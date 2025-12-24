@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Уровни доступа</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item active">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Сотрудники</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Уровни доступа</span>
+      </div>
+      
+      <div class="toolbar">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" placeholder="Поиск по названию" class="search-input">
+        </div>
+        
+        <button class="btn-add-right" id="addAccessLevelBtn">
+          Добавить  +
+        </button>
+      </div>
+      
+      <div class="access-levels-table">
+        <div class="access-levels-header">
+          <span class="col-level-id">#</span>
+          <span class="col-level-name">Название</span>
+          <span class="col-level-permissions">Права доступа</span>
+          <span class="col-level-action"></span>
+        </div>
+        
+        <div class="access-levels-body">
+          <div class="level-row">
+            <span class="level-id">1</span>
+            <span class="level-name">Владелец</span>
+            <span class="level-permissions">Полный доступ</span>
+            <div class="level-actions">
+              <svg class="action-icon edit" viewBox="0 0 24 24" fill="#0088ff"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              <svg class="action-icon delete" viewBox="0 0 24 24" fill="#ff383c"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+            </div>
+          </div>
+          
+          <div class="level-row">
+            <span class="level-id">2</span>
+            <span class="level-name">Бухгалтер</span>
+            <span class="level-permissions">Финансы, отчёты</span>
+            <div class="level-actions">
+              <svg class="action-icon edit" viewBox="0 0 24 24" fill="#0088ff"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              <svg class="action-icon delete" viewBox="0 0 24 24" fill="#ff383c"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+            </div>
+          </div>
+          
+          <div class="level-row">
+            <span class="level-id">3</span>
+            <span class="level-name">Менеджер</span>
+            <span class="level-permissions">Склад, клиенты, заказы</span>
+            <div class="level-actions">
+              <svg class="action-icon edit" viewBox="0 0 24 24" fill="#0088ff"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              <svg class="action-icon delete" viewBox="0 0 24 24" fill="#ff383c"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+            </div>
+          </div>
+          
+          <div class="level-row">
+            <span class="level-id">4</span>
+            <span class="level-name">Оператор</span>
+            <span class="level-permissions">Поддержка, диспуты</span>
+            <div class="level-actions">
+              <svg class="action-icon edit" viewBox="0 0 24 24" fill="#0088ff"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              <svg class="action-icon delete" viewBox="0 0 24 24" fill="#ff383c"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+            </div>
+          </div>
+          
+          <div class="level-row">
+            <span class="level-id">5</span>
+            <span class="level-name">Курьер</span>
+            <span class="level-permissions">Адреса, доставки</span>
+            <div class="level-actions">
+              <svg class="action-icon edit" viewBox="0 0 24 24" fill="#0088ff"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              <svg class="action-icon delete" viewBox="0 0 24 24" fill="#ff383c"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Add Access Level Modal -->
+  <div class="modal-overlay" id="addAccessLevelModalOverlay">
+    <div class="modal-window add-access-level-modal">
+      <div class="modal-header">
+        <span class="modal-title">Добавить</span>
+        <button class="modal-close-btn" id="closeAddAccessLevelModal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Название (Бухгалтер, Оператор...)</label>
+          <input type="text" class="form-input" id="accessLevelNameInput" data-testid="input-access-level-name" placeholder="">
+        </div>
+        
+        <div class="permissions-grid">
+          <div class="permission-item">
+            <input type="checkbox" id="perm1" class="permission-checkbox">
+            <label for="perm1" class="permission-label">Главная страница</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm2" class="permission-checkbox">
+            <label for="perm2" class="permission-label">Баланс магазина</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm3" class="permission-checkbox">
+            <label for="perm3" class="permission-label">Выводы с баланса</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm4" class="permission-checkbox">
+            <label for="perm4" class="permission-label">Настройки магазина</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm5" class="permission-checkbox">
+            <label for="perm5" class="permission-label">Покупки</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm6" class="permission-checkbox">
+            <label for="perm6" class="permission-label">Пополнения</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm7" class="permission-checkbox">
+            <label for="perm7" class="permission-label">Диспуты</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm8" class="permission-checkbox">
+            <label for="perm8" class="permission-label">Регионы</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm9" class="permission-checkbox">
+            <label for="perm9" class="permission-label">Города</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm10" class="permission-checkbox">
+            <label for="perm10" class="permission-label">Районы</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm11" class="permission-checkbox">
+            <label for="perm11" class="permission-label">Товары</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm12" class="permission-checkbox">
+            <label for="perm12" class="permission-label">Курьеры</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm13" class="permission-checkbox">
+            <label for="perm13" class="permission-label">Адреса</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm14" class="permission-checkbox">
+            <label for="perm14" class="permission-label">Промокоды</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm15" class="permission-checkbox">
+            <label for="perm15" class="permission-label">Промо-акции</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm16" class="permission-checkbox">
+            <label for="perm16" class="permission-label">Накопительная скидка</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm17" class="permission-checkbox">
+            <label for="perm17" class="permission-label">Отзывы</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm18" class="permission-checkbox">
+            <label for="perm18" class="permission-label">Боты</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm19" class="permission-checkbox">
+            <label for="perm19" class="permission-label">Сообщения бота</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm20" class="permission-checkbox">
+            <label for="perm20" class="permission-label">Каналы для рассылки</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm21" class="permission-checkbox">
+            <label for="perm21" class="permission-label">Публикации</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm22" class="permission-checkbox">
+            <label for="perm22" class="permission-label">Рассылки</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm23" class="permission-checkbox">
+            <label for="perm23" class="permission-label">Автопересылки</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm24" class="permission-checkbox">
+            <label for="perm24" class="permission-label">Клиенты</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm25" class="permission-checkbox">
+            <label for="perm25" class="permission-label">Сообщения от клиентов</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm26" class="permission-checkbox">
+            <label for="perm26" class="permission-label">Сотрудники</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm27" class="permission-checkbox">
+            <label for="perm27" class="permission-label">История</label>
+          </div>
+          <div class="permission-item">
+            <input type="checkbox" id="perm28" class="permission-checkbox">
+            <label for="perm28" class="permission-label">Статистика</label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer access-level-footer">
+        <button class="btn-outline" id="saveAndAddAnotherBtn" data-testid="button-save-add-another">Сохранить и добавить другой</button>
+        <button class="btn-gray" id="applyAccessLevelBtn" data-testid="button-apply-access-level">Применить</button>
+        <button class="btn-green" id="saveAccessLevelBtn" data-testid="button-save-access-level">Сохранить</button>
+        <button class="btn-red" id="deleteAccessLevelBtn" data-testid="button-delete-access-level">Удалить</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+</body>
+</html>

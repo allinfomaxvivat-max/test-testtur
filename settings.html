@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Настройки</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .settings-tabs {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 5px;
+      gap: 3px;
+      background: #161616;
+      border: 1px solid #1c1c1c;
+      border-radius: 18px;
+      margin-bottom: 24px;
+      width: fit-content;
+    }
+    
+    .settings-tab {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 16px;
+      gap: 10px;
+      height: 44px;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      color: #969696;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 13px;
+      opacity: 0.7;
+    }
+    
+    .settings-tab:hover {
+      color: white;
+      opacity: 1;
+    }
+    
+    .settings-tab.active {
+      background: #008fcd;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-weight: 500;
+      opacity: 1;
+    }
+    
+    .settings-header-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .currency-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+    }
+    
+    .currency-badge {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: white;
+    }
+    
+    .currency-badge .currency-text {
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+    }
+    
+    .currency-badge .fiat-icon {
+      width: 16px;
+      height: 16px;
+      background: #5bc4f1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px;
+      box-sizing: content-box;
+    }
+    
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+    }
+    
+    .status-select {
+      background: transparent;
+      border: none;
+      color: #4ade80;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding: 4px 24px 4px 8px;
+      border-radius: 6px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%23969696'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      transition: all 0.2s ease;
+    }
+    
+    .status-select:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .status-select:focus {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+    
+    .status-select option {
+      background: #1c1c1c;
+      color: white;
+      padding: 8px;
+    }
+    
+    .status-select.status-active {
+      color: #4ade80;
+    }
+    
+    .status-select.status-inactive {
+      color: #ef4444;
+    }
+    
+    .status-select.status-maintenance {
+      color: #f59e0b;
+    }
+    
+    .settings-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .form-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+    }
+    
+    .form-input {
+      background: #161616;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      height: 46px;
+      box-sizing: border-box;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: #008fcd;
+    }
+    
+    .file-upload {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      width: 100%;
+    }
+    
+    .hidden-file-input {
+      display: none;
+    }
+    
+    .file-upload-btn {
+      background: #008fcd;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 24px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+      height: 46px;
+      box-sizing: border-box;
+    }
+    
+    .file-upload-btn:hover {
+      background: #0077ab;
+      transform: scale(1.02);
+    }
+    
+    .file-upload-btn:active {
+      transform: scale(0.98);
+    }
+    
+    .file-status {
+      box-sizing: border-box;
+      background: #161616;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+      flex-grow: 1;
+      height: 46px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .creation-date {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+    }
+    
+    .creation-date strong {
+      color: white;
+      font-weight: 500;
+    }
+    
+    .save-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #008fcd;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 24px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: fit-content;
+    }
+    
+    .save-btn:hover {
+      background: #0077ab;
+    }
+    
+    .save-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+    
+    .save-btn.green {
+      background: #22c55e;
+    }
+    
+    .save-btn.green:hover {
+      background: #16a34a;
+    }
+    
+    .notification-checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+    }
+    
+    .notification-checkbox {
+      width: 20px;
+      height: 20px;
+      appearance: none;
+      background: #161616;
+      border: 1px solid #1c1c1c;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .notification-checkbox:hover {
+      border-color: #22c55e;
+      transform: scale(1.05);
+    }
+    
+    .notification-checkbox:checked {
+      background: #22c55e;
+      border-color: #22c55e;
+      animation: checkboxPop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .notification-checkbox:checked::after {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      animation: checkmarkDraw 0.2s ease-out 0.1s both;
+    }
+    
+    @keyframes checkboxPop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes checkmarkDraw {
+      0% { opacity: 0; transform: rotate(45deg) scale(0); }
+      100% { opacity: 1; transform: rotate(45deg) scale(1); }
+    }
+    
+    .notification-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+      cursor: pointer;
+    }
+    
+    .notifications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+    
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .tab-content.fade-out {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    
+    .tab-content.fade-in {
+      animation: fadeInUp 0.3s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeOutDown {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+    }
+    
+    .payment-methods-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    
+    .payment-method-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #161616;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    
+    .payment-checkbox {
+      width: 14px;
+      height: 14px;
+      appearance: none;
+      background: transparent;
+      border: 1px solid #969696;
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .payment-checkbox:hover {
+      border-color: #117c2c;
+      transform: scale(1.1);
+    }
+    
+    .payment-checkbox:checked {
+      background: #117c2c;
+      border-color: #117c2c;
+      animation: checkboxPop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .payment-checkbox:checked::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 4px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 1.5px 1.5px 0;
+      transform: rotate(45deg);
+      animation: checkmarkDraw 0.2s ease-out 0.1s both;
+    }
+    
+    .payment-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .form-select {
+      background: #161616;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23969696'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .form-select:hover {
+      border-color: #333;
+      background-color: #1a1a1a;
+    }
+    
+    .form-select:focus {
+      outline: none;
+      border-color: #008fcd;
+      box-shadow: 0 0 0 3px rgba(0, 143, 205, 0.15);
+      animation: selectFocus 0.3s ease-out;
+    }
+    
+    @keyframes selectFocus {
+      0% { box-shadow: 0 0 0 0 rgba(0, 143, 205, 0.4); }
+      100% { box-shadow: 0 0 0 3px rgba(0, 143, 205, 0.15); }
+    }
+    
+    .form-select option {
+      background: #161616;
+      color: white;
+      padding: 12px 16px;
+    }
+    
+    .form-select option:hover,
+    .form-select option:focus,
+    .form-select option:checked {
+      background: #008fcd;
+      color: white;
+    }
+    
+    .form-hint {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: rgba(150, 150, 150, 0.5);
+      margin-top: 4px;
+    }
+    
+    .section-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .section-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    
+    .section-checkbox-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: #969696;
+    }
+    
+    .two-column-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .three-column-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .three-column-row-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .three-column-row-buttons .form-label {
+      white-space: nowrap;
+    }
+    
+    .link-input {
+      position: relative;
+    }
+    
+    .link-input .form-input {
+      padding-left: 38px;
+    }
+    
+    .link-input-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      color: #969696;
+    }
+    
+    .edit-text-link {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: #008fcd;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 4px;
+      display: inline-block;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .edit-text-link:hover {
+      color: #00b4ff;
+      text-shadow: 0 0 8px rgba(0, 143, 205, 0.5);
+      transform: translateX(3px);
+    }
+    
+    .edit-text-link:active {
+      transform: scale(0.95) translateX(3px);
+      color: #006ba3;
+    }
+    
+    .edit-text-link::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%) scaleX(0);
+      width: 6px;
+      height: 6px;
+      background: #008fcd;
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .edit-text-link:hover::before {
+      transform: translateY(-50%) scaleX(1);
+    }
+    
+    /* Edit Bot Message Modal */
+    .edit-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      pointer-events: none;
+      transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .edit-modal-overlay.active {
+      background: rgba(0, 0, 0, 0.8);
+      pointer-events: auto;
+    }
+    
+    .edit-modal-box {
+      background: linear-gradient(145deg, #1a1a1a, #161616);
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 32px;
+      width: 600px;
+      max-height: 85vh;
+      overflow-y: auto;
+      transform: scale(0.8) translateY(30px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 143, 205, 0.1);
+    }
+    
+    .edit-modal-overlay.active .edit-modal-box {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+    
+    .edit-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    
+    .edit-modal-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .edit-modal-title-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #008fcd, #00b4ff);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: iconPulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes iconPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 143, 205, 0.4); }
+      50% { box-shadow: 0 0 20px 5px rgba(0, 143, 205, 0.2); }
+    }
+    
+    .edit-modal-close {
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      border: 1px solid #3a3a3a;
+      border-radius: 8px;
+      color: #969696;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .edit-modal-close:hover {
+      background: #2a2a2a;
+      border-color: #4a4a4a;
+      color: white;
+      transform: rotate(90deg);
+    }
+    
+    .edit-modal-slug {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 13px;
+      color: #00b4ff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slideIn 0.5s ease-out 0.2s both;
+    }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .edit-modal-slug-label {
+      color: #969696;
+      font-weight: 500;
+    }
+    
+    .edit-modal-textarea {
+      width: 100%;
+      min-height: 180px;
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 16px;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      resize: vertical;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      animation: slideIn 0.5s ease-out 0.3s both;
+    }
+    
+    .edit-modal-textarea:focus {
+      outline: none;
+      border-color: #008fcd;
+      box-shadow: 0 0 20px rgba(0, 143, 205, 0.15);
+    }
+    
+    .edit-modal-dates {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      animation: slideIn 0.5s ease-out 0.4s both;
+    }
+    
+    .edit-modal-date {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .edit-modal-date-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .edit-modal-date-value {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 13px;
+      color: #969696;
+    }
+    
+    .edit-modal-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      animation: slideIn 0.5s ease-out 0.5s both;
+    }
+    
+    .edit-modal-btn {
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+    }
+    
+    .edit-modal-btn.apply {
+      background: transparent;
+      border: 1px solid #3a3a3a;
+      color: #969696;
+    }
+    
+    .edit-modal-btn.apply:hover {
+      background: #2a2a2a;
+      border-color: #4a4a4a;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .edit-modal-btn.save {
+      background: linear-gradient(135deg, #008fcd, #0077b6);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 143, 205, 0.3);
+    }
+    
+    .edit-modal-btn.save:hover {
+      background: linear-gradient(135deg, #00a3e8, #008fcd);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 143, 205, 0.4);
+    }
+    
+    .edit-modal-btn:active {
+      transform: scale(0.97);
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .checkbox-item-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: #969696;
+    }
+    
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      pointer-events: none;
+      transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modal-overlay.active {
+      background: rgba(0, 0, 0, 0.7);
+      pointer-events: auto;
+    }
+    
+    .modal-box {
+      background: #161616;
+      border: 1px solid #1c1c1c;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      transform: scale(0.8) translateY(20px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .modal-overlay.active .modal-box {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+    
+    .modal-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 12px;
+    }
+    
+    .modal-text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+      margin-bottom: 24px;
+    }
+    
+    .modal-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    
+    .modal-btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      transform: scale(1);
+    }
+    
+    .modal-btn:hover {
+      transform: scale(1.03);
+    }
+    
+    .modal-btn:active {
+      transform: scale(0.97);
+    }
+    
+    .modal-btn.cancel {
+      background: #2a2a2a;
+      color: #969696;
+    }
+    
+    .modal-btn.cancel:hover {
+      background: #3a3a3a;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .modal-btn.confirm {
+      background: #117c2c;
+      color: white;
+    }
+    
+    .modal-btn.confirm:hover {
+      background: #14912f;
+      box-shadow: 0 4px 16px rgba(17, 124, 44, 0.4);
+    }
+    
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #117c2c 0%, #14912f 100%);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1001;
+      transform: translateX(150%) scale(0.8);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 8px 32px rgba(17, 124, 44, 0.4);
+    }
+    
+    .toast.show {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+    
+    .toast svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+      animation: checkPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+    }
+    
+    @keyframes checkPop {
+      0% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+    
+    /* ============================================
+       RESPONSIVE STYLES - SETTINGS PAGE
+       ============================================ */
+    
+    @media screen and (max-width: 768px) {
+      .settings-container,
+      .settings-content {
+        padding: 16px;
+      }
+      
+      .settings-section {
+        padding: 16px;
+      }
+      
+      .settings-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .settings-row > div,
+      .settings-row > .form-group {
+        width: 100%;
+      }
+      
+      .settings-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      
+      .settings-tab {
+        flex: 1 1 calc(50% - 4px);
+        text-align: center;
+      }
+      
+      .toast {
+        left: 16px;
+        right: 16px;
+        bottom: 20px;
+        max-width: calc(100vw - 32px);
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .settings-container,
+      .settings-content {
+        padding: 12px;
+      }
+      
+      .settings-section {
+        padding: 12px;
+      }
+      
+      .settings-tab {
+        flex: 1 1 100%;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link">
+        <img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo">
+      </a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Настройки</span>
+      </div>
+      
+      <div class="settings-tabs">
+        <button class="settings-tab active">Информация</button>
+        <button class="settings-tab">Оповещения</button>
+        <button class="settings-tab">Способы оплат</button>
+        <button class="settings-tab">Канал/реферлка</button>
+        <button class="settings-tab">Кастомизация бота</button>
+        <button class="settings-tab">Личный бот</button>
+      </div>
+      
+      <div id="tab-info" class="tab-content active">
+        <div class="settings-header-row">
+          <div class="currency-toggle">
+            <span>Валюта магазина:</span>
+            <div class="currency-badge">
+              <div class="fiat-icon">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 21V18H4V16H6V14H4V12H6V3H13C14.6667 3 16.0833 3.58333 17.25 4.75C18.4167 5.91667 19 7.33333 19 9C19 10.6667 18.4167 12.0833 17.25 13.25C16.0833 14.4167 14.6667 15 13 15H8V16H15V18H8V21H6ZM8 12H13C14.1 12 15.0417 11.6083 15.825 10.825C16.6083 10.0417 17 9.1 17 8C17 6.9 16.6083 5.95833 15.825 5.175C15.0417 4.39167 14.1 4 13 4H8V12Z"/>
+                </svg>
+              </div>
+              <span class="currency-text">RUB</span>
+            </div>
+          </div>
+          <div class="status-badge">
+            <span>Статус:</span>
+            <select id="shop-status-select" class="status-select" data-testid="select-shop-status">
+              <option value="active" class="status-option-active">Активный</option>
+              <option value="inactive" class="status-option-inactive">Неактивный</option>
+              <option value="maintenance" class="status-option-maintenance">На обслуживании</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="settings-form">
+          <div class="form-group">
+            <label class="form-label">Название магазина</label>
+            <input type="text" class="form-input" value="Gothem" data-testid="input-shop-name">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Логотип магазина</label>
+            <div class="file-upload">
+              <input type="file" id="logoFileInput" class="hidden-file-input" accept="image/*" data-testid="input-file-logo">
+              <button class="file-upload-btn" data-testid="button-upload-logo" onclick="document.getElementById('logoFileInput').click()">Выберите файл</button>
+              <span class="file-status" id="logoFileStatus">Файл не выбран</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Кол-во часов на открытие спора по заявке</label>
+            <input type="text" class="form-input" value="3 часа" data-testid="input-dispute-hours">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Токен бота диспутов для сотрудников</label>
+            <input type="text" class="form-input" placeholder="" data-testid="input-dispute-bot-token">
+          </div>
+          
+          <div class="creation-date">
+            Дата создания: <strong id="creation-date-value" data-testid="text-creation-date"></strong>
+          </div>
+          
+          <button class="save-btn green" data-testid="button-save-info">
+            Сохранить все настройки
+            <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.078 2.168a2 2 0 0 1 1.844 0l7 3.5A2 2 0 0 1 21 7.5v9a2 2 0 0 1-1.078 1.832l-7 3.5a2 2 0 0 1-1.844 0l-7-3.5A2 2 0 0 1 3 16.5v-9a2 2 0 0 1 1.078-1.832l7-3.5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="tab-notifications" class="tab-content">
+        <div class="settings-form">
+          <div class="form-group">
+            <label class="form-label">Токен бота для оповещений</label>
+            <input type="text" class="form-input" placeholder="Введите токен бота" data-testid="input-notification-bot-token">
+          </div>
+          
+          <div class="notifications-list">
+            <div class="notification-checkbox-item">
+              <input type="checkbox" class="notification-checkbox" id="notify-new-purchase" checked data-testid="checkbox-new-purchase">
+              <label class="notification-label" for="notify-new-purchase">Новая покупка</label>
+            </div>
+            <div class="notification-checkbox-item">
+              <input type="checkbox" class="notification-checkbox" id="notify-new-deposit" checked data-testid="checkbox-new-deposit">
+              <label class="notification-label" for="notify-new-deposit">Новое пополнение</label>
+            </div>
+            <div class="notification-checkbox-item">
+              <input type="checkbox" class="notification-checkbox" id="notify-new-dispute" data-testid="checkbox-new-dispute">
+              <label class="notification-label" for="notify-new-dispute">Новый диспут</label>
+            </div>
+            <div class="notification-checkbox-item">
+              <input type="checkbox" class="notification-checkbox" id="notify-new-review" checked data-testid="checkbox-new-review">
+              <label class="notification-label" for="notify-new-review">Новый отзыв</label>
+            </div>
+            <div class="notification-checkbox-item">
+              <input type="checkbox" class="notification-checkbox" id="notify-low-stock" data-testid="checkbox-low-stock">
+              <label class="notification-label" for="notify-low-stock">Мало товара на складе</label>
+            </div>
+            <div class="notification-checkbox-item">
+              <input type="checkbox" class="notification-checkbox" id="notify-support-message" checked data-testid="checkbox-support-message">
+              <label class="notification-label" for="notify-support-message">Сообщение в техподдержку</label>
+            </div>
+          </div>
+          
+          <button class="save-btn green" data-testid="button-save-notifications">
+            Сохранить настройки оповещений
+            <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.078 2.168a2 2 0 0 1 1.844 0l7 3.5A2 2 0 0 1 21 7.5v9a2 2 0 0 1-1.078 1.832l-7 3.5a2 2 0 0 1-1.844 0l-7-3.5A2 2 0 0 1 3 16.5v-9a2 2 0 0 1 1.078-1.832l7-3.5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="tab-payment-methods" class="tab-content">
+        <div class="settings-form">
+          <div class="payment-methods-grid">
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-btc" data-testid="checkbox-pay-btc">
+              <label class="payment-label" for="pay-btc">Оплата BTC</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-ltc" checked data-testid="checkbox-pay-ltc">
+              <label class="payment-label" for="pay-ltc">Оплата LTC</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-usdt" data-testid="checkbox-pay-usdt">
+              <label class="payment-label" for="pay-usdt">Оплата USDT TRC-20</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-promo" checked data-testid="checkbox-pay-promo">
+              <label class="payment-label" for="pay-promo">Оплата Промокод</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-cards" data-testid="checkbox-pay-cards">
+              <label class="payment-label" for="pay-cards">Оплата Карты Visa/MC/МИР</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-sbp" checked data-testid="checkbox-pay-sbp">
+              <label class="payment-label" for="pay-sbp">Оплата СБП</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-transgarant" data-testid="checkbox-pay-transgarant">
+              <label class="payment-label" for="pay-transgarant">Оплата Трансгарант перевод в СНГ</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-sber" checked data-testid="checkbox-pay-sber">
+              <label class="payment-label" for="pay-sber">Оплата Со Сбербанка на Сбербанк</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-alfa" data-testid="checkbox-pay-alfa">
+              <label class="payment-label" for="pay-alfa">Оплата С Альфа-банк на Альфа-Банк</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-ozon" data-testid="checkbox-pay-ozon">
+              <label class="payment-label" for="pay-ozon">Оплата С Озона на Озон</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-qr-sber" data-testid="checkbox-pay-qr-sber">
+              <label class="payment-label" for="pay-qr-sber">Оплата QR со Сбербанка на Сбербанк</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-qr-alfa" data-testid="checkbox-pay-qr-alfa">
+              <label class="payment-label" for="pay-qr-alfa">Оплата QR с Альфа-Банк на Альфа-Банк</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-qr-ozon" data-testid="checkbox-pay-qr-ozon">
+              <label class="payment-label" for="pay-qr-ozon">Оплата QR с Озон банка на Озон банк</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-qr-gazprom" data-testid="checkbox-pay-qr-gazprom">
+              <label class="payment-label" for="pay-qr-gazprom">Оплата QR с Газпромбанка на Газпромбанк</label>
+            </div>
+            <div class="payment-method-item">
+              <input type="checkbox" class="payment-checkbox" id="pay-qr-any" checked data-testid="checkbox-pay-qr-any">
+              <label class="payment-label" for="pay-qr-any">Оплата QR для любого банка</label>
+            </div>
+          </div>
+          
+          <button class="save-btn green" data-testid="button-save-payment-methods">
+            Сохранить все настройки
+            <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.078 2.168a2 2 0 0 1 1.844 0l7 3.5A2 2 0 0 1 21 7.5v9a2 2 0 0 1-1.078 1.832l-7 3.5a2 2 0 0 1-1.844 0l-7-3.5A2 2 0 0 1 3 16.5v-9a2 2 0 0 1 1.078-1.832l7-3.5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="tab-channel-referral" class="tab-content">
+        <div class="settings-form">
+          <div class="form-group">
+            <label class="form-label">Требовать обязательную подписку</label>
+            <select class="form-select" data-testid="select-subscription-required">
+              <option value="">Не выбрано</option>
+              <option value="on_activation">При активации бота</option>
+            </select>
+            <p class="form-hint">Вы можете потребовать с клиента обязательную подписку на ваш канал или чат, для того что бы совершать покупки в вашем магазине.</p>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Token бота, добавленного в администраторы группы для проверки подписки</label>
+            <input type="text" class="form-input" placeholder="" data-testid="input-subscription-bot-token">
+            <p class="form-hint">Создайте отдельного бота и добавьте его в канал в качестве администратора, чтобы он мог проверять присутствие пользователя в группе. Более подробно вы можете погуглить и почитать кучу статей как это сделать.</p>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">ID Канала/Группы/Чата для подписки</label>
+            <input type="text" class="form-input" placeholder="" data-testid="input-channel-id">
+            <p class="form-hint">Погуглите как это сделать: как узнать id группы телеграм</p>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Ссылка на Канал/Группу/Чат для подписки</label>
+            <input type="text" class="form-input" placeholder="" data-testid="input-channel-link">
+            <p class="form-hint">Например, @durov или https://t.me/durov</p>
+          </div>
+          
+          <div class="section-title">Реферальная программа</div>
+          
+          <div class="section-checkbox">
+            <input type="checkbox" class="notification-checkbox" id="referral-active" data-testid="checkbox-referral-active">
+            <label class="section-checkbox-label" for="referral-active">Активна рефералка?</label>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Кол-во заявок с профитом</label>
+            <input type="text" class="form-input" value="0" data-testid="input-referral-profit-count">
+            <p class="form-hint">Кол-во заявок приглашенного, за которые будет начислен бонус пригласителю, затем начисления прекращаются. Если установить 0 - тогда будет за каждое пополнение получать бонус.</p>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Реферальный бонус, %</label>
+            <input type="text" class="form-input" value="0" data-testid="input-referral-bonus-percent">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Максимальная сумма бонуса, в валюте магазина</label>
+            <input type="text" class="form-input" value="0" data-testid="input-referral-max-bonus">
+          </div>
+          
+          <button class="save-btn green" data-testid="button-save-channel-referral">
+            Сохранить все настройки
+            <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.078 2.168a2 2 0 0 1 1.844 0l7 3.5A2 2 0 0 1 21 7.5v9a2 2 0 0 1-1.078 1.832l-7 3.5a2 2 0 0 1-1.844 0l-7-3.5A2 2 0 0 1 3 16.5v-9a2 2 0 0 1 1.078-1.832l7-3.5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="tab-bot-customization" class="tab-content">
+        <div class="settings-form">
+          <div class="three-column-row-buttons">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Кнопка "Наш канал"</label>
+              <input type="text" class="form-input" value="Наш канал" data-testid="input-btn-channel">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Кнопка "Наш сайт"</label>
+              <input type="text" class="form-input" value="Наш сайт" data-testid="input-btn-site">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Кнопка "ищем работников" (в боте после выбора города)</label>
+              <input type="text" class="form-input" value="Ищем работников" data-testid="input-btn-workers">
+            </div>
+          </div>
+          
+          <div class="three-column-row">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Ссылка на канал</label>
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="" data-testid="input-link-channel">
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Ссылка на сайт</label>
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="" data-testid="input-link-site">
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Ссылка на телеграм</label>
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="" data-testid="input-link-telegram">
+              </div>
+            </div>
+          </div>
+          
+          <div class="two-column-row">
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 1" data-testid="input-custom-btn-1-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 1" data-testid="input-custom-btn-1-link">
+              </div>
+            </div>
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 2" data-testid="input-custom-btn-2-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 2" data-testid="input-custom-btn-2-link">
+              </div>
+            </div>
+          </div>
+          
+          <div class="two-column-row">
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 3" data-testid="input-custom-btn-3-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 3" data-testid="input-custom-btn-3-link">
+              </div>
+            </div>
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 4" data-testid="input-custom-btn-4-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 4" data-testid="input-custom-btn-4-link">
+              </div>
+            </div>
+          </div>
+          
+          <div class="two-column-row">
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 5" data-testid="input-custom-btn-5-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 5" data-testid="input-custom-btn-5-link">
+              </div>
+            </div>
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 6" data-testid="input-custom-btn-6-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 6" data-testid="input-custom-btn-6-link">
+              </div>
+            </div>
+          </div>
+          
+          <div class="two-column-row">
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 7" data-testid="input-custom-btn-7-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 7" data-testid="input-custom-btn-7-link">
+              </div>
+            </div>
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 8" data-testid="input-custom-btn-8-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 8" data-testid="input-custom-btn-8-link">
+              </div>
+            </div>
+          </div>
+          
+          <div class="two-column-row">
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 9" data-testid="input-custom-btn-9-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 9" data-testid="input-custom-btn-9-link">
+              </div>
+            </div>
+            <div>
+              <input type="text" class="form-input" placeholder="Название кнопки 10" data-testid="input-custom-btn-10-name" style="margin-bottom: 10px;">
+              <div class="link-input">
+                <svg class="link-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <input type="text" class="form-input" placeholder="Ссылка кнопки 10" data-testid="input-custom-btn-10-link">
+              </div>
+            </div>
+          </div>
+          
+          <div class="checkbox-item">
+            <input type="checkbox" class="notification-checkbox" id="show-cities-menu" checked data-testid="checkbox-show-cities">
+            <label class="checkbox-item-label" for="show-cities-menu">Показывать города в главном меню</label>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Кол-во городов в строку</label>
+            <input type="text" class="form-input" value="2" data-testid="input-cities-per-row">
+          </div>
+          
+          <div class="checkbox-item">
+            <input type="checkbox" class="notification-checkbox" id="show-fast-buy" data-testid="checkbox-fast-buy">
+            <label class="checkbox-item-label" for="show-fast-buy">Показывать команду быстрой покупки в Витрине</label>
+          </div>
+          
+          <div class="checkbox-item">
+            <input type="checkbox" class="notification-checkbox" id="single-column-menu" data-testid="checkbox-single-column">
+            <label class="checkbox-item-label" for="single-column-menu">Всё меню в одну колонку</label>
+          </div>
+          
+          <div class="two-column-row">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Пункт меню: Поддержка</label>
+              <input type="text" class="form-input" value="Поддержка" data-testid="input-menu-support">
+              <p class="form-hint">Оставьте пустым, тогда этот пункт меню пропадет из меню</p>
+              <span class="edit-text-link" data-modal="support" data-testid="link-edit-support">Изменить текст</span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">ID Канала/Группы/Чата для подписки</label>
+              <input type="text" class="form-input" value="https://t.me/Dahoon_scrag" data-testid="input-menu-support-link">
+              <p class="form-hint">Если установлена ссылка, тогда вместо раздела Поддержка с отправкой заявки будет выводиться просто ссылка на оператора.</p>
+            </div>
+          </div>
+          
+          <div class="two-column-row">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Пункт меню: Витрина</label>
+              <input type="text" class="form-input" value="ВИТРИНА" data-testid="input-menu-vitrina">
+              <p class="form-hint">Оставьте пустым, тогда этот пункт меню пропадет из меню</p>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Пункт меню: Работа</label>
+              <input type="text" class="form-input" value="Работа" data-testid="input-menu-work">
+              <p class="form-hint">Оставьте пустым, тогда этот пункт меню пропадет из меню</p>
+              <span class="edit-text-link" data-modal="work" data-testid="link-edit-work">Изменить текст</span>
+            </div>
+          </div>
+          
+          <div class="two-column-row">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Пункт меню: Бонусы</label>
+              <input type="text" class="form-input" value="Бонусы" data-testid="input-menu-bonuses">
+              <p class="form-hint">Оставьте пустым, тогда этот пункт меню пропадет из меню</p>
+              <span class="edit-text-link" data-modal="bonus" data-testid="link-edit-bonus">Изменить текст</span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Пункт меню: Правила</label>
+              <input type="text" class="form-input" value="Правила" data-testid="input-menu-rules">
+              <p class="form-hint">Оставьте пустым, тогда этот пункт меню пропадет из меню</p>
+              <span class="edit-text-link" data-modal="rules" data-testid="link-edit-rules">Изменить текст</span>
+            </div>
+          </div>
+          
+          <div class="two-column-row">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Пункт меню: Информация</label>
+              <input type="text" class="form-input" value="Бонусы" data-testid="input-menu-info">
+              <p class="form-hint">Оставьте пустым, тогда этот пункт меню пропадет из меню</p>
+              <span class="edit-text-link" data-modal="info" data-testid="link-edit-info">Изменить текст</span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Пункт меню: Мои покупки</label>
+              <input type="text" class="form-input" value="Правила" data-testid="input-menu-purchases">
+              <p class="form-hint">Оставьте пустым, тогда этот пункт меню пропадет из меню</p>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Пункт меню: Отзывы</label>
+            <input type="text" class="form-input" value="Отзывы" data-testid="input-menu-reviews">
+            <p class="form-hint">Оставьте пустым, тогда этот пункт меню пропадет из меню</p>
+          </div>
+          
+          <button class="save-btn green" data-testid="button-save-bot-customization">
+            Сохранить все настройки
+            <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.078 2.168a2 2 0 0 1 1.844 0l7 3.5A2 2 0 0 1 21 7.5v9a2 2 0 0 1-1.078 1.832l-7 3.5a2 2 0 0 1-1.844 0l-7-3.5A2 2 0 0 1 3 16.5v-9a2 2 0 0 1 1.078-1.832l7-3.5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="tab-personal-bot" class="tab-content">
+        <div class="settings-form">
+          <div class="checkbox-item">
+            <input type="checkbox" class="notification-checkbox" id="allow-personal-bots" checked data-testid="checkbox-allow-personal-bots">
+            <label class="checkbox-item-label" for="allow-personal-bots">Разрешить подключать личные боты</label>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Минимальное кол-во покупок у клиента для подключения бота</label>
+            <input type="text" class="form-input" value="1" data-testid="input-min-purchases-bot">
+          </div>
+          
+          <button class="save-btn green" data-testid="button-save-personal-bot">
+            Сохранить все настройки
+            <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.078 2.168a2 2 0 0 1 1.844 0l7 3.5A2 2 0 0 1 21 7.5v9a2 2 0 0 1-1.078 1.832l-7 3.5a2 2 0 0 1-1.844 0l-7-3.5A2 2 0 0 1 3 16.5v-9a2 2 0 0 1 1.078-1.832l7-3.5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <div class="modal-overlay" id="confirmModal" data-testid="modal-confirm">
+    <div class="modal-box">
+      <h3 class="modal-title">Подтверждение</h3>
+      <p class="modal-text">Вы уверены, что хотите сохранить изменения?</p>
+      <div class="modal-buttons">
+        <button class="modal-btn cancel" id="modalCancel" data-testid="button-modal-cancel">Отменить</button>
+        <button class="modal-btn confirm" id="modalConfirm" data-testid="button-modal-confirm">Подтвердить</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="toast" id="toast" data-testid="toast-notification">
+    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+    <span>Настройки сохранены</span>
+  </div>
+  
+  <div class="edit-modal-overlay" id="editModal" data-testid="modal-edit-bot">
+    <div class="edit-modal-box">
+      <div class="edit-modal-header">
+        <h3 class="edit-modal-title">
+          <div class="edit-modal-title-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+          </div>
+          Редактировать сообщение бота
+        </h3>
+        <button class="edit-modal-close" id="editModalClose" data-testid="button-edit-modal-close">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </div>
+      <div class="edit-modal-slug">
+        <span class="edit-modal-slug-label">Slug:</span>
+        <span id="editModalSlug">MAIN_INFO_TEXT-WORK</span>
+      </div>
+      <label class="form-label" style="margin-bottom: 8px;">Текст:</label>
+      <textarea class="edit-modal-textarea" id="editModalText" data-testid="textarea-edit-bot-text"></textarea>
+      <div class="edit-modal-dates">
+        <div class="edit-modal-date">
+          <span class="edit-modal-date-label">Дата создания:</span>
+          <span class="edit-modal-date-value" id="editModalCreated">10.10.2025 20:29:42</span>
+        </div>
+        <div class="edit-modal-date">
+          <span class="edit-modal-date-label">Дата изменения:</span>
+          <span class="edit-modal-date-value" id="editModalModified">00-00-0000 00:00:00</span>
+        </div>
+      </div>
+      <div class="edit-modal-buttons">
+        <button class="edit-modal-btn apply" id="editModalApply" data-testid="button-edit-apply">Применить</button>
+        <button class="edit-modal-btn save" id="editModalSave" data-testid="button-edit-save">Сохранить</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    // Set date/time - only updates on save
+    function updateCreationDate() {
+      const dateElement = document.getElementById('creation-date-value');
+      if (dateElement) {
+        const now = new Date();
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const dateStr = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+        dateElement.textContent = dateStr;
+        localStorage.setItem('creationDate', dateStr);
+      }
+    }
+    
+    // Load saved date from localStorage or show placeholder
+    function loadCreationDate() {
+      const dateElement = document.getElementById('creation-date-value');
+      if (dateElement) {
+        const savedDate = localStorage.getItem('creationDate');
+        dateElement.textContent = savedDate || 'Не сохранено';
+      }
+    }
+    loadCreationDate();
+    
+    // Shop status handling
+    const shopStatusSelect = document.getElementById('shop-status-select');
+    
+    function updateStatusColor() {
+      if (shopStatusSelect) {
+        shopStatusSelect.classList.remove('status-active', 'status-inactive', 'status-maintenance');
+        const value = shopStatusSelect.value;
+        if (value === 'active') {
+          shopStatusSelect.classList.add('status-active');
+        } else if (value === 'inactive') {
+          shopStatusSelect.classList.add('status-inactive');
+        } else if (value === 'maintenance') {
+          shopStatusSelect.classList.add('status-maintenance');
+        }
+      }
+    }
+    
+    function saveShopStatus() {
+      if (shopStatusSelect) {
+        localStorage.setItem('shopStatus', shopStatusSelect.value);
+      }
+    }
+    
+    function loadShopStatus() {
+      if (shopStatusSelect) {
+        const savedStatus = localStorage.getItem('shopStatus');
+        if (savedStatus) {
+          shopStatusSelect.value = savedStatus;
+        }
+        updateStatusColor();
+      }
+    }
+    
+    if (shopStatusSelect) {
+      shopStatusSelect.addEventListener('change', updateStatusColor);
+    }
+    loadShopStatus();
+    
+    const tabMapping = {
+      'Информация': 'tab-info',
+      'Оповещения': 'tab-notifications',
+      'Способы оплат': 'tab-payment-methods',
+      'Канал/реферлка': 'tab-channel-referral',
+      'Кастомизация бота': 'tab-bot-customization',
+      'Личный бот': 'tab-personal-bot'
+    };
+    
+    document.querySelectorAll('.settings-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        const tabText = this.textContent.trim();
+        const tabId = tabMapping[tabText];
+        
+        if (this.classList.contains('active')) return;
+        
+        document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        
+        const currentActive = document.querySelector('.tab-content.active');
+        const targetContent = tabId ? document.getElementById(tabId) : null;
+        
+        if (currentActive && targetContent) {
+          currentActive.style.animation = 'fadeOutDown 0.2s ease forwards';
+          
+          setTimeout(() => {
+            currentActive.classList.remove('active');
+            currentActive.style.animation = '';
+            
+            targetContent.classList.add('active');
+            targetContent.classList.add('fade-in');
+            
+            setTimeout(() => {
+              targetContent.classList.remove('fade-in');
+            }, 300);
+          }, 200);
+        } else if (targetContent) {
+          document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+          targetContent.classList.add('active');
+          targetContent.classList.add('fade-in');
+          setTimeout(() => {
+            targetContent.classList.remove('fade-in');
+          }, 300);
+        }
+      });
+    });
+    
+    const modal = document.getElementById('confirmModal');
+    const modalCancel = document.getElementById('modalCancel');
+    const modalConfirm = document.getElementById('modalConfirm');
+    const toast = document.getElementById('toast');
+    
+    function showModal() {
+      modal.classList.add('active');
+    }
+    
+    function hideModal() {
+      modal.classList.remove('active');
+    }
+    
+    function showToast() {
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+    
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showModal();
+      });
+    });
+    
+    modalCancel.addEventListener('click', hideModal);
+    
+    modalConfirm.addEventListener('click', function() {
+      updateCreationDate();
+      saveShopStatus();
+      hideModal();
+      showToast();
+    });
+    
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        hideModal();
+      }
+    });
+    
+    // File upload handler
+    const logoFileInput = document.getElementById('logoFileInput');
+    const logoFileStatus = document.getElementById('logoFileStatus');
+    
+    if (logoFileInput && logoFileStatus) {
+      logoFileInput.addEventListener('change', function() {
+        if (this.files && this.files.length > 0) {
+          logoFileStatus.textContent = this.files[0].name;
+          logoFileStatus.style.color = '#ffffff';
+        } else {
+          logoFileStatus.textContent = 'Файл не выбран';
+          logoFileStatus.style.color = '#ffffff';
+        }
+      });
+    }
+    
+    // Edit Bot Message Modal
+    const editModal = document.getElementById('editModal');
+    const editModalClose = document.getElementById('editModalClose');
+    const editModalSlug = document.getElementById('editModalSlug');
+    const editModalText = document.getElementById('editModalText');
+    const editModalCreated = document.getElementById('editModalCreated');
+    const editModalModified = document.getElementById('editModalModified');
+    const editModalApply = document.getElementById('editModalApply');
+    const editModalSave = document.getElementById('editModalSave');
+    
+    // Modal content data
+    const modalData = {
+      support: {
+        slug: 'MAIN_INFO_TEXT-SUPPORT',
+        text: 'При возникновения вопросов на тему баланса/покупки/клада/трудоустройства\nписать менеджеру шопа: @BANE_RT',
+        storageKey: 'botMessage_support'
+      },
+      work: {
+        slug: 'MAIN_INFO_TEXT-WORK',
+        text: 'Работа: Наш Магазин ведет набор в команду на позиции:\nКладмен - от 1000р за клад | Без 228 чистоя работа на аптеку от 500р за клад\nПрисутствует карьерная лесница кладмен - склад - куратор - менеджер.\nСвязь с менеджером: @',
+        storageKey: 'botMessage_work'
+      },
+      bonus: {
+        slug: 'MAIN_INFO_TEXT-BONUS',
+        text: 'Бонусы',
+        storageKey: 'botMessage_bonus'
+      },
+      rules: {
+        slug: 'MAIN_INFO_TEXT-RULES',
+        text: 'Правила',
+        storageKey: 'botMessage_rules'
+      },
+      info: {
+        slug: 'MAIN_INFO_TEXT-INFO',
+        text: 'Информация',
+        storageKey: 'botMessage_info'
+      }
+    };
+    
+    let currentModalType = null;
+    
+    function formatDate(date) {
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const year = date.getFullYear();
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
+      const seconds = String(date.getSeconds()).padStart(2, '0');
+      return `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+    }
+    
+    function loadModalData(type) {
+      const data = modalData[type];
+      if (!data) return;
+      
+      currentModalType = type;
+      editModalSlug.textContent = data.slug;
+      
+      // Load saved data from localStorage
+      const savedData = localStorage.getItem(data.storageKey);
+      if (savedData) {
+        try {
+          const parsed = JSON.parse(savedData);
+          editModalText.value = parsed.text !== undefined ? parsed.text : data.text;
+          editModalCreated.textContent = parsed.created || '00.00.0000 00:00:00';
+          editModalModified.textContent = parsed.modified || '00.00.0000 00:00:00';
+        } catch (e) {
+          editModalText.value = data.text;
+          editModalCreated.textContent = '00.00.0000 00:00:00';
+          editModalModified.textContent = '00.00.0000 00:00:00';
+        }
+      } else {
+        // No saved data yet - dates will be set on first save
+        editModalText.value = data.text;
+        editModalCreated.textContent = '00.00.0000 00:00:00';
+        editModalModified.textContent = '00.00.0000 00:00:00';
+      }
+    }
+    
+    function showEditModal(type) {
+      loadModalData(type);
+      editModal.classList.add('active');
+    }
+    
+    function hideEditModal() {
+      editModal.classList.remove('active');
+      currentModalType = null;
+    }
+    
+    function saveModalData() {
+      if (!currentModalType) return;
+      
+      const data = modalData[currentModalType];
+      const now = formatDate(new Date());
+      
+      // Get existing data to preserve creation date
+      let existingCreated = null;
+      const existing = localStorage.getItem(data.storageKey);
+      if (existing) {
+        try {
+          const parsed = JSON.parse(existing);
+          existingCreated = parsed.created;
+        } catch (e) {}
+      }
+      
+      // Creation date: only set once on first save
+      const createdDate = existingCreated && existingCreated !== '00.00.0000 00:00:00' ? existingCreated : now;
+      
+      const savedData = {
+        text: editModalText.value,
+        created: createdDate,
+        modified: now
+      };
+      
+      localStorage.setItem(data.storageKey, JSON.stringify(savedData));
+      
+      // Update display
+      editModalCreated.textContent = savedData.created;
+      editModalModified.textContent = savedData.modified;
+    }
+    
+    // Click handlers for edit links
+    document.querySelectorAll('.edit-text-link[data-modal]').forEach(link => {
+      link.addEventListener('click', function() {
+        const modalType = this.getAttribute('data-modal');
+        showEditModal(modalType);
+      });
+    });
+    
+    // Close modal handlers
+    editModalClose.addEventListener('click', hideEditModal);
+    
+    editModal.addEventListener('click', function(e) {
+      if (e.target === editModal) {
+        hideEditModal();
+      }
+    });
+    
+    // Apply button - saves without closing
+    editModalApply.addEventListener('click', function() {
+      saveModalData();
+      showToast();
+    });
+    
+    // Save button - saves and closes
+    editModalSave.addEventListener('click', function() {
+      saveModalData();
+      hideEditModal();
+      showToast();
+    });
+  </script>
+</body>
+</html>

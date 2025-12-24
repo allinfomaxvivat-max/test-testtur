@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Отзывы</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/css/layout.css" />
+    <link rel="stylesheet" href="styles/css/sidebar.css" />
+    <link rel="stylesheet" href="styles/css/pages/reviews.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item active">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Маркетинг</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Отзывы</span>
+      </div>
+      
+      <div class="toolbar">
+        <div class="filter-dropdown" id="reviewRatingFilter" data-testid="filter-review-rating">
+          <span id="reviewRatingText">Рейтинг</span>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+          <div class="filter-dropdown-menu">
+            <div class="filter-dropdown-item" data-value="all">Все</div>
+            <div class="filter-dropdown-item" data-value="5">5</div>
+            <div class="filter-dropdown-item" data-value="4">4</div>
+            <div class="filter-dropdown-item" data-value="3">3</div>
+            <div class="filter-dropdown-item" data-value="2">2</div>
+            <div class="filter-dropdown-item" data-value="1">1</div>
+          </div>
+        </div>
+        
+        <div class="filter-dropdown" id="reviewStatusFilter" data-testid="filter-review-status">
+          <span id="reviewStatusText">Статус</span>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+          <div class="filter-dropdown-menu">
+            <div class="filter-dropdown-item" data-value="all">Все</div>
+            <div class="filter-dropdown-item" data-value="moderation">На модерации</div>
+            <div class="filter-dropdown-item" data-value="approved">Одобрено</div>
+            <div class="filter-dropdown-item" data-value="rejected">Отклонено</div>
+          </div>
+        </div>
+        
+        <div class="filter-dropdown date-range" id="reviewDateFilter" data-testid="filter-review-date">
+          <span id="reviewDateText">Выберите даты</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+          <div class="filter-dropdown-menu date-picker-menu">
+            <div class="date-picker-row">
+              <label class="date-label">От:</label>
+              <input type="date" class="date-input" id="reviewDateFrom" data-testid="input-date-from">
+            </div>
+            <div class="date-picker-row">
+              <label class="date-label">До:</label>
+              <input type="date" class="date-input" id="reviewDateTo" data-testid="input-date-to">
+            </div>
+            <div class="date-picker-actions">
+              <button class="btn-apply-date" id="applyDateFilter" data-testid="button-apply-date">Применить</button>
+              <button class="btn-reset-date" id="resetDateFilter" data-testid="button-reset-date">Сбросить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="reviews-table">
+        <div class="reviews-body">
+          <div class="review-card" data-testid="row-review-1" data-rating="5" data-status="moderation">
+            <div class="review-user-section">
+              <div class="review-user-id">3063</div>
+              <div class="review-user-details">
+                <div class="review-username">@Endycrown Krown Endy</div>
+                <div class="review-user-shop">Gothem</div>
+                <div class="review-user-stat">Приглашённых: 0</div>
+                <div class="review-user-stat">Пополнений: 1</div>
+                <div class="review-user-stat">Покупок: 1</div>
+                <div class="review-user-stat muted">Открытых диспутов: 0</div>
+                <div class="review-user-stat">Сколько диспутов открывал: 0</div>
+                <div class="review-user-stat">Выдали промокоды: 1</div>
+                <div class="review-user-stat muted">Баланс: 0 / Скидка 0 %</div>
+              </div>
+            </div>
+            <div class="review-order-id">#43063</div>
+            <div class="review-content">
+              <div class="review-text-main">Всё отлично</div>
+              <div class="review-response"><span class="response-label">Наш ответ:</span> Приходите ещё</div>
+            </div>
+            <div class="review-rating">5</div>
+            <div class="review-courier">Курьер1</div>
+            <div class="review-status status-moderation">На модерации</div>
+            <div class="review-date">03.12.2025 22:47:46</div>
+            <div class="review-actions">
+              <svg class="thumb-up" data-testid="button-approve-1" viewBox="0 0 24 24" fill="none" stroke="#117c2c" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+              <svg class="thumb-down" data-testid="button-reject-1" viewBox="0 0 24 24" fill="none" stroke="#ff383c" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+            </div>
+          </div>
+          
+          <div class="review-card" data-testid="row-review-2" data-rating="4" data-status="approved">
+            <div class="review-user-section">
+              <div class="review-user-id">3064</div>
+              <div class="review-user-details">
+                <div class="review-username">@JohnDoe</div>
+                <div class="review-user-shop">Gothem</div>
+                <div class="review-user-stat">Приглашённых: 2</div>
+                <div class="review-user-stat">Пополнений: 3</div>
+                <div class="review-user-stat">Покупок: 5</div>
+                <div class="review-user-stat muted">Открытых диспутов: 0</div>
+                <div class="review-user-stat">Сколько диспутов открывал: 1</div>
+                <div class="review-user-stat">Выдали промокоды: 2</div>
+                <div class="review-user-stat muted">Баланс: 150 / Скидка 5 %</div>
+              </div>
+            </div>
+            <div class="review-order-id">#43064</div>
+            <div class="review-content">
+              <div class="review-text-main">Хороший товар, быстрая доставка</div>
+              <div class="review-response"><span class="response-label">Наш ответ:</span> Спасибо за отзыв!</div>
+            </div>
+            <div class="review-rating">4</div>
+            <div class="review-courier">Курьер2</div>
+            <div class="review-status status-approved">Одобрено</div>
+            <div class="review-date">02.12.2025 18:30:12</div>
+            <div class="review-actions">
+              <svg class="thumb-up" data-testid="button-approve-2" viewBox="0 0 24 24" fill="none" stroke="#117c2c" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+              <svg class="thumb-down" data-testid="button-reject-2" viewBox="0 0 24 24" fill="none" stroke="#ff383c" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+            </div>
+          </div>
+          
+          <div class="review-card" data-testid="row-review-3" data-rating="3" data-status="rejected">
+            <div class="review-user-section">
+              <div class="review-user-id">3065</div>
+              <div class="review-user-details">
+                <div class="review-username">@MikeSmith</div>
+                <div class="review-user-shop">Gothem</div>
+                <div class="review-user-stat">Приглашённых: 0</div>
+                <div class="review-user-stat">Пополнений: 2</div>
+                <div class="review-user-stat">Покупок: 2</div>
+                <div class="review-user-stat muted">Открытых диспутов: 1</div>
+                <div class="review-user-stat">Сколько диспутов открывал: 2</div>
+                <div class="review-user-stat">Выдали промокоды: 0</div>
+                <div class="review-user-stat muted">Баланс: 0 / Скидка 0 %</div>
+              </div>
+            </div>
+            <div class="review-order-id">#43065</div>
+            <div class="review-content">
+              <div class="review-text-main">Долго ждал</div>
+              <div class="review-response"><span class="response-label">Наш ответ:</span> Извините за задержку</div>
+            </div>
+            <div class="review-rating">3</div>
+            <div class="review-courier">Курьер1</div>
+            <div class="review-status status-rejected">Отклонено</div>
+            <div class="review-date">01.12.2025 14:15:33</div>
+            <div class="review-actions">
+              <svg class="thumb-up" data-testid="button-approve-3" viewBox="0 0 24 24" fill="none" stroke="#117c2c" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+              <svg class="thumb-down" data-testid="button-reject-3" viewBox="0 0 24 24" fill="none" stroke="#ff383c" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+            </div>
+          </div>
+          
+          <div class="review-card" data-testid="row-review-4" data-rating="5" data-status="approved">
+            <div class="review-user-section">
+              <div class="review-user-id">3066</div>
+              <div class="review-user-details">
+                <div class="review-username">@AlexPetrov</div>
+                <div class="review-user-shop">Gothem</div>
+                <div class="review-user-stat">Приглашённых: 5</div>
+                <div class="review-user-stat">Пополнений: 10</div>
+                <div class="review-user-stat">Покупок: 15</div>
+                <div class="review-user-stat muted">Открытых диспутов: 0</div>
+                <div class="review-user-stat">Сколько диспутов открывал: 0</div>
+                <div class="review-user-stat">Выдали промокоды: 3</div>
+                <div class="review-user-stat muted">Баланс: 500 / Скидка 10 %</div>
+              </div>
+            </div>
+            <div class="review-order-id">#43066</div>
+            <div class="review-content">
+              <div class="review-text-main">Лучший сервис!</div>
+              <div class="review-response"><span class="response-label">Наш ответ:</span> Благодарим за доверие!</div>
+            </div>
+            <div class="review-rating">5</div>
+            <div class="review-courier">Курьер3</div>
+            <div class="review-status status-approved">Одобрено</div>
+            <div class="review-date">30.11.2025 10:22:18</div>
+            <div class="review-actions">
+              <svg class="thumb-up" data-testid="button-approve-4" viewBox="0 0 24 24" fill="none" stroke="#117c2c" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+              <svg class="thumb-down" data-testid="button-reject-4" viewBox="0 0 24 24" fill="none" stroke="#ff383c" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="scripts/main.js?v=2"></script>
+</body>
+</html>

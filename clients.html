@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Клиенты</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="clients.html" class="submenu-item active">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Клиенты</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Клиенты</span>
+      </div>
+      
+      <div class="clients-toolbar">
+        <div class="clients-filters-left">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" placeholder="Поиск по номеру или логину" class="search-input" data-testid="input-search">
+          </div>
+          <div class="filter-dropdown-wrapper">
+            <button class="filter-dropdown-btn" style="width: 100px;" data-testid="filter-cities" id="citiesFilterBtn">
+              <span id="citiesFilterText">Города</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="#969696" stroke-width="1.33"><path d="M4 6l4 4 4-4"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="citiesFilterMenu">
+              <div class="filter-dropdown-item active" data-value="all">Все города</div>
+              <div class="filter-dropdown-item" data-value="moscow">Москва</div>
+              <div class="filter-dropdown-item" data-value="spb">Санкт-Петербург</div>
+              <div class="filter-dropdown-item" data-value="kazan">Казань</div>
+              <div class="filter-dropdown-item" data-value="novosibirsk">Новосибирск</div>
+            </div>
+          </div>
+          <div class="filter-dropdown-wrapper">
+            <button class="filter-dropdown-btn" style="width: 126px;" data-testid="filter-mailing" id="mailingFilterBtn">
+              <span id="mailingFilterText">Рассылка?</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="#969696" stroke-width="1.33"><path d="M4 6l4 4 4-4"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="mailingFilterMenu">
+              <div class="filter-dropdown-item active" data-value="all">Все</div>
+              <div class="filter-dropdown-item" data-value="yes">Да</div>
+              <div class="filter-dropdown-item" data-value="no">Нет</div>
+            </div>
+          </div>
+          <div class="filter-dropdown-wrapper">
+            <button class="filter-dropdown-btn" style="width: 86px;" data-testid="filter-ban" id="banFilterBtn">
+              <span id="banFilterText">Бан?</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="#969696" stroke-width="1.33"><path d="M4 6l4 4 4-4"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="banFilterMenu">
+              <div class="filter-dropdown-item active" data-value="all">Все</div>
+              <div class="filter-dropdown-item" data-value="active">Активные</div>
+              <div class="filter-dropdown-item" data-value="banned">Заблокированные</div>
+            </div>
+          </div>
+          <div class="filter-dropdown-wrapper">
+            <button class="filter-dropdown-btn" style="width: 207px;" data-testid="filter-date" id="dateFilterBtn">
+              <span id="dateFilterText">2025-12-09 - 2025-12-15</span>
+              <img src="images/calendar-check_1766273734428.png" alt="calendar" style="width: 16px; height: 16px;">
+            </button>
+            <div class="filter-dropdown-menu date-filter-menu" id="dateFilterMenu">
+              <div class="date-filter-header">Выберите период</div>
+              <div class="date-filter-body">
+                <div class="date-filter-row">
+                  <label>От:</label>
+                  <input type="date" class="date-filter-input" id="dateFromInput" value="2025-12-09">
+                </div>
+                <div class="date-filter-row">
+                  <label>До:</label>
+                  <input type="date" class="date-filter-input" id="dateToInput" value="2025-12-15">
+                </div>
+              </div>
+              <div class="date-filter-footer">
+                <button class="date-filter-apply" id="dateApplyBtn">Применить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="export-btn" data-testid="button-export">
+          <span>Export</span>
+          <img src="images/Export_fill_1766274429197.png" alt="export">
+        </button>
+      </div>
+      
+      <div class="clients-filters-row">
+        <span class="filter-label">Покупки:</span>
+        <div class="filter-dropdown-wrapper">
+          <button class="filter-dropdown-btn" style="min-width: 62px; min-height: 40px;" data-testid="filter-purchases-op" id="purchasesOpBtn">
+            <span id="purchasesOpText">=</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="#969696" stroke-width="1.33"><path d="M4 6l4 4 4-4"/></svg>
+          </button>
+          <div class="filter-dropdown-menu" id="purchasesOpMenu">
+            <div class="filter-dropdown-item" data-value="="><span>=</span></div>
+            <div class="filter-dropdown-item" data-value=">"><span>></span></div>
+            <div class="filter-dropdown-item" data-value="<"><span><</span></div>
+            <div class="filter-dropdown-item" data-value=">="><span>>=</span></div>
+            <div class="filter-dropdown-item" data-value="<="><span><=</span></div>
+            <div class="filter-dropdown-item" data-value="!="><span>!=</span></div>
+          </div>
+        </div>
+        <input type="text" class="filter-input" style="width: 50px; height: 40px;" data-testid="input-purchases-value" id="purchasesValueInput">
+        <button class="filter-search-btn" data-testid="button-find-purchases" id="findPurchasesBtn">Найти покупки</button>
+      </div>
+      
+      <div class="clients-table">
+        <div class="clients-header">
+          <span class="col-client-id">#</span>
+          <span class="col-client-telegram">Telegram</span>
+          <span class="col-client-referral">Реферал</span>
+          <span class="col-client-finance">Финансы</span>
+          <span class="col-client-stats">Статистика</span>
+          <span class="col-client-status">Статус</span>
+          <span class="col-client-message">Написать</span>
+          <span class="col-client-date">Дата</span>
+          <span class="col-client-action"></span>
+        </div>
+        
+        <div class="clients-body">
+          <div class="client-row">
+            <div class="client-id">147680</div>
+            <div class="client-telegram">
+              <div class="tg-id">6400301991</div>
+              <div class="tg-username">@manager_mnkiie</div>
+              <div class="tg-name">Manager</div>
+            </div>
+            <div class="client-referral">@manager_mnkiie</div>
+            <div class="client-finance">
+              <div class="finance-info">Баланс: 500 ₽</div>
+              <div class="finance-info">Скидка: 0%</div>
+              <a href="#" class="finance-action add">Добавить к балансу</a>
+              <a href="#" class="finance-action remove">Списать с баланса</a>
+              <a href="#" class="finance-action edit">Изменить скидку</a>
+            </div>
+            <div class="client-stats">
+              <div class="stat-row">Приглашённых: 0</div>
+              <div class="stat-row">Пополнений: 1</div>
+              <div class="stat-row">Покупок: 1</div>
+              <div class="stat-row muted">Открытых диспутов: 0</div>
+              <div class="stat-row">Сколько диспутов открывал: 0</div>
+              <div class="stat-row">Выдали промокоды: 1</div>
+            </div>
+            <div class="client-status">
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Рассылка</span>
+              </div>
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Активен</span>
+              </div>
+              <a href="#" class="block-link">Заблокировать</a>
+            </div>
+            <div class="client-message">
+              <a href="#" class="message-link">Написать<br>сообщение</a>
+            </div>
+            <div class="client-date">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="client-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+              <button class="action-btn card">
+                <svg viewBox="0 0 24 20" fill="none">
+                  <rect x="0" y="0" width="24" height="20" rx="3" fill="#117C2C"/>
+                  <rect x="0" y="6" width="24" height="5" fill="#0D5F22"/>
+                  <circle cx="6" cy="15" r="2" fill="#0D5F22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="client-row">
+            <div class="client-id">147681</div>
+            <div class="client-telegram">
+              <div class="tg-id">6400301992</div>
+              <div class="tg-username">@blocked_user</div>
+              <div class="tg-name">Blocked User</div>
+            </div>
+            <div class="client-referral">@blocked_user</div>
+            <div class="client-finance">
+              <div class="finance-info">Баланс: 100 ₽</div>
+              <div class="finance-info">Скидка: 5%</div>
+              <a href="#" class="finance-action add">Добавить к балансу</a>
+              <a href="#" class="finance-action remove">Списать с баланса</a>
+              <a href="#" class="finance-action edit">Изменить скидку</a>
+            </div>
+            <div class="client-stats">
+              <div class="stat-row">Приглашённых: 0</div>
+              <div class="stat-row">Пополнений: 0</div>
+              <div class="stat-row">Покупок: 0</div>
+              <div class="stat-row muted">Открытых диспутов: 1</div>
+              <div class="stat-row">Сколько диспутов открывал: 2</div>
+              <div class="stat-row">Выдали промокоды: 0</div>
+            </div>
+            <div class="client-status">
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Рассылка</span>
+              </div>
+              <div class="status-item blocked">
+                <svg class="block-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#FF383C"/><path d="M6 6l8 8M14 6l-8 8" stroke="#33363F" stroke-width="2" stroke-linecap="round"/></svg>
+                <span>Заблокирован</span>
+              </div>
+              <a href="#" class="unblock-link">Разблокировать</a>
+            </div>
+            <div class="client-message">
+              <a href="#" class="message-link">Написать<br>сообщение</a>
+            </div>
+            <div class="client-date">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="client-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+              <button class="action-btn card">
+                <svg viewBox="0 0 24 20" fill="none">
+                  <rect x="0" y="0" width="24" height="20" rx="3" fill="#117C2C"/>
+                  <rect x="0" y="6" width="24" height="5" fill="#0D5F22"/>
+                  <circle cx="6" cy="15" r="2" fill="#0D5F22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="client-row">
+            <div class="client-id">147682</div>
+            <div class="client-telegram">
+              <div class="tg-id">6400301991</div>
+              <div class="tg-username">@manager_mnkiie</div>
+              <div class="tg-name">Manager</div>
+            </div>
+            <div class="client-referral">@manager_mnkiie</div>
+            <div class="client-finance">
+              <div class="finance-info">Баланс: 500 ₽</div>
+              <div class="finance-info">Скидка: 0%</div>
+              <a href="#" class="finance-action add">Добавить к балансу</a>
+              <a href="#" class="finance-action remove">Списать с баланса</a>
+              <a href="#" class="finance-action edit">Изменить скидку</a>
+            </div>
+            <div class="client-stats">
+              <div class="stat-row">Приглашённых: 0</div>
+              <div class="stat-row">Пополнений: 1</div>
+              <div class="stat-row">Покупок: 1</div>
+              <div class="stat-row muted">Открытых диспутов: 0</div>
+              <div class="stat-row">Сколько диспутов открывал: 0</div>
+              <div class="stat-row">Выдали промокоды: 1</div>
+            </div>
+            <div class="client-status">
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Рассылка</span>
+              </div>
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Активен</span>
+              </div>
+              <a href="#" class="block-link">Заблокировать</a>
+            </div>
+            <div class="client-message">
+              <a href="#" class="message-link">Написать<br>сообщение</a>
+            </div>
+            <div class="client-date">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="client-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+              <button class="action-btn card">
+                <svg viewBox="0 0 24 20" fill="none">
+                  <rect x="0" y="0" width="24" height="20" rx="3" fill="#117C2C"/>
+                  <rect x="0" y="6" width="24" height="5" fill="#0D5F22"/>
+                  <circle cx="6" cy="15" r="2" fill="#0D5F22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="client-row">
+            <div class="client-id">147683</div>
+            <div class="client-telegram">
+              <div class="tg-id">6400301991</div>
+              <div class="tg-username">@manager_mnkiie</div>
+              <div class="tg-name">Manager</div>
+            </div>
+            <div class="client-referral">@manager_mnkiie</div>
+            <div class="client-finance">
+              <div class="finance-info">Баланс: 500 ₽</div>
+              <div class="finance-info">Скидка: 0%</div>
+              <a href="#" class="finance-action add">Добавить к балансу</a>
+              <a href="#" class="finance-action remove">Списать с баланса</a>
+              <a href="#" class="finance-action edit">Изменить скидку</a>
+            </div>
+            <div class="client-stats">
+              <div class="stat-row">Приглашённых: 0</div>
+              <div class="stat-row">Пополнений: 1</div>
+              <div class="stat-row">Покупок: 1</div>
+              <div class="stat-row muted">Открытых диспутов: 0</div>
+              <div class="stat-row">Сколько диспутов открывал: 0</div>
+              <div class="stat-row">Выдали промокоды: 1</div>
+            </div>
+            <div class="client-status">
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Рассылка</span>
+              </div>
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Активен</span>
+              </div>
+              <a href="#" class="block-link">Заблокировать</a>
+            </div>
+            <div class="client-message">
+              <a href="#" class="message-link">Написать<br>сообщение</a>
+            </div>
+            <div class="client-date">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="client-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+              <button class="action-btn card">
+                <svg viewBox="0 0 24 20" fill="none">
+                  <rect x="0" y="0" width="24" height="20" rx="3" fill="#117C2C"/>
+                  <rect x="0" y="6" width="24" height="5" fill="#0D5F22"/>
+                  <circle cx="6" cy="15" r="2" fill="#0D5F22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="client-row">
+            <div class="client-id">147684</div>
+            <div class="client-telegram">
+              <div class="tg-id">6400301991</div>
+              <div class="tg-username">@manager_mnkiie</div>
+              <div class="tg-name">Manager</div>
+            </div>
+            <div class="client-referral">@manager_mnkiie</div>
+            <div class="client-finance">
+              <div class="finance-info">Баланс: 500 ₽</div>
+              <div class="finance-info">Скидка: 0%</div>
+              <a href="#" class="finance-action add">Добавить к балансу</a>
+              <a href="#" class="finance-action remove">Списать с баланса</a>
+              <a href="#" class="finance-action edit">Изменить скидку</a>
+            </div>
+            <div class="client-stats">
+              <div class="stat-row">Приглашённых: 0</div>
+              <div class="stat-row">Пополнений: 1</div>
+              <div class="stat-row">Покупок: 1</div>
+              <div class="stat-row muted">Открытых диспутов: 0</div>
+              <div class="stat-row">Сколько диспутов открывал: 0</div>
+              <div class="stat-row">Выдали промокоды: 1</div>
+            </div>
+            <div class="client-status">
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Рассылка</span>
+              </div>
+              <div class="status-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Активен</span>
+              </div>
+              <a href="#" class="block-link">Заблокировать</a>
+            </div>
+            <div class="client-message">
+              <a href="#" class="message-link">Написать<br>сообщение</a>
+            </div>
+            <div class="client-date">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="client-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+              <button class="action-btn card">
+                <svg viewBox="0 0 24 20" fill="none">
+                  <rect x="0" y="0" width="24" height="20" rx="3" fill="#117C2C"/>
+                  <rect x="0" y="6" width="24" height="5" fill="#0D5F22"/>
+                  <circle cx="6" cy="15" r="2" fill="#0D5F22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Add Balance Modal -->
+  <div class="balance-modal-overlay" id="addBalanceModal">
+    <div class="balance-modal">
+      <span class="balance-modal-title">Добавить к балансу</span>
+      <button class="balance-modal-close" id="addBalanceClose" data-testid="button-add-modal-close">
+        <svg viewBox="0 0 19 19" fill="none" stroke="#FFFFFF" stroke-width="1.58">
+          <line x1="4.75" y1="4.75" x2="14.25" y2="14.25"/>
+          <line x1="14.25" y1="4.75" x2="4.75" y2="14.25"/>
+        </svg>
+      </button>
+      <div class="balance-modal-body">
+        <label class="balance-label">Введите сумму</label>
+        <input type="text" class="balance-input" id="balanceAmountInput" data-testid="input-balance-amount">
+      </div>
+      <div class="balance-modal-footer">
+        <button class="balance-btn-add" id="balanceAddBtn" data-testid="button-add-balance">Добавить</button>
+        <button class="balance-btn-cancel" id="balanceCancelBtn" data-testid="button-add-cancel">Вернуться к клиенту</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Deduct Balance Modal -->
+  <div class="balance-modal-overlay" id="deductBalanceModal">
+    <div class="balance-modal">
+      <span class="balance-modal-title">Вычесть с баланса</span>
+      <button class="balance-modal-close" id="deductBalanceClose" data-testid="button-deduct-modal-close">
+        <svg viewBox="0 0 19 19" fill="none" stroke="#FFFFFF" stroke-width="1.58">
+          <line x1="4.75" y1="4.75" x2="14.25" y2="14.25"/>
+          <line x1="14.25" y1="4.75" x2="4.75" y2="14.25"/>
+        </svg>
+      </button>
+      <div class="balance-modal-body">
+        <label class="balance-label">Введите сумму</label>
+        <input type="text" class="balance-input" id="deductAmountInput" data-testid="input-deduct-amount">
+      </div>
+      <div class="balance-modal-footer">
+        <button class="balance-btn-add" id="deductConfirmBtn" data-testid="button-deduct-balance">Добавить</button>
+        <button class="balance-btn-cancel" id="deductCancelBtn" data-testid="button-deduct-cancel">Вернуться к клиенту</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Write Message Modal -->
+  <div class="write-message-modal-overlay" id="writeMessageModal">
+    <div class="write-message-modal">
+      <span class="write-message-modal-title">Сообщение от клиента</span>
+      <button class="write-message-modal-close" id="writeMessageModalClose" data-testid="button-write-message-close">
+        <svg viewBox="0 0 19 19" fill="none" stroke="#FFFFFF" stroke-width="1.58">
+          <line x1="4.75" y1="4.75" x2="14.25" y2="14.25"/>
+          <line x1="14.25" y1="4.75" x2="4.75" y2="14.25"/>
+        </svg>
+      </button>
+      
+      <div class="write-message-chat">
+        <div class="chat-message client-msg">
+          <span class="msg-author">PAHAN @PAHAN_BORZ777</span>
+          <div class="msg-bubble client">Какая формула?</div>
+          <span class="msg-time">02.12.2025 17:12:06</span>
+        </div>
+        
+        <div class="chat-message employee-msg">
+          <span class="msg-author">Сотрудник</span>
+          <div class="msg-bubble employee">тест</div>
+          <span class="msg-time">02.12.2025 17:12:06</span>
+        </div>
+      </div>
+      
+      <div class="write-message-input-section">
+        <textarea class="write-message-textarea" placeholder=""></textarea>
+        
+        <div class="write-message-file-section">
+          <span class="file-label">Фото/Видео/Анимация</span>
+          <div class="file-row">
+            <button class="file-select-btn" data-testid="button-select-file">Выберите файл</button>
+            <div class="file-name-display">Файл не выбран</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Client Info Modal -->
+  <div class="client-info-modal-overlay" id="clientInfoModal">
+    <div class="client-info-modal">
+      <span class="client-info-modal-title">Информация о клиенте</span>
+      <button class="client-info-modal-close" id="clientInfoModalClose" data-testid="button-client-info-close">
+        <svg viewBox="0 0 19 19" fill="none" stroke="#FFFFFF" stroke-width="1.58">
+          <line x1="4.75" y1="4.75" x2="14.25" y2="14.25"/>
+          <line x1="14.25" y1="4.75" x2="4.75" y2="14.25"/>
+        </svg>
+      </button>
+      
+      <div class="client-info-section">
+        <div class="client-info-row">
+          <div class="client-info-field">
+            <span class="field-label">Telegram ID:</span>
+            <span class="field-value" id="modalTelegramId">8592143158</span>
+          </div>
+          <div class="client-info-field">
+            <span class="field-label">Telegram Username:</span>
+            <span class="field-value" id="modalTelegramUsername">@prostajames86</span>
+          </div>
+          <div class="client-info-field">
+            <span class="field-label">Telegram Bot:</span>
+            <span class="field-value" id="modalTelegramBot">botfprodavecccbot</span>
+          </div>
+          <div class="client-info-field">
+            <span class="field-label">Имя:</span>
+            <span class="field-value" id="modalClientName">Джемс Проста</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="client-info-checkboxes">
+        <label class="checkbox-item"><input type="checkbox" class="custom-checkbox"> <span>Не может участвовать в акциях</span></label>
+        <label class="checkbox-item"><input type="checkbox" class="custom-checkbox"> <span>Заблокирован</span></label>
+        <label class="checkbox-item"><input type="checkbox" class="custom-checkbox"> <span>Не нужна проверка на бота</span></label>
+      </div>
+      
+      <div class="client-info-balance-box">
+        <div class="balance-info-group">
+          <span class="balance-label">Баланс:</span>
+          <span class="balance-value" id="modalBalanceValue">0.00₽</span>
+        </div>
+        <div class="balance-info-group">
+          <span class="balance-label">Накопительная скидка:</span>
+          <span class="balance-value" id="modalDiscountValue">0%</span>
+        </div>
+        <div class="balance-actions-group">
+          <a href="#" class="balance-action-link add-balance">Добавить к балансу</a>
+          <a href="#" class="balance-action-link subtract-balance">Списать с баланса</a>
+          <a href="#" class="balance-action-link change-discount">Изменить скидку</a>
+        </div>
+      </div>
+      
+      <div class="client-info-referral-section">
+        <div class="referral-row">
+          <div class="referral-field">
+            <span class="field-label">Parent:</span>
+          </div>
+          <div class="referral-field">
+            <span class="field-label">Всего получено бонусов за рефералов:</span>
+            <span class="field-value">0.00</span>
+          </div>
+          <div class="referral-field">
+            <span class="field-label">Реферальная ссылка:</span>
+            <span class="field-value">t.me/botfprodavecccbot?start=ref-151414</span>
+          </div>
+        </div>
+      </div>
+      
+      <label class="checkbox-item client-mailing-checkbox"><input type="checkbox" class="custom-checkbox"> <span>получает рассылку?</span></label>
+      
+      <div class="client-info-stats">
+        <span class="stats-title">Статистика</span>
+        <div class="stats-box">
+          <div class="stat-item"><span class="stat-label">Приглашенных:</span><span class="stat-value">0</span></div>
+          <div class="stat-item"><span class="stat-label">Пополнения:</span><span class="stat-value">0</span></div>
+          <div class="stat-item"><span class="stat-label">Покупки:</span><span class="stat-value">0</span></div>
+          <div class="stat-item"><span class="stat-label">Выполненных:</span><span class="stat-value">0</span></div>
+          <div class="stat-item"><span class="stat-label">Диспутов открыто:</span><span class="stat-value">0</span></div>
+          <div class="stat-item"><span class="stat-label">Диспутов всего:</span><span class="stat-value">0</span></div>
+        </div>
+      </div>
+      
+      <div class="client-info-block-status">
+        <span class="block-status-label">Статус блокировки: просроченных заявок за сутки:</span>
+        <span class="block-status-value">0</span>
+      </div>
+      
+      <div class="client-info-comment">
+        <span class="comment-label">Комментарий</span>
+        <textarea class="comment-textarea" placeholder=""></textarea>
+      </div>
+      
+      <div class="client-info-discounts">
+        <span class="discounts-label">Разовые скидки</span>
+        <div class="discounts-table">
+          <div class="discounts-header">
+            <span>Товар</span>
+            <span>Величина скидка</span>
+            <span>Тип скидки</span>
+          </div>
+        </div>
+        <button class="add-row-btn">Добавить строку</button>
+      </div>
+      
+      <div class="client-info-footer">
+        <button class="footer-btn save-add" data-testid="button-save-add">Сохранить и добавить другой</button>
+        <button class="footer-btn apply" data-testid="button-apply">Применить</button>
+        <button class="footer-btn save" data-testid="button-save">Сохранить</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Change Discount Modal -->
+  <div class="balance-modal-overlay" id="discountModal">
+    <div class="balance-modal">
+      <span class="balance-modal-title">Изменить скидку</span>
+      <button class="balance-modal-close" id="discountModalClose" data-testid="button-discount-modal-close">
+        <svg viewBox="0 0 19 19" fill="none" stroke="#FFFFFF" stroke-width="1.58">
+          <line x1="4.75" y1="4.75" x2="14.25" y2="14.25"/>
+          <line x1="14.25" y1="4.75" x2="4.75" y2="14.25"/>
+        </svg>
+      </button>
+      <div class="balance-modal-body">
+        <label class="balance-label">Введите скидку цифрами</label>
+        <input type="text" class="balance-input" id="discountAmountInput" data-testid="input-discount-amount">
+      </div>
+      <div class="balance-modal-footer">
+        <button class="balance-btn-add" id="discountConfirmBtn" data-testid="button-change-discount">Добавить</button>
+        <button class="balance-btn-cancel" id="discountCancelBtn" data-testid="button-discount-cancel">Вернуться к клиенту</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add Balance Modal
+      const addBalanceModal = document.getElementById('addBalanceModal');
+      const addBalanceClose = document.getElementById('addBalanceClose');
+      const balanceCancelBtn = document.getElementById('balanceCancelBtn');
+      const balanceAddBtn = document.getElementById('balanceAddBtn');
+      const balanceInput = document.getElementById('balanceAmountInput');
+      
+      function closeAddModal() {
+        addBalanceModal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (balanceInput) balanceInput.value = '';
+      }
+      
+      if (addBalanceClose) addBalanceClose.addEventListener('click', closeAddModal);
+      if (balanceCancelBtn) balanceCancelBtn.addEventListener('click', closeAddModal);
+      if (addBalanceModal) {
+        addBalanceModal.addEventListener('click', function(e) {
+          if (e.target === addBalanceModal) closeAddModal();
+        });
+      }
+      
+      // Deduct Balance Modal
+      const deductBalanceModal = document.getElementById('deductBalanceModal');
+      const deductBalanceClose = document.getElementById('deductBalanceClose');
+      const deductCancelBtn = document.getElementById('deductCancelBtn');
+      const deductConfirmBtn = document.getElementById('deductConfirmBtn');
+      const deductInput = document.getElementById('deductAmountInput');
+      
+      function closeDeductModal() {
+        deductBalanceModal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (deductInput) deductInput.value = '';
+      }
+      
+      if (deductBalanceClose) deductBalanceClose.addEventListener('click', closeDeductModal);
+      if (deductCancelBtn) deductCancelBtn.addEventListener('click', closeDeductModal);
+      if (deductBalanceModal) {
+        deductBalanceModal.addEventListener('click', function(e) {
+          if (e.target === deductBalanceModal) closeDeductModal();
+        });
+      }
+      
+      // Change Discount Modal
+      const discountModal = document.getElementById('discountModal');
+      const discountModalClose = document.getElementById('discountModalClose');
+      const discountCancelBtn = document.getElementById('discountCancelBtn');
+      const discountConfirmBtn = document.getElementById('discountConfirmBtn');
+      const discountInput = document.getElementById('discountAmountInput');
+      
+      function closeDiscountModal() {
+        discountModal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (discountInput) discountInput.value = '';
+      }
+      
+      if (discountModalClose) discountModalClose.addEventListener('click', closeDiscountModal);
+      if (discountCancelBtn) discountCancelBtn.addEventListener('click', closeDiscountModal);
+      if (discountModal) {
+        discountModal.addEventListener('click', function(e) {
+          if (e.target === discountModal) closeDiscountModal();
+        });
+      }
+      
+      // Write Message Modal
+      const writeMessageModal = document.getElementById('writeMessageModal');
+      const writeMessageModalClose = document.getElementById('writeMessageModalClose');
+      
+      function closeWriteMessageModal() {
+        writeMessageModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      document.querySelectorAll('.message-link').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          writeMessageModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      if (writeMessageModalClose) writeMessageModalClose.addEventListener('click', closeWriteMessageModal);
+      if (writeMessageModal) {
+        writeMessageModal.addEventListener('click', function(e) {
+          if (e.target === writeMessageModal) closeWriteMessageModal();
+        });
+      }
+      
+      // Client Info Modal - Dynamic
+      const clientInfoModal = document.getElementById('clientInfoModal');
+      const clientInfoModalClose = document.getElementById('clientInfoModalClose');
+      let currentClientRow = null;
+      
+      function closeClientInfoModal() {
+        clientInfoModal.classList.remove('active');
+        document.body.style.overflow = '';
+        currentClientRow = null;
+      }
+      
+      function openClientInfoModal(row) {
+        currentClientRow = row;
+        
+        // Extract data from the row
+        var clientId = row.querySelector('.client-id').textContent.trim();
+        var tgId = row.querySelector('.tg-id').textContent.trim();
+        var tgUsername = row.querySelector('.tg-username').textContent.trim();
+        var tgName = row.querySelector('.tg-name').textContent.trim();
+        
+        // Get balance and discount
+        var financeInfo = row.querySelectorAll('.finance-info');
+        var balanceText = financeInfo[0] ? financeInfo[0].textContent.replace('Баланс:', '').trim() : '0 ₽';
+        var discountText = financeInfo[1] ? financeInfo[1].textContent.replace('Скидка:', '').trim() : '0%';
+        
+        // Get stats
+        var statRows = row.querySelectorAll('.stat-row');
+        var invited = statRows[0] ? statRows[0].textContent.replace('Приглашённых:', '').trim() : '0';
+        var deposits = statRows[1] ? statRows[1].textContent.replace('Пополнений:', '').trim() : '0';
+        var purchases = statRows[2] ? statRows[2].textContent.replace('Покупок:', '').trim() : '0';
+        var openDisputes = statRows[3] ? statRows[3].textContent.replace('Открытых диспутов:', '').trim() : '0';
+        var totalDisputes = statRows[4] ? statRows[4].textContent.replace('Сколько диспутов открывал:', '').trim() : '0';
+        
+        // Check if blocked
+        var isBlocked = row.querySelector('.status-item.blocked') !== null;
+        
+        // Populate modal
+        document.getElementById('modalTelegramId').textContent = tgId;
+        document.getElementById('modalTelegramUsername').textContent = tgUsername;
+        document.getElementById('modalClientName').textContent = tgName;
+        document.getElementById('modalBalanceValue').textContent = balanceText;
+        document.getElementById('modalDiscountValue').textContent = discountText;
+        
+        // Update stats in modal
+        var statItems = clientInfoModal.querySelectorAll('.stats-box .stat-item .stat-value');
+        if (statItems[0]) statItems[0].textContent = invited;
+        if (statItems[1]) statItems[1].textContent = deposits;
+        if (statItems[2]) statItems[2].textContent = purchases;
+        if (statItems[4]) statItems[4].textContent = openDisputes;
+        if (statItems[5]) statItems[5].textContent = totalDisputes;
+        
+        // Set blocked checkbox
+        var blockedCheckbox = clientInfoModal.querySelectorAll('.client-info-checkboxes .custom-checkbox')[1];
+        if (blockedCheckbox) blockedCheckbox.checked = isBlocked;
+        
+        clientInfoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function saveClientInfo() {
+        if (!currentClientRow) return;
+        
+        // Get values from modal
+        var newName = document.getElementById('modalClientName').textContent.trim();
+        var newBalance = document.getElementById('modalBalanceValue').textContent.trim();
+        var newDiscount = document.getElementById('modalDiscountValue').textContent.trim();
+        
+        // Get checkbox states
+        var blockedCheckbox = clientInfoModal.querySelectorAll('.client-info-checkboxes .custom-checkbox')[1];
+        var isBlocked = blockedCheckbox ? blockedCheckbox.checked : false;
+        
+        // Update the row
+        var tgNameEl = currentClientRow.querySelector('.tg-name');
+        if (tgNameEl) tgNameEl.textContent = newName;
+        
+        var financeInfo = currentClientRow.querySelectorAll('.finance-info');
+        if (financeInfo[0]) financeInfo[0].textContent = 'Баланс: ' + newBalance;
+        if (financeInfo[1]) financeInfo[1].textContent = 'Скидка: ' + newDiscount;
+        
+        // Update blocked status
+        var statusItem = currentClientRow.querySelector('.status-item:last-of-type');
+        var blockLink = currentClientRow.querySelector('.block-link, .unblock-link');
+        
+        if (isBlocked && statusItem && !statusItem.classList.contains('blocked')) {
+          statusItem.classList.add('blocked');
+          statusItem.innerHTML = '<svg class="block-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#FF383C"/><path d="M6 6l8 8M14 6l-8 8" stroke="#33363F" stroke-width="2" stroke-linecap="round"/></svg><span>Заблокирован</span>';
+          if (blockLink) {
+            blockLink.textContent = 'Разблокировать';
+            blockLink.classList.remove('block-link');
+            blockLink.classList.add('unblock-link');
+          }
+        } else if (!isBlocked && statusItem && statusItem.classList.contains('blocked')) {
+          statusItem.classList.remove('blocked');
+          statusItem.innerHTML = '<svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Активен</span>';
+          if (blockLink) {
+            blockLink.textContent = 'Заблокировать';
+            blockLink.classList.remove('unblock-link');
+            blockLink.classList.add('block-link');
+          }
+        }
+        
+        // Add visual feedback
+        currentClientRow.style.transition = 'background 0.3s ease';
+        currentClientRow.style.background = 'rgba(0, 143, 205, 0.15)';
+        setTimeout(function() {
+          currentClientRow.style.background = '';
+        }, 600);
+        
+        if (typeof showToast === 'function') {
+          showToast('success', 'Успешно', 'Данные клиента сохранены');
+        }
+        
+        initBlockUnblock();
+      }
+      
+      document.querySelectorAll('.client-telegram').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          var row = el.closest('.client-row');
+          if (row) openClientInfoModal(row);
+        });
+      });
+      
+      if (clientInfoModalClose) clientInfoModalClose.addEventListener('click', closeClientInfoModal);
+      if (clientInfoModal) {
+        clientInfoModal.addEventListener('click', function(e) {
+          if (e.target === clientInfoModal) closeClientInfoModal();
+        });
+      }
+      
+      // Footer buttons
+      document.querySelectorAll('.footer-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          saveClientInfo();
+          if (!btn.classList.contains('apply')) {
+            closeClientInfoModal();
+          }
+        });
+      });
+      
+      // ===== BLOCK/UNBLOCK FUNCTIONALITY =====
+      function initBlockUnblock() {
+        document.querySelectorAll('.block-link').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var row = link.closest('.client-row');
+            if (!row) return;
+            
+            var statusContainer = row.querySelector('.client-status');
+            var activeStatusItem = statusContainer.querySelector('.status-item:last-of-type');
+            
+            // Change to blocked state
+            activeStatusItem.classList.add('blocked');
+            activeStatusItem.innerHTML = '<svg class="block-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#FF383C"/><path d="M6 6l8 8M14 6l-8 8" stroke="#33363F" stroke-width="2" stroke-linecap="round"/></svg><span>Заблокирован</span>';
+            
+            // Change link to unblock
+            link.textContent = 'Разблокировать';
+            link.classList.remove('block-link');
+            link.classList.add('unblock-link');
+            
+            // Add animation
+            row.style.transition = 'background 0.3s ease';
+            row.style.background = 'rgba(255, 56, 60, 0.1)';
+            setTimeout(function() {
+              row.style.background = '';
+            }, 500);
+            
+            if (typeof showToast === 'function') {
+              showToast('success', 'Успешно', 'Клиент заблокирован');
+            }
+            
+            // Reinitialize for the new unblock link
+            initBlockUnblock();
+          });
+        });
+        
+        document.querySelectorAll('.unblock-link').forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var row = link.closest('.client-row');
+            if (!row) return;
+            
+            var statusContainer = row.querySelector('.client-status');
+            var blockedStatusItem = statusContainer.querySelector('.status-item.blocked');
+            
+            if (blockedStatusItem) {
+              // Change to active state
+              blockedStatusItem.classList.remove('blocked');
+              blockedStatusItem.innerHTML = '<svg class="check-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#117C2C"/><path d="M6 10l3 3 5-6" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Активен</span>';
+            }
+            
+            // Change link to block
+            link.textContent = 'Заблокировать';
+            link.classList.remove('unblock-link');
+            link.classList.add('block-link');
+            
+            // Add animation
+            row.style.transition = 'background 0.3s ease';
+            row.style.background = 'rgba(17, 124, 44, 0.1)';
+            setTimeout(function() {
+              row.style.background = '';
+            }, 500);
+            
+            if (typeof showToast === 'function') {
+              showToast('success', 'Успешно', 'Клиент разблокирован');
+            }
+            
+            // Reinitialize for the new block link
+            initBlockUnblock();
+          });
+        });
+      }
+      
+      initBlockUnblock();
+      
+      // ===== DYNAMIC MODAL DATA =====
+      var currentClientRow = null;
+      
+      // Save current row when opening any modal - must be set FIRST
+      document.querySelectorAll('.finance-action.add').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          currentClientRow = link.closest('.client-row');
+          addBalanceModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          if (balanceInput) {
+            balanceInput.value = '';
+            balanceInput.focus();
+          }
+        });
+      });
+      
+      document.querySelectorAll('.finance-action.remove').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          currentClientRow = link.closest('.client-row');
+          deductBalanceModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          if (deductInput) {
+            deductInput.value = '';
+            deductInput.focus();
+          }
+        });
+      });
+      
+      document.querySelectorAll('.finance-action.edit').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          currentClientRow = link.closest('.client-row');
+          discountModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          if (discountInput) {
+            discountInput.value = '';
+            discountInput.focus();
+          }
+        });
+      });
+      
+      // Update client info modal when clicking on a client
+      document.querySelectorAll('.client-telegram').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          currentClientRow = el.closest('.client-row');
+          if (currentClientRow) {
+            var telegramId = currentClientRow.querySelector('.tg-id');
+            var telegramUsername = currentClientRow.querySelector('.tg-username');
+            var telegramName = currentClientRow.querySelector('.tg-name');
+            
+            if (telegramId) document.getElementById('modalTelegramId').textContent = telegramId.textContent;
+            if (telegramUsername) document.getElementById('modalTelegramUsername').textContent = telegramUsername.textContent;
+            if (telegramName) document.getElementById('modalClientName').textContent = telegramName.textContent;
+          }
+        });
+      });
+      
+      // Update balance when adding
+      if (balanceAddBtn) {
+        balanceAddBtn.addEventListener('click', function() {
+          var amount = balanceInput.value.trim();
+          if (amount && currentClientRow) {
+            var balanceEl = currentClientRow.querySelector('.finance-info');
+            if (balanceEl) {
+              var currentBalance = parseInt(balanceEl.textContent.replace(/[^\d]/g, '')) || 0;
+              var newBalance = currentBalance + parseInt(amount);
+              balanceEl.textContent = 'Баланс: ' + newBalance + ' ₽';
+              
+              balanceEl.style.transition = 'all 0.3s ease';
+              balanceEl.style.color = '#117C2C';
+              balanceEl.style.transform = 'scale(1.1)';
+              setTimeout(function() {
+                balanceEl.style.color = '';
+                balanceEl.style.transform = '';
+              }, 1000);
+              
+              if (typeof showToast === 'function') {
+                showToast('success', 'Успешно', 'Баланс пополнен на ' + amount + ' ₽');
+              }
+            }
+            closeAddModal();
+          }
+        });
+      }
+      
+      // Update balance when deducting
+      if (deductConfirmBtn) {
+        deductConfirmBtn.addEventListener('click', function() {
+          var amount = deductInput.value.trim();
+          if (amount && currentClientRow) {
+            var balanceEl = currentClientRow.querySelector('.finance-info');
+            if (balanceEl) {
+              var currentBalance = parseInt(balanceEl.textContent.replace(/[^\d]/g, '')) || 0;
+              var newBalance = Math.max(0, currentBalance - parseInt(amount));
+              balanceEl.textContent = 'Баланс: ' + newBalance + ' ₽';
+              
+              balanceEl.style.transition = 'all 0.3s ease';
+              balanceEl.style.color = '#ff383c';
+              balanceEl.style.transform = 'scale(1.1)';
+              setTimeout(function() {
+                balanceEl.style.color = '';
+                balanceEl.style.transform = '';
+              }, 1000);
+              
+              if (typeof showToast === 'function') {
+                showToast('success', 'Успешно', 'Списано ' + amount + ' ₽ с баланса');
+              }
+            }
+            closeDeductModal();
+          }
+        });
+      }
+      
+      // Update discount
+      if (discountConfirmBtn) {
+        discountConfirmBtn.addEventListener('click', function() {
+          var amount = discountInput.value.trim();
+          if (amount && currentClientRow) {
+            var discountEl = currentClientRow.querySelectorAll('.finance-info')[1];
+            if (discountEl) {
+              discountEl.textContent = 'Скидка: ' + amount + '%';
+              
+              discountEl.style.transition = 'all 0.3s ease';
+              discountEl.style.color = '#008FCD';
+              discountEl.style.transform = 'scale(1.1)';
+              setTimeout(function() {
+                discountEl.style.color = '';
+                discountEl.style.transform = '';
+              }, 1000);
+              
+              if (typeof showToast === 'function') {
+                showToast('success', 'Успешно', 'Скидка изменена на ' + amount + '%');
+              }
+            }
+            closeDiscountModal();
+          }
+        });
+      }
+      
+      // ESC to close any modal
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (addBalanceModal.classList.contains('active')) closeAddModal();
+          if (deductBalanceModal.classList.contains('active')) closeDeductModal();
+          if (discountModal.classList.contains('active')) closeDiscountModal();
+          if (clientInfoModal.classList.contains('active')) closeClientInfoModal();
+          if (writeMessageModal.classList.contains('active')) closeWriteMessageModal();
+          closeAllFilterMenus();
+        }
+      });
+      
+      // ===== PURCHASES OPERATOR FILTER =====
+      var purchasesOpBtn = document.getElementById('purchasesOpBtn');
+      var purchasesOpMenu = document.getElementById('purchasesOpMenu');
+      var purchasesOpText = document.getElementById('purchasesOpText');
+      var purchasesValueInput = document.getElementById('purchasesValueInput');
+      var findPurchasesBtn = document.getElementById('findPurchasesBtn');
+      var currentPurchasesOp = '=';
+      
+      if (purchasesOpBtn && purchasesOpMenu) {
+        purchasesOpBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isOpen = purchasesOpMenu.classList.contains('open');
+          closeAllFilterMenus();
+          if (!isOpen) {
+            purchasesOpMenu.classList.add('open');
+            purchasesOpBtn.classList.add('open');
+          }
+        });
+        
+        purchasesOpMenu.querySelectorAll('.filter-dropdown-item').forEach(function(item) {
+          item.addEventListener('click', function() {
+            var value = item.getAttribute('data-value');
+            currentPurchasesOp = value;
+            purchasesOpText.textContent = value;
+            purchasesOpMenu.classList.remove('open');
+            purchasesOpBtn.classList.remove('open');
+          });
+        });
+      }
+      
+      if (findPurchasesBtn) {
+        findPurchasesBtn.addEventListener('click', function() {
+          var purchasesValue = purchasesValueInput ? purchasesValueInput.value.trim() : '';
+          if (purchasesValue) {
+            filterClientsByPurchases(currentPurchasesOp, parseInt(purchasesValue));
+          }
+        });
+      }
+      
+      function filterClientsByPurchases(op, value) {
+        document.querySelectorAll('.client-row').forEach(function(row) {
+          var statsEl = row.querySelector('.client-stats');
+          if (!statsEl) {
+            row.style.display = '';
+            return;
+          }
+          
+          var purchasesText = '';
+          statsEl.querySelectorAll('.stat-row').forEach(function(stat) {
+            if (stat.textContent.includes('Покупок:')) {
+              purchasesText = stat.textContent;
+            }
+          });
+          
+          var purchases = parseInt(purchasesText.replace(/[^\d]/g, '')) || 0;
+          var show = true;
+          
+          switch (op) {
+            case '=': show = purchases === value; break;
+            case '>': show = purchases > value; break;
+            case '<': show = purchases < value; break;
+            case '>=': show = purchases >= value; break;
+            case '<=': show = purchases <= value; break;
+            case '!=': show = purchases !== value; break;
+          }
+          
+          row.style.display = show ? '' : 'none';
+          row.style.transition = 'opacity 0.3s ease';
+          row.style.opacity = show ? '1' : '0';
+        });
+        
+        if (typeof showToast === 'function') {
+          showToast('success', 'Фильтр применён', 'Покупки ' + op + ' ' + value);
+        }
+      }
+      
+      // ===== FILTER DROPDOWNS =====
+      var clientsFilters = {
+        search: '',
+        city: 'all',
+        mailing: 'all',
+        ban: 'all',
+        dateFrom: '2025-12-09',
+        dateTo: '2025-12-15'
+      };
+      
+      function closeAllFilterMenus() {
+        document.querySelectorAll('.filter-dropdown-menu.open').forEach(function(menu) {
+          menu.classList.remove('open');
+        });
+        document.querySelectorAll('.filter-dropdown-btn.open').forEach(function(btn) {
+          btn.classList.remove('open');
+        });
+      }
+      
+      function initClientsFilters() {
+        var filters = [
+          { btn: 'citiesFilterBtn', menu: 'citiesFilterMenu', text: 'citiesFilterText', defaultText: 'Города', filterKey: 'city' },
+          { btn: 'mailingFilterBtn', menu: 'mailingFilterMenu', text: 'mailingFilterText', defaultText: 'Рассылка?', filterKey: 'mailing' },
+          { btn: 'banFilterBtn', menu: 'banFilterMenu', text: 'banFilterText', defaultText: 'Бан?', filterKey: 'ban' }
+        ];
+        
+        filters.forEach(function(filter) {
+          var btn = document.getElementById(filter.btn);
+          var menu = document.getElementById(filter.menu);
+          var textEl = document.getElementById(filter.text);
+          
+          if (!btn || !menu) return;
+          
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = menu.classList.contains('open');
+            closeAllFilterMenus();
+            
+            if (!isOpen) {
+              menu.classList.add('open');
+              btn.classList.add('open');
+            }
+          });
+          
+          menu.querySelectorAll('.filter-dropdown-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+              menu.querySelectorAll('.filter-dropdown-item').forEach(function(i) {
+                i.classList.remove('active');
+              });
+              item.classList.add('active');
+              
+              if (item.dataset.value === 'all') {
+                textEl.textContent = filter.defaultText;
+              } else {
+                textEl.textContent = item.textContent;
+              }
+              
+              clientsFilters[filter.filterKey] = item.dataset.value || 'all';
+              applyClientsFilters();
+              
+              menu.classList.remove('open');
+              btn.classList.remove('open');
+            });
+          });
+        });
+        
+        // Date filter
+        var dateBtn = document.getElementById('dateFilterBtn');
+        var dateMenu = document.getElementById('dateFilterMenu');
+        var dateText = document.getElementById('dateFilterText');
+        var dateApplyBtn = document.getElementById('dateApplyBtn');
+        var dateFromInput = document.getElementById('dateFromInput');
+        var dateToInput = document.getElementById('dateToInput');
+        
+        if (dateBtn && dateMenu) {
+          dateBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = dateMenu.classList.contains('open');
+            closeAllFilterMenus();
+            
+            if (!isOpen) {
+              dateMenu.classList.add('open');
+              dateBtn.classList.add('open');
+            }
+          });
+          
+          if (dateApplyBtn && dateFromInput && dateToInput && dateText) {
+            dateApplyBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              var from = dateFromInput.value;
+              var to = dateToInput.value;
+              
+              if (from && to) {
+                clientsFilters.dateFrom = from;
+                clientsFilters.dateTo = to;
+                dateText.textContent = from + ' - ' + to;
+                applyClientsFilters();
+              }
+              
+              dateMenu.classList.remove('open');
+              dateBtn.classList.remove('open');
+            });
+          }
+        }
+        
+        // Search input
+        var searchInput = document.querySelector('.search-input[data-testid="input-search"]');
+        if (searchInput) {
+          searchInput.addEventListener('input', function(e) {
+            clientsFilters.search = e.target.value.toLowerCase();
+            applyClientsFilters();
+          });
+        }
+        
+        // Close menus on outside click
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.filter-dropdown-wrapper')) {
+            closeAllFilterMenus();
+          }
+        });
+      }
+      
+      function applyClientsFilters() {
+        var rows = document.querySelectorAll('.client-row');
+        var visibleCount = 0;
+        
+        rows.forEach(function(row) {
+          var shouldShow = true;
+          
+          // Search filter
+          if (clientsFilters.search) {
+            var rowText = row.textContent.toLowerCase();
+            if (!rowText.includes(clientsFilters.search)) {
+              shouldShow = false;
+            }
+          }
+          
+          // Mailing filter
+          if (clientsFilters.mailing !== 'all') {
+            var hasMailingActive = row.querySelector('.status-item span');
+            var mailingText = hasMailingActive ? hasMailingActive.textContent : '';
+            var hasMailing = mailingText.includes('Рассылка');
+            
+            if (clientsFilters.mailing === 'yes' && !hasMailing) {
+              shouldShow = false;
+            }
+            if (clientsFilters.mailing === 'no' && hasMailing) {
+              shouldShow = false;
+            }
+          }
+          
+          // Ban filter
+          if (clientsFilters.ban !== 'all') {
+            var statusItems = row.querySelectorAll('.status-item');
+            var isBlocked = false;
+            statusItems.forEach(function(item) {
+              if (item.textContent.includes('Заблокирован')) {
+                isBlocked = true;
+              }
+            });
+            
+            if (clientsFilters.ban === 'active' && isBlocked) {
+              shouldShow = false;
+            }
+            if (clientsFilters.ban === 'banned' && !isBlocked) {
+              shouldShow = false;
+            }
+          }
+          
+          // Date filter
+          if (clientsFilters.dateFrom && clientsFilters.dateTo) {
+            var dateEl = row.querySelector('.client-date div');
+            if (dateEl) {
+              var dateText = dateEl.textContent;
+              var parts = dateText.split('.');
+              if (parts.length === 3) {
+                var rowDate = new Date(parts[2] + '-' + parts[1] + '-' + parts[0]);
+                var fromDate = new Date(clientsFilters.dateFrom);
+                var toDate = new Date(clientsFilters.dateTo);
+                
+                if (rowDate < fromDate || rowDate > toDate) {
+                  shouldShow = false;
+                }
+              }
+            }
+          }
+          
+          // Apply visibility with animation
+          if (shouldShow) {
+            row.classList.remove('hidden');
+            row.classList.add('visible');
+            row.style.display = '';
+            visibleCount++;
+          } else {
+            row.classList.add('hidden');
+            row.classList.remove('visible');
+            setTimeout(function() {
+              if (row.classList.contains('hidden')) {
+                row.style.display = 'none';
+              }
+            }, 300);
+          }
+        });
+        
+        // Update no results message
+        var existingNoResults = document.querySelector('.clients-no-results');
+        if (visibleCount === 0) {
+          if (!existingNoResults) {
+            var noResultsEl = document.createElement('div');
+            noResultsEl.className = 'clients-no-results';
+            noResultsEl.style.cssText = 'padding: 40px; text-align: center; color: #969696; font-family: Roboto, sans-serif; font-size: 14px;';
+            noResultsEl.textContent = 'Ничего не найдено';
+            var clientsBody = document.querySelector('.clients-body');
+            if (clientsBody) {
+              clientsBody.appendChild(noResultsEl);
+            }
+          }
+        } else {
+          if (existingNoResults) {
+            existingNoResults.remove();
+          }
+        }
+      }
+      
+      initClientsFilters();
+    });
+  </script>
+</body>
+</html>

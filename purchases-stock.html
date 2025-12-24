@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Покупки и остатки</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    .page-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .filter-dropdown-wrapper {
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .filter-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .filter-dropdown:hover {
+      background: #252525;
+    }
+    
+    .filter-dropdown svg {
+      width: 16px;
+      height: 16px;
+      fill: #969696;
+    }
+    
+    .filter-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 4px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+      z-index: 9999;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    
+    .filter-dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .filter-dropdown-item {
+      padding: 12px 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #ccc;
+      cursor: pointer;
+      transition: background 0.15s;
+      background: #1a1a1a;
+    }
+    
+    .filter-dropdown-item:hover {
+      background: #2a2a2a;
+    }
+    
+    .filter-dropdown-item.active {
+      background: #0a3a50;
+      color: #00b4dc;
+    }
+    
+    .date-picker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15, 15, 15, 0.6);
+      border: 1px solid #1c1c1c;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    .date-picker svg {
+      width: 16px;
+      height: 16px;
+      fill: #969696;
+    }
+    
+    .toolbar-spacer {
+      flex: 1;
+    }
+    
+    .export-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #117c2c;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .export-btn:hover {
+      background: #0d6623;
+    }
+    
+    .export-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+    
+    .stats-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      color: #969696;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .table-container {
+      background: rgba(15, 15, 15, 0.6);
+      border: 1px solid #1c1c1c;
+      border-radius: 18px;
+      padding: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .city-section {
+      margin-bottom: 10px;
+    }
+    
+    .city-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      color: #969696;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      gap: 8px;
+    }
+    
+    .city-title {
+      font-weight: 500;
+      color: white;
+      flex-shrink: 0;
+    }
+    
+    .city-stats {
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+    
+    .column-headers {
+      display: flex;
+      font-size: 16px;
+      font-family: 'Roboto', sans-serif;
+      color: #969696;
+      margin-left: auto;
+    }
+    
+    .column-headers span {
+      text-align: center;
+    }
+    
+    .column-headers .col-price {
+      width: 120px;
+      text-align: right;
+      margin-right: 40px;
+    }
+    
+    .column-headers .col-stock {
+      width: 100px;
+      text-align: center;
+      margin-right: 50px;
+    }
+    
+    .column-headers .col-sold {
+      width: 80px;
+      text-align: center;
+      margin-right: 50px;
+    }
+    
+    .column-headers .col-amount {
+      width: 80px;
+      text-align: right;
+    }
+    
+    .product-row {
+      display: flex;
+      align-items: center;
+      background: #161616;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 10px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: white;
+    }
+    
+    .product-name {
+      flex: 1;
+    }
+    
+    .product-price {
+      width: 120px;
+      text-align: right;
+      margin-right: 40px;
+    }
+    
+    .product-stock {
+      width: 100px;
+      text-align: center;
+      margin-right: 50px;
+    }
+    
+    .product-sold {
+      width: 80px;
+      text-align: center;
+      margin-right: 50px;
+    }
+    
+    .product-amount {
+      width: 80px;
+      text-align: right;
+    }
+    
+    .no-results-message {
+      text-align: center;
+      padding: 40px;
+      color: #969696;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+    }
+    
+    /* Animations */
+    .page-toolbar {
+      animation: fadeInUp 0.5s ease forwards;
+    }
+    
+    .stats-summary {
+      animation: fadeInUp 0.5s ease 0.1s both;
+    }
+    
+    .table-container {
+      animation: fadeInUp 0.5s ease 0.2s both;
+    }
+    
+    .city-section {
+      animation: fadeInUp 0.4s ease both;
+    }
+    
+    .city-section:nth-child(1) { animation-delay: 0.2s; }
+    .city-section:nth-child(2) { animation-delay: 0.3s; }
+    .city-section:nth-child(3) { animation-delay: 0.4s; }
+    .city-section:nth-child(4) { animation-delay: 0.5s; }
+    
+    .product-row {
+      animation: fadeInUp 0.3s ease both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* ============================================
+       RESPONSIVE STYLES - PURCHASES STOCK PAGE
+       ============================================ */
+    
+    @media screen and (max-width: 768px) {
+      .page-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      
+      .filter-dropdown-wrapper {
+        width: 100%;
+      }
+      
+      .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .city-section {
+        padding: 16px;
+      }
+      
+      .product-row {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .city-section {
+        padding: 12px;
+        border-radius: 12px;
+      }
+      
+      .stats-summary {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="purchases-stock.html" class="submenu-item active">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Статистика</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Покупки и остатки</span>
+      </div>
+      
+      <div class="page-toolbar" data-animate="fade-up">
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="cityFilterBtn" data-testid="button-city-filter">
+            <span id="cityFilterText">Город</span>
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="cityFilterMenu">
+            <div class="filter-dropdown-item active" data-value="all">Все города</div>
+            <div class="filter-dropdown-item" data-value="moscow">Москва</div>
+            <div class="filter-dropdown-item" data-value="saratov">Саратов</div>
+            <div class="filter-dropdown-item" data-value="spb">Санкт-Петербург</div>
+            <div class="filter-dropdown-item" data-value="kazan">Казань</div>
+          </div>
+        </div>
+        
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="dateFilterBtn" data-testid="button-date-filter">
+            <span id="dateFilterText">2025-12-09 - 2025-12-15</span>
+            <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="dateFilterMenu">
+            <div class="filter-dropdown-item active" data-value="all">Все даты</div>
+            <div class="filter-dropdown-item" data-value="today">Сегодня</div>
+            <div class="filter-dropdown-item" data-value="yesterday">Вчера</div>
+            <div class="filter-dropdown-item" data-value="week">Последние 7 дней</div>
+            <div class="filter-dropdown-item" data-value="month">Последний месяц</div>
+          </div>
+        </div>
+        
+        <div class="toolbar-spacer"></div>
+        
+        <button type="button" class="export-btn" id="exportBtn" data-testid="button-export">
+          <span>Export</span>
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        </button>
+      </div>
+      
+      <div class="stats-summary" data-animate="fade-up" data-delay="100">
+        <span id="stockSummary">Всего в остатках: 6 шт. (19.1 г.) на 32 290.00 ₽</span>
+        <span id="salesSummary">Всего покупок: 0 на 0 ₽</span>
+      </div>
+      
+      <div class="table-container" id="stockTable" data-animate="fade-up" data-delay="200">
+        <div class="city-section" data-city="moscow">
+          <div class="city-header">
+            <span class="city-title">Москва</span>
+            <span class="city-stats">- Остатки: <span class="city-stock-count">2</span> шт. (<span class="city-stock-weight">3</span> г.) на <span class="city-stock-value">10 868</span> руб / Продажи: <span class="city-sold-count">3</span> шт. / <span class="city-sold-value">16 302</span> руб</span>
+          </div>
+          <div class="column-headers">
+            <span class="col-price">Цена</span>
+            <span class="col-stock">Остатки</span>
+            <span class="col-sold">Продано</span>
+            <span class="col-amount">На сумму</span>
+          </div>
+          
+          <div class="product-row" data-name="Альфа 1 грамм" data-price="5434" data-stock="1" data-weight="1" data-sold="2" data-sold-amount="10868" data-date="2025-12-15">
+            <span class="product-name">Альфа 1 грамм</span>
+            <span class="product-price">5 434.00 ₽</span>
+            <span class="product-stock">1 шт. / 1.00 г.</span>
+            <span class="product-sold">2 шт</span>
+            <span class="product-amount">10 868 ₽</span>
+          </div>
+          
+          <div class="product-row" data-name="Premium Gold 2 грамма" data-price="5434" data-stock="1" data-weight="2" data-sold="1" data-sold-amount="5434" data-date="2025-12-14">
+            <span class="product-name">Premium Gold 2 грамма</span>
+            <span class="product-price">5 434.00 ₽</span>
+            <span class="product-stock">1 шт. / 2.00 г.</span>
+            <span class="product-sold">1 шт</span>
+            <span class="product-amount">5 434 ₽</span>
+          </div>
+        </div>
+        
+        <div class="city-section" data-city="saratov">
+          <div class="city-header">
+            <span class="city-title">Саратов</span>
+            <span class="city-stats">- Остатки: <span class="city-stock-count">5</span> шт. (<span class="city-stock-weight">18.1</span> г.) на <span class="city-stock-value">27 170</span> руб / Продажи: <span class="city-sold-count">5</span> шт. / <span class="city-sold-value">27 170</span> руб</span>
+          </div>
+          
+          <div class="product-row" data-name="Hash Amezia 3 грамма" data-price="5434" data-stock="2" data-weight="6" data-sold="3" data-sold-amount="16302" data-date="2025-12-13">
+            <span class="product-name">Hash Amezia 3 грамма</span>
+            <span class="product-price">5 434.00 ₽</span>
+            <span class="product-stock">2 шт. / 6.00 г.</span>
+            <span class="product-sold">3 шт</span>
+            <span class="product-amount">16 302 ₽</span>
+          </div>
+          
+          <div class="product-row" data-name="Hash Amezia 4 грамма" data-price="5434" data-stock="2" data-weight="8" data-sold="1" data-sold-amount="5434" data-date="2025-12-12">
+            <span class="product-name">Hash Amezia 4 грамма</span>
+            <span class="product-price">5 434.00 ₽</span>
+            <span class="product-stock">2 шт. / 8.00 г.</span>
+            <span class="product-sold">1 шт</span>
+            <span class="product-amount">5 434 ₽</span>
+          </div>
+          
+          <div class="product-row" data-name="Hash Amezia 5 грамма" data-price="5434" data-stock="1" data-weight="4.1" data-sold="1" data-sold-amount="5434" data-date="2025-12-10">
+            <span class="product-name">Hash Amezia 5 грамма</span>
+            <span class="product-price">5 434.00 ₽</span>
+            <span class="product-stock">1 шт. / 4.10 г.</span>
+            <span class="product-sold">1 шт</span>
+            <span class="product-amount">5 434 ₽</span>
+          </div>
+        </div>
+        
+        <div class="city-section" data-city="spb">
+          <div class="city-header">
+            <span class="city-title">Санкт-Петербург</span>
+            <span class="city-stats">- Остатки: <span class="city-stock-count">3</span> шт. (<span class="city-stock-weight">9</span> г.) на <span class="city-stock-value">16 302</span> руб / Продажи: <span class="city-sold-count">2</span> шт. / <span class="city-sold-value">10 868</span> руб</span>
+          </div>
+          
+          <div class="product-row" data-name="White Crystal 3 грамма" data-price="5434" data-stock="2" data-weight="6" data-sold="1" data-sold-amount="5434" data-date="2025-12-11">
+            <span class="product-name">White Crystal 3 грамма</span>
+            <span class="product-price">5 434.00 ₽</span>
+            <span class="product-stock">2 шт. / 6.00 г.</span>
+            <span class="product-sold">1 шт</span>
+            <span class="product-amount">5 434 ₽</span>
+          </div>
+          
+          <div class="product-row" data-name="Diamond Pure 3 грамма" data-price="5434" data-stock="1" data-weight="3" data-sold="1" data-sold-amount="5434" data-date="2025-12-09">
+            <span class="product-name">Diamond Pure 3 грамма</span>
+            <span class="product-price">5 434.00 ₽</span>
+            <span class="product-stock">1 шт. / 3.00 г.</span>
+            <span class="product-sold">1 шт</span>
+            <span class="product-amount">5 434 ₽</span>
+          </div>
+        </div>
+        
+        <div class="city-section" data-city="kazan">
+          <div class="city-header">
+            <span class="city-title">Казань</span>
+            <span class="city-stats">- Остатки: <span class="city-stock-count">2</span> шт. (<span class="city-stock-weight">5</span> г.) на <span class="city-stock-value">10 868</span> руб / Продажи: <span class="city-sold-count">0</span> шт. / <span class="city-sold-value">0</span> руб</span>
+          </div>
+          
+          <div class="product-row" data-name="Elite Mix 2.5 грамма" data-price="5434" data-stock="2" data-weight="5" data-sold="0" data-sold-amount="0" data-date="2025-12-08">
+            <span class="product-name">Elite Mix 2.5 грамма</span>
+            <span class="product-price">5 434.00 ₽</span>
+            <span class="product-stock">2 шт. / 5.00 г.</span>
+            <span class="product-sold">0 шт</span>
+            <span class="product-amount">0 ₽</span>
+          </div>
+        </div>
+        
+        <div class="no-results-message" id="noStockResults" style="display: none;">
+          <span>Ничего не найдено</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Районы</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item active">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Склад</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Районы</span>
+      </div>
+      
+      <div class="regions-toolbar">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" placeholder="Номер или название" class="search-input">
+        </div>
+        <button class="add-btn">
+          <span>Добавить</span>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+      </div>
+      
+      <div class="regions-table">
+        <div class="regions-header">
+          <span class="col-id">#</span>
+          <span class="col-region">Район (Город)</span>
+          <span class="col-action">Действие</span>
+        </div>
+        
+        <div class="regions-body">
+          <div class="region-row">
+            <div class="region-id">208</div>
+            <div class="region-name">Кузнецкий мост <span class="region-label">(Москва)</span></div>
+            <div class="region-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="region-row">
+            <div class="region-id">200</div>
+            <div class="region-name">Ленинский <span class="region-label">(Саратов)</span></div>
+            <div class="region-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Add District Modal -->
+  <div class="region-modal-overlay" id="districtModalOverlay">
+    <div class="region-modal" id="districtModal">
+      <div class="region-modal-header">
+        <span class="region-modal-title">Добавить</span>
+        <button class="region-modal-close" id="districtModalClose" data-testid="button-modal-close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="region-modal-body">
+        <div class="modal-field">
+          <label class="region-modal-label">Выберите город</label>
+          <div class="modal-select-wrapper" id="citySelectWrapper">
+            <div class="modal-select" id="citySelect" data-testid="select-city">
+              <span class="modal-select-text" id="citySelectText">Не выбрано</span>
+              <svg class="modal-select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+            </div>
+            <div class="modal-select-dropdown" id="cityDropdown">
+              <div class="modal-select-option" data-value="">Не выбрано</div>
+              <div class="modal-select-option" data-value="Москва">Москва</div>
+              <div class="modal-select-option" data-value="Санкт-Петербург">Санкт-Петербург</div>
+              <div class="modal-select-option" data-value="Казань">Казань</div>
+              <div class="modal-select-option" data-value="Саратов">Саратов</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-field">
+          <label class="region-modal-label">Название района</label>
+          <input type="text" class="region-modal-input" id="districtNameInput" data-testid="input-district-name" placeholder="">
+        </div>
+      </div>
+      <div class="region-modal-footer">
+        <button class="region-modal-btn green" id="btnDistrictSaveAndAdd" data-testid="button-save-and-add">Сохранить и добавить другой</button>
+        <button class="region-modal-btn green" id="btnDistrictApply" data-testid="button-apply">Применить</button>
+        <button class="region-modal-btn green" id="btnDistrictSave" data-testid="button-save">Сохранить</button>
+        <button class="region-modal-btn red" id="btnDistrictDelete" data-testid="button-delete">Удалить</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    // District Modal functionality
+    (function() {
+      const addBtn = document.querySelector('.add-btn');
+      const modalOverlay = document.getElementById('districtModalOverlay');
+      const modal = document.getElementById('districtModal');
+      const closeBtn = document.getElementById('districtModalClose');
+      const districtInput = document.getElementById('districtNameInput');
+      const regionsBody = document.querySelector('.regions-body');
+      const modalTitle = document.querySelector('.region-modal-title');
+      const btnDelete = document.getElementById('btnDistrictDelete');
+      
+      // City select
+      const citySelect = document.getElementById('citySelect');
+      const cityDropdown = document.getElementById('cityDropdown');
+      const citySelectText = document.getElementById('citySelectText');
+      
+      let editingDistrictId = null;
+      let nextDistrictId = 300;
+      let selectedCity = '';
+      
+      function generateDistrictId() {
+        return nextDistrictId++;
+      }
+      
+      // City dropdown functionality
+      citySelect?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        cityDropdown.classList.toggle('open');
+        citySelect.classList.toggle('open');
+      });
+      
+      cityDropdown?.querySelectorAll('.modal-select-option').forEach(function(option) {
+        option.addEventListener('click', function() {
+          selectedCity = option.getAttribute('data-value');
+          citySelectText.textContent = selectedCity || 'Не выбрано';
+          cityDropdown.classList.remove('open');
+          citySelect.classList.remove('open');
+        });
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (!citySelect?.contains(e.target) && !cityDropdown?.contains(e.target)) {
+          cityDropdown?.classList.remove('open');
+          citySelect?.classList.remove('open');
+        }
+      });
+      
+      function openModal(isEdit, districtId, districtName, cityName) {
+        editingDistrictId = isEdit ? districtId : null;
+        modalTitle.textContent = isEdit ? 'Редактировать' : 'Добавить';
+        districtInput.value = districtName || '';
+        selectedCity = cityName || '';
+        citySelectText.textContent = selectedCity || 'Не выбрано';
+        btnDelete.style.display = isEdit ? 'flex' : 'none';
+        
+        modalOverlay.classList.add('active');
+        modal.classList.add('active');
+        districtInput.focus();
+      }
+      
+      function closeModal() {
+        modal.classList.remove('active');
+        modalOverlay.classList.remove('active');
+        cityDropdown?.classList.remove('open');
+        citySelect?.classList.remove('open');
+        editingDistrictId = null;
+      }
+      
+      function createDistrictRow(id, name, city) {
+        const row = document.createElement('div');
+        row.className = 'region-row';
+        row.setAttribute('data-district-id', id);
+        row.setAttribute('data-city', city || '');
+        row.innerHTML = `
+          <div class="region-id">${id}</div>
+          <div class="region-name">${name} <span class="region-label">(${city || ''})</span></div>
+          <div class="region-action">
+            <button class="action-btn info">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        `;
+        row.style.animation = 'fadeInUp 0.3s ease forwards';
+        return row;
+      }
+      
+      function addDistrictToList(name, city) {
+        if (!name || !regionsBody) return null;
+        const id = generateDistrictId();
+        const row = createDistrictRow(id, name, city);
+        regionsBody.insertBefore(row, regionsBody.firstChild);
+        return id;
+      }
+      
+      function updateDistrictInList(id, name, city) {
+        const row = regionsBody.querySelector(`[data-district-id="${id}"]`);
+        if (row) {
+          row.querySelector('.region-name').innerHTML = `${name} <span class="region-label">(${city || ''})</span>`;
+          row.setAttribute('data-city', city || '');
+          row.style.animation = 'none';
+          row.offsetHeight;
+          row.style.animation = 'fadeInUp 0.3s ease forwards';
+        }
+      }
+      
+      function deleteDistrictFromList(id) {
+        const row = regionsBody.querySelector(`[data-district-id="${id}"]`);
+        if (row) {
+          row.style.animation = 'fadeOutDown 0.3s ease forwards';
+          setTimeout(() => row.remove(), 300);
+        }
+      }
+      
+      if (addBtn) {
+        addBtn.addEventListener('click', function() {
+          openModal(false);
+        });
+      }
+      
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+      
+      if (modalOverlay) {
+        modalOverlay.addEventListener('click', function(e) {
+          if (e.target === modalOverlay) {
+            closeModal();
+          }
+        });
+      }
+      
+      // Save and add another
+      document.getElementById('btnDistrictSaveAndAdd')?.addEventListener('click', function() {
+        const name = districtInput.value.trim();
+        if (name) {
+          if (editingDistrictId) {
+            updateDistrictInList(editingDistrictId, name, selectedCity);
+            editingDistrictId = null;
+            modalTitle.textContent = 'Добавить';
+            btnDelete.style.display = 'none';
+          } else {
+            addDistrictToList(name, selectedCity);
+          }
+          districtInput.value = '';
+          selectedCity = '';
+          citySelectText.textContent = 'Не выбрано';
+          districtInput.focus();
+        }
+      });
+      
+      // Apply (save but keep modal open)
+      document.getElementById('btnDistrictApply')?.addEventListener('click', function() {
+        const name = districtInput.value.trim();
+        if (name) {
+          if (editingDistrictId) {
+            updateDistrictInList(editingDistrictId, name, selectedCity);
+          } else {
+            const newId = addDistrictToList(name, selectedCity);
+            editingDistrictId = newId;
+            modalTitle.textContent = 'Редактировать';
+            btnDelete.style.display = 'flex';
+          }
+        }
+      });
+      
+      // Save and close
+      document.getElementById('btnDistrictSave')?.addEventListener('click', function() {
+        const name = districtInput.value.trim();
+        if (name) {
+          if (editingDistrictId) {
+            updateDistrictInList(editingDistrictId, name, selectedCity);
+          } else {
+            addDistrictToList(name, selectedCity);
+          }
+          closeModal();
+        }
+      });
+      
+      // Delete
+      document.getElementById('btnDistrictDelete')?.addEventListener('click', function() {
+        if (editingDistrictId) {
+          deleteDistrictFromList(editingDistrictId);
+        }
+        closeModal();
+      });
+      
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+          closeModal();
+        }
+      });
+      
+      // Click on existing district rows to edit
+      regionsBody?.addEventListener('click', function(e) {
+        const row = e.target.closest('.region-row');
+        const actionBtn = e.target.closest('.action-btn');
+        if (row && actionBtn) {
+          const id = row.getAttribute('data-district-id') || row.querySelector('.region-id').textContent;
+          const nameEl = row.querySelector('.region-name');
+          const name = nameEl.childNodes[0].textContent.trim();
+          const city = row.getAttribute('data-city') || '';
+          openModal(true, id, name, city);
+        }
+      });
+      
+      // Set data-district-id on existing rows
+      document.querySelectorAll('.region-row').forEach(function(row) {
+        const id = row.querySelector('.region-id').textContent;
+        row.setAttribute('data-district-id', id);
+        const labelEl = row.querySelector('.region-label');
+        if (labelEl) {
+          const match = labelEl.textContent.match(/\((.*)\)/);
+          row.setAttribute('data-city', match ? match[1] : '');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

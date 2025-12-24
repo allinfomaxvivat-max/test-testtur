@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Дебет/Кредит</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .page-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1000;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+    
+    .filter-dropdown-wrapper {
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .filter-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .filter-dropdown:hover {
+      background: #252525;
+    }
+    
+    .filter-dropdown svg {
+      width: 16px;
+      height: 16px;
+      fill: #969696;
+      transition: transform 0.2s;
+    }
+    
+    .filter-dropdown.open svg:last-child {
+      transform: rotate(180deg);
+    }
+    
+    .filter-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 4px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+      z-index: 9999;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    
+    .filter-dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .filter-dropdown-item {
+      padding: 12px 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #ccc;
+      cursor: pointer;
+      transition: background 0.15s;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .filter-dropdown-item:hover {
+      background: #2a2a2a;
+    }
+    
+    .filter-dropdown-item.active {
+      background: #0a3a50;
+      color: #00b4dc;
+    }
+    
+    .filter-dropdown-item img {
+      width: 16px;
+      height: 16px;
+    }
+    
+    .data-table {
+      width: 100%;
+      background: rgba(15, 15, 15, 0.6);
+      border: 1px solid #1c1c1c;
+      border-radius: 18px;
+      overflow: hidden;
+      animation: fadeInUp 0.5s ease 0.2s both;
+    }
+    
+    .table-header {
+      display: grid;
+      grid-template-columns: 100px 120px 1fr 1fr 1fr 1fr;
+      padding: 16px 20px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+      border-bottom: 1px solid #1c1c1c;
+      background: rgba(20, 20, 20, 0.5);
+    }
+    
+    .table-row {
+      display: grid;
+      grid-template-columns: 100px 120px 1fr 1fr 1fr 1fr;
+      padding: 14px 20px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: white;
+      border-bottom: 1px solid #1c1c1c;
+      background: #161616;
+      align-items: center;
+      transition: background 0.2s;
+      animation: fadeInUp 0.4s ease both;
+    }
+    
+    .table-row:nth-child(2) { animation-delay: 0.25s; }
+    .table-row:nth-child(3) { animation-delay: 0.3s; }
+    .table-row:nth-child(4) { animation-delay: 0.35s; }
+    .table-row:nth-child(5) { animation-delay: 0.4s; }
+    .table-row:nth-child(6) { animation-delay: 0.45s; }
+    .table-row:nth-child(7) { animation-delay: 0.5s; }
+    .table-row:nth-child(8) { animation-delay: 0.55s; }
+    
+    .table-row:hover {
+      background: #1e1e1e;
+    }
+    
+    .table-row:last-child {
+      border-bottom: none;
+    }
+    
+    .currency-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .currency-icon {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .table-header span:nth-child(3),
+    .table-header span:nth-child(4),
+    .table-header span:nth-child(5),
+    .table-header span:nth-child(6),
+    .table-row span:nth-child(3),
+    .table-row span:nth-child(4),
+    .table-row span:nth-child(5),
+    .table-row span:nth-child(6) {
+      text-align: right;
+    }
+    
+    
+    .no-results {
+      padding: 40px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+      display: none;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes countUp {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    /* ============================================
+       RESPONSIVE STYLES - DEBIT CREDIT PAGE
+       ============================================ */
+    
+    @media screen and (max-width: 768px) {
+      .page-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      
+      .filter-dropdown-wrapper,
+      .search-input-wrapper {
+        width: 100%;
+      }
+      
+      .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .table-header,
+      .table-row {
+        min-width: 600px;
+      }
+      
+      .summary-cards {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .summary-card {
+        width: 100%;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .summary-card {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item active">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Статистика</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Дебет/Кредит</span>
+      </div>
+      
+      <div class="page-toolbar">
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="currencyFilterBtn" data-testid="button-currency-filter">
+            <span id="currencyFilterText">Все валюты</span>
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="currencyFilterMenu">
+            <div class="filter-dropdown-item active" data-value="all">Все валюты</div>
+            <div class="filter-dropdown-item" data-value="rub">
+              <img src="assets/rub.svg" alt="RUB"> RUB
+            </div>
+            <div class="filter-dropdown-item" data-value="btc">
+              <img src="assets/btc.svg" alt="BTC"> BTC
+            </div>
+            <div class="filter-dropdown-item" data-value="ltc">
+              <img src="assets/ltc.svg" alt="LTC"> LTC
+            </div>
+            <div class="filter-dropdown-item" data-value="usdt">
+              <img src="assets/usdt.svg" alt="USDT"> USDT
+            </div>
+          </div>
+        </div>
+        
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="dateFilterBtn" data-testid="button-date-filter">
+            <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+            <span id="dateFilterText">2025-12-09 - 2025-12-15</span>
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="dateFilterMenu">
+            <div class="filter-dropdown-item active" data-value="week" data-label="2025-12-09 - 2025-12-15">Последние 7 дней</div>
+            <div class="filter-dropdown-item" data-value="today" data-label="2025-12-15">Сегодня</div>
+            <div class="filter-dropdown-item" data-value="yesterday" data-label="2025-12-14">Вчера</div>
+            <div class="filter-dropdown-item" data-value="month" data-label="2025-11-15 - 2025-12-15">Последний месяц</div>
+            <div class="filter-dropdown-item" data-value="all" data-label="Все время">Все время</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="data-table" id="dataTable">
+        <div class="table-header">
+          <span>Дата</span>
+          <span>Валюта</span>
+          <span>Остаток на начало</span>
+          <span>Приход</span>
+          <span>Расход</span>
+          <span>Остаток на конец</span>
+        </div>
+        <div class="table-row" data-currency="usdt" data-date="2025-12-15">
+          <span>15.12.25</span>
+          <span class="currency-cell">
+            <img src="assets/usdt.svg" alt="USDT" class="currency-icon">
+            USDT
+          </span>
+          <span>16.000000</span>
+          <span>0</span>
+          <span>2.000000</span>
+          <span>14.000000</span>
+        </div>
+        <div class="table-row" data-currency="btc" data-date="2025-12-15">
+          <span>15.12.25</span>
+          <span class="currency-cell">
+            <img src="assets/btc.svg" alt="BTC" class="currency-icon">
+            BTC
+          </span>
+          <span>0</span>
+          <span>0.00001751</span>
+          <span>0</span>
+          <span>0.00001751</span>
+        </div>
+        <div class="table-row" data-currency="rub" data-date="2025-12-14">
+          <span>14.12.25</span>
+          <span class="currency-cell">
+            <img src="assets/rub.svg" alt="RUB" class="currency-icon">
+            RUB
+          </span>
+          <span>106 367 ₽</span>
+          <span>323 ₽</span>
+          <span>0 ₽</span>
+          <span>106 691 ₽</span>
+        </div>
+        <div class="table-row" data-currency="ltc" data-date="2025-12-14">
+          <span>14.12.25</span>
+          <span class="currency-cell">
+            <img src="assets/ltc.svg" alt="LTC" class="currency-icon">
+            LTC
+          </span>
+          <span>0</span>
+          <span>0.02190423</span>
+          <span>0.02190423</span>
+          <span>0</span>
+        </div>
+        <div class="table-row" data-currency="btc" data-date="2025-12-13">
+          <span>13.12.25</span>
+          <span class="currency-cell">
+            <img src="assets/btc.svg" alt="BTC" class="currency-icon">
+            BTC
+          </span>
+          <span>0</span>
+          <span>0.00001751</span>
+          <span>0</span>
+          <span>0.00001751</span>
+        </div>
+        <div class="table-row" data-currency="rub" data-date="2025-12-12">
+          <span>12.12.25</span>
+          <span class="currency-cell">
+            <img src="assets/rub.svg" alt="RUB" class="currency-icon">
+            RUB
+          </span>
+          <span>106 044 ₽</span>
+          <span>323 ₽</span>
+          <span>0 ₽</span>
+          <span>106 367 ₽</span>
+        </div>
+        <div class="table-row" data-currency="ltc" data-date="2025-12-11">
+          <span>11.12.25</span>
+          <span class="currency-cell">
+            <img src="assets/ltc.svg" alt="LTC" class="currency-icon">
+            LTC
+          </span>
+          <span>0.02190423</span>
+          <span>0</span>
+          <span>0.02190423</span>
+          <span>0</span>
+        </div>
+        <div class="no-results" id="noResults">
+          Нет данных для отображения
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initDebitCreditPage();
+    });
+    
+    function initDebitCreditPage() {
+      let currentFilters = { currency: 'all', date: 'week' };
+      
+      // Setup currency filter
+      setupFilter('currencyFilterBtn', 'currencyFilterMenu', 'currencyFilterText', function(value, text) {
+        currentFilters.currency = value;
+        filterData();
+      });
+      
+      // Setup date filter
+      setupDateFilter();
+      
+      function setupFilter(btnId, menuId, textId, onSelect) {
+        const btn = document.getElementById(btnId);
+        const menu = document.getElementById(menuId);
+        if (!btn || !menu) return;
+        
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          closeAllDropdowns(menu, btn);
+          menu.classList.toggle('show');
+          btn.classList.toggle('open');
+        });
+        
+        menu.querySelectorAll('.filter-dropdown-item').forEach(function(item) {
+          item.addEventListener('click', function() {
+            const value = this.dataset.value;
+            const text = this.textContent.trim();
+            
+            menu.querySelectorAll('.filter-dropdown-item').forEach(function(i) {
+              i.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            const textEl = document.getElementById(textId);
+            if (textEl) {
+              textEl.textContent = text;
+            }
+            
+            menu.classList.remove('show');
+            btn.classList.remove('open');
+            onSelect(value, text);
+          });
+        });
+      }
+      
+      function setupDateFilter() {
+        const btn = document.getElementById('dateFilterBtn');
+        const menu = document.getElementById('dateFilterMenu');
+        const textEl = document.getElementById('dateFilterText');
+        if (!btn || !menu) return;
+        
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          closeAllDropdowns(menu, btn);
+          menu.classList.toggle('show');
+          btn.classList.toggle('open');
+        });
+        
+        menu.querySelectorAll('.filter-dropdown-item').forEach(function(item) {
+          item.addEventListener('click', function() {
+            const value = this.dataset.value;
+            const label = this.dataset.label;
+            
+            menu.querySelectorAll('.filter-dropdown-item').forEach(function(i) {
+              i.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            if (textEl) {
+              textEl.textContent = label;
+            }
+            
+            menu.classList.remove('show');
+            btn.classList.remove('open');
+            currentFilters.date = value;
+            filterData();
+          });
+        });
+      }
+      
+      function closeAllDropdowns(exceptMenu, exceptBtn) {
+        document.querySelectorAll('.filter-dropdown-menu.show').forEach(function(m) {
+          if (m !== exceptMenu) m.classList.remove('show');
+        });
+        document.querySelectorAll('.filter-dropdown.open').forEach(function(b) {
+          if (b !== exceptBtn) b.classList.remove('open');
+        });
+      }
+      
+      document.addEventListener('click', function() {
+        closeAllDropdowns();
+      });
+      
+      function filterData() {
+        const rows = document.querySelectorAll('.table-row');
+        let visibleCount = 0;
+        
+        rows.forEach(function(row) {
+          const currency = row.dataset.currency;
+          let visible = true;
+          
+          if (currentFilters.currency !== 'all' && currency !== currentFilters.currency) {
+            visible = false;
+          }
+          
+          if (visible) {
+            row.style.display = '';
+            visibleCount++;
+          } else {
+            row.style.display = 'none';
+          }
+        });
+        
+        const noResults = document.getElementById('noResults');
+        if (noResults) {
+          noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

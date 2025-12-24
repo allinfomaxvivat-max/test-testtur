@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Рассылки в бот</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/bot-mailing-modal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item active">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Рассылки/Публикации</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Рассылки</span>
+      </div>
+      
+      <!-- Filters Bar -->
+      <div class="bot-mailings-filters">
+        <div class="bot-filters-left">
+          <div class="bot-filter-dropdown" id="typeFilterWrapper">
+            <button class="bot-filter-btn" id="typeFilterBtn" data-testid="filter-type">
+              <span>Тип</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="bot-filter-menu" id="typeFilterMenu">
+              <div class="bot-filter-item" data-value="all">Все типы</div>
+              <div class="bot-filter-item" data-value="manual">Ручной запуск</div>
+              <div class="bot-filter-item" data-value="auto">Автоматический запуск</div>
+            </div>
+          </div>
+          <div class="bot-date-range">
+            <button type="button" class="bot-date-btn" id="dateRangeBtn" data-testid="button-date-range">
+              <span id="dateRangeText">2025-12-09 - 2025-12-15</span>
+              <svg class="bot-date-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button class="btn-add" data-testid="button-add-mailing">
+          <span>Добавить</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+      </div>
+      
+      <!-- Bot Mailings Table -->
+      <div class="bot-mailings-table-container">
+        <div class="bot-mailings-table">
+          <div class="bot-mailings-header">
+            <div class="bot-th bot-th-id">#</div>
+            <div class="bot-th bot-th-attachment">Вложение</div>
+            <div class="bot-th bot-th-text">Текст</div>
+            <div class="bot-th bot-th-status">Статус</div>
+            <div class="bot-th bot-th-type">Тип рассылки</div>
+            <div class="bot-th bot-th-action">Действие</div>
+          </div>
+          <div class="bot-mailings-body" id="botMailingsBody">
+            <div class="bot-mailing-row bot-mailing-card" data-id="8">
+              <div class="bot-td bot-td-id">8</div>
+              <div class="bot-td bot-td-attachment">
+                <div class="bot-attachment-preview bot-attachment-large">
+                  <img src="assets/bot-mailing-preview.png" alt="Attachment" class="bot-attachment-img">
+                </div>
+              </div>
+              <div class="bot-td bot-td-text">Тестовое название канала</div>
+              <div class="bot-td bot-td-status">
+                <div class="bot-status-info">
+                  <span class="bot-status-label">Последний запуск</span>
+                  <span class="bot-status-date">03.12.2025 22:47</span>
+                  <div class="bot-status-badges">
+                    <span class="bot-stat-badge bot-stat-gray">12</span>
+                    <span class="bot-stat-badge bot-stat-green">32</span>
+                    <span class="bot-stat-badge bot-stat-red">12</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bot-td bot-td-type">Ручной запуск</div>
+              <div class="bot-td bot-td-action">
+                <button class="bot-launch-btn bot-launch-blue" data-testid="button-launch-8">Запуск</button>
+              </div>
+            </div>
+            <div class="bot-mailing-row bot-mailing-card no-attachment" data-id="8">
+              <div class="bot-td bot-td-id">8</div>
+              <div class="bot-td bot-td-attachment">
+                <span class="bot-no-attachment">Без вложения</span>
+              </div>
+              <div class="bot-td bot-td-text">Тестовое название канала</div>
+              <div class="bot-td bot-td-status">
+                <div class="bot-status-info">
+                  <span class="bot-status-label">Последний запуск</span>
+                  <span class="bot-status-date">03.12.2025 22:47</span>
+                  <div class="bot-status-badges">
+                    <span class="bot-stat-badge bot-stat-gray">12</span>
+                    <span class="bot-stat-badge bot-stat-green">32</span>
+                    <span class="bot-stat-badge bot-stat-red">12</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bot-td bot-td-type">Автоматический запуск</div>
+              <div class="bot-td bot-td-action">
+                <button class="bot-launch-btn bot-launch-blue" data-testid="button-launch-8b">Запуск</button>
+              </div>
+            </div>
+            <div class="bot-mailing-row bot-mailing-card no-attachment" data-id="8">
+              <div class="bot-td bot-td-id">8</div>
+              <div class="bot-td bot-td-attachment">
+                <span class="bot-no-attachment">Без вложения</span>
+              </div>
+              <div class="bot-td bot-td-text">Тестовое название канала</div>
+              <div class="bot-td bot-td-status">
+                <div class="bot-status-info empty">
+                  <span class="bot-status-label">—</span>
+                </div>
+              </div>
+              <div class="bot-td bot-td-type">Автоматический запуск</div>
+              <div class="bot-td bot-td-action">
+                <button class="bot-launch-btn bot-launch-blue" data-testid="button-launch-8c">Запуск</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Bot Mailing Modal -->
+  <div class="bot-mailing-modal-overlay" id="botMailingModalOverlay">
+    <div class="bot-mailing-modal">
+      <!-- Title -->
+      <span class="bot-mailing-modal-title" id="botMailingModalTitle">Добавить рассылку</span>
+      
+      <!-- Close Button -->
+      <button class="modal-close" id="botMailingModalClose" data-testid="button-close-mailing-modal">
+        <svg viewBox="0 0 19 19" fill="none">
+          <line x1="4.75" y1="4.75" x2="14.25" y2="14.25" stroke="white" stroke-width="1.58" stroke-linecap="round"/>
+          <line x1="14.25" y1="4.75" x2="4.75" y2="14.25" stroke="white" stroke-width="1.58" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <!-- Type Dropdown -->
+      <div class="mailing-type-group">
+        <label class="mailing-form-label">Тип</label>
+        <div class="mailing-dropdown-wrapper">
+          <button class="mailing-dropdown-toggle" id="mailingTypeDropdown" data-testid="dropdown-type">
+            <span>Ручной запуск</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="mailing-dropdown-menu" id="mailingTypeMenu">
+            <div class="mailing-dropdown-item" data-value="manual">Ручной запуск</div>
+            <div class="mailing-dropdown-item" data-value="auto">Автоматический запуск</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- File Upload -->
+      <div class="mailing-file-group">
+        <label class="mailing-form-label">Фото/Видео/Анимация</label>
+        <button class="mailing-file-upload-btn" id="mailingFileBtn" data-testid="button-upload-file">
+          <span>Выберите файл</span>
+        </button>
+        <input type="file" id="mailingFileInput" class="mailing-file-input" accept="image/*,video/*" data-testid="input-file">
+        <div class="mailing-file-input-display" id="mailingFileDisplay">
+          <span>Файл не выбран</span>
+        </div>
+      </div>
+      
+      <!-- Text Textarea -->
+      <div class="mailing-text-group">
+        <label class="mailing-form-label">Текст рассылки</label>
+        <textarea class="mailing-textarea" id="mailingTextInput" placeholder="" data-testid="input-text"></textarea>
+      </div>
+      
+      <!-- Buttons Textarea -->
+      <div class="mailing-buttons-group">
+        <label class="mailing-form-label">Кнопки с ссылками</label>
+        <textarea class="mailing-textarea" id="mailingButtonsInput" placeholder="" data-testid="input-buttons"></textarea>
+        <span class="mailing-form-hint">В каждой строчке кнопка text|link, например DUROV|https://t.me/durov</span>
+      </div>
+      
+      <!-- Checkbox: Don't send to clients -->
+      <label class="mailing-checkbox-no-clients">
+        <input type="checkbox" id="mailingNoClients" data-testid="checkbox-no-clients">
+        <span class="mailing-checkbox-box"></span>
+        <span class="mailing-checkbox-label">Не рассылать клиентам?</span>
+        <span class="mailing-checkbox-hint">(Если вы установите галочку, тогда рассылки по клиентам НЕ БУДЕТ. Будет только рассылка по каналам, если они выбраны.)</span>
+      </label>
+      
+      <!-- Checkbox: Only to buyers -->
+      <label class="mailing-checkbox-only-buyers">
+        <input type="checkbox" id="mailingOnlyBuyers" data-testid="checkbox-only-buyers">
+        <span class="mailing-checkbox-box"></span>
+        <span class="mailing-checkbox-label">Отправлять только купившим</span>
+      </label>
+      
+      <!-- Cities Dropdown -->
+      <div class="mailing-cities-group">
+        <label class="mailing-form-label">Только для городов</label>
+        <div class="mailing-dropdown-wrapper">
+          <button class="mailing-dropdown-toggle" id="mailingCitiesDropdown" data-testid="dropdown-cities">
+            <span>Все города</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="mailing-dropdown-menu" id="mailingCitiesMenu">
+            <div class="mailing-dropdown-item" data-value="all">Все города</div>
+            <div class="mailing-dropdown-item" data-value="moscow">Москва</div>
+            <div class="mailing-dropdown-item" data-value="spb">Санкт-Петербург</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Channels Dropdown -->
+      <div class="mailing-channels-group">
+        <label class="mailing-form-label">Каналы для публикации</label>
+        <div class="mailing-dropdown-wrapper">
+          <button class="mailing-dropdown-toggle" id="mailingChannelsDropdown" data-testid="dropdown-channels">
+            <span>Каналы</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="mailing-dropdown-menu" id="mailingChannelsMenu">
+            <div class="mailing-dropdown-item" data-value="channel1">Канал 1</div>
+            <div class="mailing-dropdown-item" data-value="channel2">Канал 2</div>
+            <div class="mailing-dropdown-item" data-value="channel3">Канал 3</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Status Dropdown -->
+      <div class="mailing-status-group">
+        <label class="mailing-form-label">Статус</label>
+        <div class="mailing-dropdown-wrapper">
+          <button class="mailing-dropdown-toggle" id="mailingStatusDropdown" data-testid="dropdown-status">
+            <span>Активная</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="mailing-dropdown-menu" id="mailingStatusMenu">
+            <div class="mailing-dropdown-item" data-value="active">Активная</div>
+            <div class="mailing-dropdown-item" data-value="paused">На паузе</div>
+            <div class="mailing-dropdown-item" data-value="inactive">Неактивная</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Buttons -->
+      <div class="bot-mailing-modal-footer">
+        <button class="mailing-modal-btn" id="mailingSaveAndAdd" data-testid="button-save-and-add">Сохранить и добавить другой</button>
+        <button class="mailing-modal-btn" id="mailingApply" data-testid="button-apply">Применить</button>
+        <button class="mailing-modal-btn" id="mailingSave" data-testid="button-save">Сохранить</button>
+        <button class="mailing-modal-btn" id="mailingDelete" data-testid="button-delete" style="display: none;">Удалить</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Остатки по группам товаров</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+  <style>
+    .page-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1000;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+    
+    .filter-dropdown-wrapper {
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .filter-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15, 15, 15, 0.6);
+      border: 1px solid #1c1c1c;
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .filter-dropdown:hover {
+      background: rgba(25, 25, 25, 0.8);
+    }
+    
+    .filter-dropdown svg {
+      width: 16px;
+      height: 16px;
+      fill: #969696;
+    }
+    
+    .filter-dropdown .dropdown-arrow {
+      transition: transform 0.2s ease;
+    }
+    
+    .filter-dropdown.open .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+    
+    .filter-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 4px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+      z-index: 9999;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    
+    .filter-dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .filter-dropdown-item {
+      padding: 12px 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #ccc;
+      cursor: pointer;
+      transition: background 0.15s;
+      background: #1a1a1a;
+    }
+    
+    .filter-dropdown-item:hover {
+      background: #2a2a2a;
+    }
+    
+    .filter-dropdown-item.active {
+      background: #0a3a50;
+      color: #00b4dc;
+    }
+    
+    .toolbar-spacer {
+      flex: 1;
+    }
+    
+    .export-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #117c2c;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    
+    .export-btn:hover {
+      background: #0d6623;
+    }
+    
+    .export-btn:active {
+      transform: scale(0.98);
+    }
+    
+    .export-btn.exporting {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    
+    .export-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+    
+    .stats-summary {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.5s ease 0.1s both;
+    }
+    
+    .animated-value {
+      display: inline-block;
+    }
+    
+    .table-container {
+      margin-top: 16px;
+    }
+    
+    .city-section {
+      margin-bottom: 16px;
+    }
+    
+    .city-header {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+    }
+    
+    .city-title {
+      flex: 1;
+    }
+    
+    .column-headers {
+      display: flex;
+      gap: 60px;
+    }
+    
+    .column-headers span {
+      width: 80px;
+      text-align: right;
+      color: #969696;
+    }
+    
+    .product-row {
+      display: flex;
+      align-items: center;
+      background: #161616;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 4px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: white;
+      transition: background 0.2s;
+    }
+    
+    .product-row:hover {
+      background: #1a1a1a;
+    }
+    
+    .product-name {
+      flex: 1;
+      font-weight: 500;
+    }
+    
+    .product-stats {
+      display: flex;
+      gap: 60px;
+    }
+    
+    .product-stats span {
+      width: 80px;
+      text-align: right;
+      color: #ccc;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* ============================================
+       RESPONSIVE STYLES - STOCK GROUPS PAGE
+       ============================================ */
+    
+    @media screen and (max-width: 768px) {
+      .page-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      
+      .search-input-wrapper {
+        width: 100%;
+      }
+      
+      .group-card {
+        padding: 16px;
+      }
+      
+      .product-row {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      
+      .product-stats {
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .group-card {
+        padding: 12px;
+        border-radius: 12px;
+      }
+      
+      .product-stats {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .product-stats span {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item active">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Статистика</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Остатки по группам товаров</span>
+      </div>
+      
+      <div class="page-toolbar">
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="dateFilterBtn" data-testid="button-date-filter">
+            <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+            <span id="dateFilterText"></span>
+            <svg class="dropdown-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="dateFilterMenu">
+            <div class="filter-dropdown-item active" data-value="week" id="dateOptionWeek">Последние 7 дней</div>
+            <div class="filter-dropdown-item" data-value="today" id="dateOptionToday">Сегодня</div>
+            <div class="filter-dropdown-item" data-value="month" id="dateOptionMonth">Последний месяц</div>
+            <div class="filter-dropdown-item" data-value="all" data-label="Все время">Все время</div>
+          </div>
+        </div>
+        
+        <div class="toolbar-spacer"></div>
+        
+        <button type="button" class="export-btn" id="exportBtn" data-testid="button-export">
+          <span id="exportBtnText">Export</span>
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        </button>
+      </div>
+      
+      <div class="stats-summary">
+        Всего в остатках: <span class="animated-value" id="totalWeight" data-target="19.1">0</span> г. на <span class="animated-value" id="totalAmount" data-target="32290">0</span> ₽
+      </div>
+      
+      <div class="table-container" id="stockTable">
+        <div class="city-section" data-city="moscow">
+          <div class="city-header">
+            <span class="city-title">Москва - Остатки: <span class="animated-value city-weight" data-target="1">0</span> г. на <span class="animated-value city-amount" data-target="5000">0</span> руб</span>
+            <div class="column-headers">
+              <span>Остатки</span>
+              <span>На сумму</span>
+            </div>
+          </div>
+          <div class="product-row" data-product="Alpha-PVP" data-amount="5434" data-weight="1.00">
+            <span class="product-name">Alpha-PVP</span>
+            <div class="product-stats">
+              <span><span class="animated-value" data-target="5434">0</span> ₽</span>
+              <span><span class="animated-value" data-target="1.00">0</span> г.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="city-section" data-city="saratov">
+          <div class="city-header">
+            <span class="city-title">Саратов - Остатки: <span class="animated-value city-weight" data-target="18.1">0</span> г. на <span class="animated-value city-amount" data-target="27290">0</span> руб</span>
+            <div class="column-headers">
+              <span>Остатки</span>
+              <span>На сумму</span>
+            </div>
+          </div>
+          <div class="product-row" data-product="Hash Amezia 3 грамма" data-amount="27290" data-weight="18.10">
+            <span class="product-name">Hash Amezia 3 грамма</span>
+            <div class="product-stats">
+              <span><span class="animated-value" data-target="5434">0</span> ₽</span>
+              <span><span class="animated-value" data-target="18.10">0</span> г.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initStockGroupsPage();
+    });
+    
+    function initStockGroupsPage() {
+      // Initialize dynamic dates
+      initDynamicDates();
+      
+      // Animate all values on page load
+      animateAllValues();
+      
+      let currentDateFilter = 'week';
+      
+      function animateValue(element, target, duration, isDecimal) {
+        const startTime = performance.now();
+        const startValue = 0;
+        
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const currentValue = startValue + (target - startValue) * easeOut;
+          
+          if (isDecimal) {
+            element.textContent = currentValue.toFixed(2).replace('.', ',');
+          } else if (target >= 1000) {
+            element.textContent = Math.round(currentValue).toLocaleString('ru-RU');
+          } else {
+            element.textContent = currentValue.toFixed(1).replace('.', ',');
+          }
+          
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        
+        requestAnimationFrame(update);
+      }
+      
+      function animateAllValues() {
+        document.querySelectorAll('.animated-value').forEach(function(el) {
+          const target = parseFloat(el.dataset.target) || 0;
+          const isDecimal = target.toString().includes('.') && target < 100;
+          animateValue(el, target, 1200, isDecimal);
+        });
+      }
+      
+      function formatDateISO(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return year + '-' + month + '-' + day;
+      }
+      
+      function initDynamicDates() {
+        const today = new Date();
+        const todayStr = formatDateISO(today);
+        
+        const weekAgo = new Date(today);
+        weekAgo.setDate(weekAgo.getDate() - 7);
+        const weekAgoStr = formatDateISO(weekAgo);
+        
+        const monthAgo = new Date(today);
+        monthAgo.setMonth(monthAgo.getMonth() - 1);
+        const monthAgoStr = formatDateISO(monthAgo);
+        
+        // Update date filter text (default: last 7 days)
+        const dateFilterText = document.getElementById('dateFilterText');
+        if (dateFilterText) {
+          dateFilterText.textContent = weekAgoStr + ' - ' + todayStr;
+        }
+        
+        // Update date options with dynamic labels
+        const optionWeek = document.getElementById('dateOptionWeek');
+        const optionToday = document.getElementById('dateOptionToday');
+        const optionMonth = document.getElementById('dateOptionMonth');
+        
+        if (optionWeek) optionWeek.dataset.label = weekAgoStr + ' - ' + todayStr;
+        if (optionToday) optionToday.dataset.label = todayStr;
+        if (optionMonth) optionMonth.dataset.label = monthAgoStr + ' - ' + todayStr;
+      }
+      
+      // Setup date filter
+      const btn = document.getElementById('dateFilterBtn');
+      const menu = document.getElementById('dateFilterMenu');
+      const textEl = document.getElementById('dateFilterText');
+      
+      console.log('Date filter setup - btn:', btn, 'menu:', menu);
+      
+      if (btn && menu) {
+        btn.onclick = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('Click! Current classes:', menu.className);
+          menu.classList.toggle('show');
+          btn.classList.toggle('open');
+          console.log('After toggle:', menu.className);
+        };
+        
+        menu.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+        
+        menu.querySelectorAll('.filter-dropdown-item').forEach(function(item) {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const label = this.dataset.label;
+            const value = this.dataset.value;
+            
+            menu.querySelectorAll('.filter-dropdown-item').forEach(function(i) {
+              i.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            if (textEl && label) {
+              textEl.textContent = label;
+            }
+            
+            currentDateFilter = value;
+            filterStockData(value);
+            
+            menu.classList.remove('show');
+            btn.classList.remove('open');
+          });
+        });
+        
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('show');
+            btn.classList.remove('open');
+          }
+        });
+      }
+      
+      function filterStockData(dateValue) {
+        const citySections = document.querySelectorAll('.city-section');
+        let grandTotalAmount = 0;
+        let grandTotalWeight = 0;
+        
+        citySections.forEach(function(section) {
+          const rows = section.querySelectorAll('.product-row');
+          let visibleCount = 0;
+          let cityTotalAmount = 0;
+          let cityTotalWeight = 0;
+          
+          rows.forEach(function(row) {
+            let visible = true;
+            
+            if (dateValue === 'today') {
+              visible = Math.random() > 0.5;
+            }
+            
+            if (visible) {
+              row.style.display = '';
+              visibleCount++;
+              const rowAmount = parseFloat(row.dataset.amount) || 0;
+              const rowWeight = parseFloat(row.dataset.weight) || 0;
+              cityTotalAmount += rowAmount;
+              cityTotalWeight += rowWeight;
+              
+              // Animate product stats
+              const productAmountEl = row.querySelector('.product-amount');
+              const productWeightEl = row.querySelector('.product-weight');
+              if (productAmountEl) {
+                productAmountEl.dataset.target = rowAmount;
+                animateValue(productAmountEl, rowAmount, 800, false);
+              }
+              if (productWeightEl) {
+                productWeightEl.dataset.target = rowWeight;
+                animateValue(productWeightEl, rowWeight, 800, true);
+              }
+            } else {
+              row.style.display = 'none';
+            }
+          });
+          
+          grandTotalAmount += cityTotalAmount;
+          grandTotalWeight += cityTotalWeight;
+          
+          // Update city header with animated values
+          const cityWeightEl = section.querySelector('.city-weight');
+          const cityAmountEl = section.querySelector('.city-amount');
+          if (cityWeightEl && visibleCount > 0) {
+            cityWeightEl.dataset.target = cityTotalWeight;
+            animateValue(cityWeightEl, cityTotalWeight, 800, cityTotalWeight < 100);
+          }
+          if (cityAmountEl && visibleCount > 0) {
+            cityAmountEl.dataset.target = cityTotalAmount;
+            animateValue(cityAmountEl, cityTotalAmount, 800, false);
+          }
+          
+          section.style.display = visibleCount > 0 ? '' : 'none';
+        });
+        
+        // Update grand totals with animation
+        const totalWeightEl = document.getElementById('totalWeight');
+        const totalAmountEl = document.getElementById('totalAmount');
+        if (totalWeightEl) {
+          totalWeightEl.dataset.target = grandTotalWeight;
+          animateValue(totalWeightEl, grandTotalWeight, 1000, true);
+        }
+        if (totalAmountEl) {
+          totalAmountEl.dataset.target = grandTotalAmount;
+          animateValue(totalAmountEl, grandTotalAmount, 1000, false);
+        }
+      }
+      
+      // Setup export
+      const exportBtn = document.getElementById('exportBtn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          if (this.classList.contains('exporting')) return;
+          
+          this.classList.add('exporting');
+          const btnText = document.getElementById('exportBtnText');
+          const originalText = btnText.textContent;
+          btnText.textContent = 'Экспорт...';
+          
+          setTimeout(function() {
+            try {
+              exportToXLSX();
+              btnText.textContent = 'Готово!';
+              setTimeout(function() {
+                btnText.textContent = originalText;
+                exportBtn.classList.remove('exporting');
+              }, 1500);
+            } catch(err) {
+              console.error('Export error:', err);
+              btnText.textContent = 'Ошибка';
+              setTimeout(function() {
+                btnText.textContent = originalText;
+                exportBtn.classList.remove('exporting');
+              }, 2000);
+            }
+          }, 300);
+        });
+      }
+      
+      function exportToXLSX() {
+        const data = [];
+        
+        data.push(['Город', 'Товар', 'На сумму', 'Остатки']);
+        
+        document.querySelectorAll('.city-section').forEach(function(section) {
+          const cityTitle = section.querySelector('.city-title').textContent;
+          const cityName = cityTitle.split(' - ')[0];
+          
+          section.querySelectorAll('.product-row').forEach(function(row) {
+            const product = row.dataset.product;
+            const amount = row.dataset.amount;
+            const weight = row.dataset.weight;
+            
+            data.push([cityName, product, amount + ' ₽', weight + ' г.']);
+          });
+        });
+        
+        const ws = XLSX.utils.aoa_to_sheet(data);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Остатки по группам');
+        
+        ws['!cols'] = [
+          { wch: 15 },
+          { wch: 30 },
+          { wch: 15 },
+          { wch: 12 }
+        ];
+        
+        const date = new Date().toISOString().slice(0, 10);
+        XLSX.writeFile(wb, 'stock-groups-' + date + '.xlsx');
+      }
+    }
+  </script>
+</body>
+</html>

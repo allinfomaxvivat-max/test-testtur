@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Товары</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item active">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Склад</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Товары</span>
+      </div>
+      
+      <div class="products-toolbar">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" placeholder="Номер или название" class="search-input">
+        </div>
+        <div class="toolbar-buttons">
+          <button class="add-btn">
+            <span>Добавить</span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </button>
+          <button class="add-btn bulk">
+            <span>Добавить массово</span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div class="products-table">
+        <div class="products-header">
+          <span class="col-id">#</span>
+          <span class="col-name">Название</span>
+          <span class="col-group">Группа</span>
+          <span class="col-weight">Вес/кол-во в одном товаре</span>
+          <span class="col-price">Цена</span>
+          <span class="col-action">Действие</span>
+        </div>
+        
+        <div class="products-body">
+          <div class="product-row">
+            <div class="product-id">1269</div>
+            <div class="product-name">Альфа 1 грам</div>
+            <div class="product-group">Alpha-PVP</div>
+            <div class="product-weight">0.44 г.</div>
+            <div class="product-price">15 000.00 ₽</div>
+            <div class="product-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="product-row">
+            <div class="product-id">1269</div>
+            <div class="product-name">Альфа 1 грам</div>
+            <div class="product-group">Alpha-PVP</div>
+            <div class="product-weight">0.44 г.</div>
+            <div class="product-price">15 000.00 ₽</div>
+            <div class="product-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="product-row">
+            <div class="product-id">1269</div>
+            <div class="product-name">Альфа 1 грам</div>
+            <div class="product-group">Alpha-PVP</div>
+            <div class="product-weight">0.44 г.</div>
+            <div class="product-price">15 000.00 ₽</div>
+            <div class="product-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="product-row">
+            <div class="product-id">1269</div>
+            <div class="product-name">соль</div>
+            <div class="product-group"></div>
+            <div class="product-weight">0.44 г.</div>
+            <div class="product-price">15 000.00 ₽</div>
+            <div class="product-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="product-row">
+            <div class="product-id">1269</div>
+            <div class="product-name">Альфа 1 грам</div>
+            <div class="product-group"></div>
+            <div class="product-weight">0.44 г.</div>
+            <div class="product-price">15 000.00 ₽</div>
+            <div class="product-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="product-row">
+            <div class="product-id">1269</div>
+            <div class="product-name">Альфа 1 грам</div>
+            <div class="product-group">Alpha-PVP</div>
+            <div class="product-weight">0.44 г.</div>
+            <div class="product-price">15 000.00 ₽</div>
+            <div class="product-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="product-row">
+            <div class="product-id">1269</div>
+            <div class="product-name">Мёд 1гр</div>
+            <div class="product-group">Мяу</div>
+            <div class="product-weight">0.3 г.</div>
+            <div class="product-price">15 000.00 ₽</div>
+            <div class="product-action">
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Bulk Add Modal -->
+  <div class="product-modal-overlay" id="bulkModalOverlay">
+    <div class="product-modal" id="bulkModal">
+      <div class="product-modal-header">
+        <span class="product-modal-title">Массовое добавление товаров</span>
+        <button class="product-modal-close" id="bulkModalClose" data-testid="button-bulk-modal-close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="product-modal-body">
+        <div class="bulk-modal-info">
+          <div class="bulk-modal-info-text">
+            Указывайте каждый товар в отдельной строке.<br>
+            Поля товара отделяются между собой символом ; (точка с запятой)
+          </div>
+          <div class="bulk-modal-columns">
+            <div class="bulk-modal-column">
+              <span class="bulk-modal-column-title">Название с объемом</span>
+              <span class="bulk-modal-column-subtitle">Вес или кол-во штук цифрами</span>
+            </div>
+            <div class="bulk-modal-column">
+              <span class="bulk-modal-column-title">Обозначение веса/штук</span>
+              <span class="bulk-modal-column-subtitle">Цена цифрами</span>
+            </div>
+          </div>
+          <div class="bulk-modal-example">
+            <div class="bulk-modal-example-label">Например,</div>
+            <div class="bulk-modal-example-text">Альфа 0.5 г.;0.5;г.;1500</div>
+            <div class="bulk-modal-example-text">Бета 2 шт.;2;шт.;3000</div>
+          </div>
+        </div>
+        <textarea class="bulk-modal-textarea" id="bulkTextarea" data-testid="textarea-bulk-products" placeholder=""></textarea>
+      </div>
+      <div class="product-modal-footer">
+        <button class="product-modal-btn green" id="btnBulkSave" data-testid="button-bulk-save">Сохранить</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add/Edit Product Modal -->
+  <div class="product-modal-overlay" id="productModalOverlay">
+    <div class="product-modal" id="productModal">
+      <div class="product-modal-header">
+        <span class="product-modal-title" id="productModalTitle">Добавить</span>
+        <button class="product-modal-close" id="productModalClose" data-testid="button-product-modal-close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="product-modal-body">
+        <div class="product-modal-tabs">
+          <button class="product-modal-tab active" data-tab="info" data-testid="tab-info">Информация</button>
+          <button class="product-modal-tab" data-tab="happy-hours" data-testid="tab-happy-hours">Счастливые часы</button>
+        </div>
+        
+        <!-- Information Tab -->
+        <div class="product-tab-content active" id="tabInfo">
+          <div class="product-form-group">
+            <label class="product-form-label">Выберите группу товаров</label>
+            <div class="product-form-select-wrapper">
+              <div class="product-form-select" id="groupSelect" data-testid="select-group">
+                <span id="groupSelectText">Выберите</span>
+              </div>
+              <svg class="product-form-select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+              <div class="product-form-select-dropdown" id="groupDropdown">
+                <div class="product-form-select-option" data-value="">Не выбрано</div>
+                <div class="product-form-select-option" data-value="Alpha-PVP">Alpha-PVP</div>
+                <div class="product-form-select-option" data-value="Мяу">Мяу</div>
+                <div class="product-form-select-option" data-value="Кокаин">Кокаин</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-form-group">
+            <label class="product-form-label">Введите название товара</label>
+            <input type="text" class="product-form-input" id="productNameInput" data-testid="input-product-name" placeholder="Введите название">
+          </div>
+          
+          <div class="product-form-row">
+            <div class="product-form-group" style="flex: 2;">
+              <label class="product-form-label">Введите вес/кол-во товара</label>
+              <input type="text" class="product-form-input" id="productWeightInput" data-testid="input-product-weight" placeholder="Введите вес или кол-во">
+            </div>
+            <div class="product-form-group" style="flex: 1;">
+              <label class="product-form-label">&nbsp;</label>
+              <div class="product-form-select-wrapper">
+                <div class="product-form-select" id="unitSelect" data-testid="select-unit">
+                  <span id="unitSelectText">Граммы</span>
+                </div>
+                <svg class="product-form-select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                <div class="product-form-select-dropdown" id="unitDropdown">
+                  <div class="product-form-select-option" data-value="г.">Граммы</div>
+                  <div class="product-form-select-option" data-value="шт.">Штуки</div>
+                  <div class="product-form-select-option" data-value="мл.">Миллилитры</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-form-row">
+            <div class="product-form-group">
+              <label class="product-form-label">Цена</label>
+              <input type="text" class="product-form-input" id="productPriceInput" data-testid="input-product-price" placeholder="Введите цену">
+            </div>
+            <div class="product-form-group">
+              <label class="product-form-label">Старая цена</label>
+              <input type="text" class="product-form-input" id="productOldPriceInput" data-testid="input-product-old-price" placeholder="Введите цену">
+            </div>
+          </div>
+          
+          <div class="product-form-group">
+            <label class="product-form-label">Описание товара (опционально, для детального описания)</label>
+            <textarea class="product-form-textarea" id="productDescInput" data-testid="textarea-product-desc" placeholder=""></textarea>
+          </div>
+          
+          <!-- City Prices Section -->
+          <div class="city-prices-section">
+            <label class="city-prices-label">Цены на товары по городам</label>
+            <!-- Empty State (shown when no prices added) -->
+            <div class="city-prices-table city-prices-empty" id="cityPricesEmpty">
+              <div class="city-prices-header-static">
+                <span style="position: absolute; left: 25px;">Город</span>
+                <span style="position: absolute; left: 128px;">Цена</span>
+                <span style="position: absolute; left: 236px;">Старая цена</span>
+                <span style="position: absolute; left: 515px;">Счастливая цена, в валюте магазина</span>
+              </div>
+            </div>
+            <!-- Dynamic State (shown when prices exist) -->
+            <div class="city-prices-table city-prices-dynamic" id="cityPricesDynamic" style="display: none;">
+              <div class="city-prices-header">
+                <span>Город</span>
+                <span>Цена</span>
+                <span>Старая цена</span>
+                <span>Счастливая цена, в валюте магазина</span>
+                <span></span>
+              </div>
+              <div class="city-prices-body" id="cityPricesBody">
+              </div>
+            </div>
+            <button class="add-city-price-btn" id="addCityPriceBtn" data-testid="button-add-city-price">Добавить строку</button>
+          </div>
+        </div>
+        
+        <!-- Happy Hours Tab -->
+        <div class="product-tab-content" id="tabHappyHours">
+          <label class="happy-hours-checkbox">
+            <input type="checkbox" id="happyHoursEnabled" data-testid="checkbox-happy-hours-enabled">
+            <div class="happy-hours-checkbox-box"></div>
+            <span class="happy-hours-checkbox-label">Счастливые часы активированы?</span>
+          </label>
+          
+          <div class="hours-grid-label">Счастливая цена, в валюте магазина:</div>
+          <div class="hours-grid" id="hoursGrid">
+            <label class="hour-checkbox"><input type="checkbox" data-hour="0"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">00:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="1"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">01:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="2"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">02:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="3"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">03:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="4"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">04:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="5"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">05:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="6"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">06:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="7"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">07:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="8"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">08:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="9"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">09:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="10"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">10:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="11"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">11:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="12"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">12:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="13"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">13:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="14"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">14:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="15"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">15:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="16"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">16:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="17"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">17:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="18"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">18:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="19"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">19:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="20"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">20:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="21"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">21:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="22"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">22:00</span></label>
+            <label class="hour-checkbox"><input type="checkbox" data-hour="23"><div class="hour-checkbox-box"></div><span class="hour-checkbox-label">23:00</span></label>
+          </div>
+          
+          <div class="product-form-group">
+            <label class="product-form-label">Счастливая цена, в валюте магазина:</label>
+            <input type="text" class="product-form-input" id="happyPriceInput" data-testid="input-happy-price" placeholder="Например: 5 434.00 ₽">
+          </div>
+        </div>
+      </div>
+      <div class="product-modal-footer">
+        <button class="product-modal-btn green" id="btnProductSaveAndAdd" data-testid="button-product-save-and-add">Сохранить и добавить другой</button>
+        <button class="product-modal-btn green" id="btnProductApply" data-testid="button-product-apply">Применить</button>
+        <button class="product-modal-btn green" id="btnProductSave" data-testid="button-product-save">Сохранить</button>
+        <button class="product-modal-btn red" id="btnProductDelete" data-testid="button-product-delete">Удалить</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Nested Modal for Add City Price Row -->
+  <div class="nested-modal-overlay" id="nestedCityModalOverlay">
+    <div class="nested-modal" id="nestedCityModal">
+      <div class="product-modal-header">
+        <span class="product-modal-title">Добавить строку цены</span>
+        <button class="product-modal-close" id="nestedCityModalClose" data-testid="button-nested-modal-close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="city-prices-table" style="margin: 0 0 20px;">
+        <div class="city-prices-header">
+          <span>Город</span>
+          <span>Цена</span>
+          <span>Старая цена</span>
+          <span>Счастливая цена, в валюте магазина</span>
+          <span></span>
+        </div>
+        <div class="city-price-row">
+          <div class="product-form-select-wrapper">
+            <div class="product-form-select" id="nestedCitySelect" data-testid="select-nested-city">
+              <span id="nestedCitySelectText">Город</span>
+            </div>
+            <svg class="product-form-select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+            <div class="product-form-select-dropdown" id="nestedCityDropdown">
+              <div class="product-form-select-option" data-value="Москва">Москва</div>
+              <div class="product-form-select-option" data-value="Санкт-Петербург">Санкт-Петербург</div>
+              <div class="product-form-select-option" data-value="Новосибирск">Новосибирск</div>
+              <div class="product-form-select-option" data-value="Екатеринбург">Екатеринбург</div>
+              <div class="product-form-select-option" data-value="Казань">Казань</div>
+              <div class="product-form-select-option" data-value="Нижний Новгород">Нижний Новгород</div>
+              <div class="product-form-select-option" data-value="Челябинск">Челябинск</div>
+              <div class="product-form-select-option" data-value="Самара">Самара</div>
+              <div class="product-form-select-option" data-value="Омск">Омск</div>
+              <div class="product-form-select-option" data-value="Ростов-на-Дону">Ростов-на-Дону</div>
+              <div class="product-form-select-option" data-value="Уфа">Уфа</div>
+              <div class="product-form-select-option" data-value="Красноярск">Красноярск</div>
+              <div class="product-form-select-option" data-value="Воронеж">Воронеж</div>
+              <div class="product-form-select-option" data-value="Пермь">Пермь</div>
+              <div class="product-form-select-option" data-value="Волгоград">Волгоград</div>
+              <div class="product-form-select-option" data-value="Краснодар">Краснодар</div>
+              <div class="product-form-select-option" data-value="Саратов">Саратов</div>
+              <div class="product-form-select-option" data-value="Тюмень">Тюмень</div>
+              <div class="product-form-select-option" data-value="Тольятти">Тольятти</div>
+              <div class="product-form-select-option" data-value="Ижевск">Ижевск</div>
+              <div class="product-form-select-option" data-value="Барнаул">Барнаул</div>
+              <div class="product-form-select-option" data-value="Ульяновск">Ульяновск</div>
+              <div class="product-form-select-option" data-value="Иркутск">Иркутск</div>
+              <div class="product-form-select-option" data-value="Хабаровск">Хабаровск</div>
+              <div class="product-form-select-option" data-value="Ярославль">Ярославль</div>
+              <div class="product-form-select-option" data-value="Владивосток">Владивосток</div>
+              <div class="product-form-select-option" data-value="Махачкала">Махачкала</div>
+              <div class="product-form-select-option" data-value="Томск">Томск</div>
+              <div class="product-form-select-option" data-value="Оренбург">Оренбург</div>
+              <div class="product-form-select-option" data-value="Кемерово">Кемерово</div>
+              <div class="product-form-select-option" data-value="Новокузнецк">Новокузнецк</div>
+              <div class="product-form-select-option" data-value="Рязань">Рязань</div>
+              <div class="product-form-select-option" data-value="Астрахань">Астрахань</div>
+              <div class="product-form-select-option" data-value="Набережные Челны">Набережные Челны</div>
+              <div class="product-form-select-option" data-value="Пенза">Пенза</div>
+              <div class="product-form-select-option" data-value="Липецк">Липецк</div>
+              <div class="product-form-select-option" data-value="Киров">Киров</div>
+              <div class="product-form-select-option" data-value="Чебоксары">Чебоксары</div>
+              <div class="product-form-select-option" data-value="Тула">Тула</div>
+              <div class="product-form-select-option" data-value="Калининград">Калининград</div>
+              <div class="product-form-select-option" data-value="Балашиха">Балашиха</div>
+              <div class="product-form-select-option" data-value="Курск">Курск</div>
+              <div class="product-form-select-option" data-value="Ставрополь">Ставрополь</div>
+              <div class="product-form-select-option" data-value="Улан-Удэ">Улан-Удэ</div>
+              <div class="product-form-select-option" data-value="Тверь">Тверь</div>
+              <div class="product-form-select-option" data-value="Магнитогорск">Магнитогорск</div>
+              <div class="product-form-select-option" data-value="Сочи">Сочи</div>
+              <div class="product-form-select-option" data-value="Иваново">Иваново</div>
+              <div class="product-form-select-option" data-value="Брянск">Брянск</div>
+              <div class="product-form-select-option" data-value="Белгород">Белгород</div>
+              <div class="product-form-select-option" data-value="Сургут">Сургут</div>
+              <div class="product-form-select-option" data-value="Владимир">Владимир</div>
+              <div class="product-form-select-option" data-value="Нижний Тагил">Нижний Тагил</div>
+              <div class="product-form-select-option" data-value="Архангельск">Архангельск</div>
+              <div class="product-form-select-option" data-value="Чита">Чита</div>
+              <div class="product-form-select-option" data-value="Калуга">Калуга</div>
+              <div class="product-form-select-option" data-value="Смоленск">Смоленск</div>
+              <div class="product-form-select-option" data-value="Волжский">Волжский</div>
+              <div class="product-form-select-option" data-value="Саранск">Саранск</div>
+              <div class="product-form-select-option" data-value="Череповец">Череповец</div>
+              <div class="product-form-select-option" data-value="Курган">Курган</div>
+              <div class="product-form-select-option" data-value="Вологда">Вологда</div>
+              <div class="product-form-select-option" data-value="Орёл">Орёл</div>
+              <div class="product-form-select-option" data-value="Владикавказ">Владикавказ</div>
+              <div class="product-form-select-option" data-value="Якутск">Якутск</div>
+              <div class="product-form-select-option" data-value="Подольск">Подольск</div>
+              <div class="product-form-select-option" data-value="Грозный">Грозный</div>
+              <div class="product-form-select-option" data-value="Мурманск">Мурманск</div>
+              <div class="product-form-select-option" data-value="Тамбов">Тамбов</div>
+              <div class="product-form-select-option" data-value="Петрозаводск">Петрозаводск</div>
+              <div class="product-form-select-option" data-value="Кострома">Кострома</div>
+              <div class="product-form-select-option" data-value="Нижневартовск">Нижневартовск</div>
+              <div class="product-form-select-option" data-value="Новороссийск">Новороссийск</div>
+              <div class="product-form-select-option" data-value="Йошкар-Ола">Йошкар-Ола</div>
+              <div class="product-form-select-option" data-value="Таганрог">Таганрог</div>
+              <div class="product-form-select-option" data-value="Комсомольск-на-Амуре">Комсомольск-на-Амуре</div>
+              <div class="product-form-select-option" data-value="Сыктывкар">Сыктывкар</div>
+              <div class="product-form-select-option" data-value="Нальчик">Нальчик</div>
+              <div class="product-form-select-option" data-value="Шахты">Шахты</div>
+              <div class="product-form-select-option" data-value="Дзержинск">Дзержинск</div>
+              <div class="product-form-select-option" data-value="Братск">Братск</div>
+              <div class="product-form-select-option" data-value="Орск">Орск</div>
+              <div class="product-form-select-option" data-value="Ангарск">Ангарск</div>
+              <div class="product-form-select-option" data-value="Энгельс">Энгельс</div>
+              <div class="product-form-select-option" data-value="Благовещенск">Благовещенск</div>
+              <div class="product-form-select-option" data-value="Старый Оскол">Старый Оскол</div>
+              <div class="product-form-select-option" data-value="Великий Новгород">Великий Новгород</div>
+              <div class="product-form-select-option" data-value="Королёв">Королёв</div>
+              <div class="product-form-select-option" data-value="Псков">Псков</div>
+              <div class="product-form-select-option" data-value="Мытищи">Мытищи</div>
+              <div class="product-form-select-option" data-value="Бийск">Бийск</div>
+              <div class="product-form-select-option" data-value="Люберцы">Люберцы</div>
+              <div class="product-form-select-option" data-value="Южно-Сахалинск">Южно-Сахалинск</div>
+              <div class="product-form-select-option" data-value="Армавир">Армавир</div>
+              <div class="product-form-select-option" data-value="Рыбинск">Рыбинск</div>
+              <div class="product-form-select-option" data-value="Прокопьевск">Прокопьевск</div>
+              <div class="product-form-select-option" data-value="Норильск">Норильск</div>
+              <div class="product-form-select-option" data-value="Балаково">Балаково</div>
+              <div class="product-form-select-option" data-value="Петропавловск-Камчатский">Петропавловск-Камчатский</div>
+              <div class="product-form-select-option" data-value="Северодвинск">Северодвинск</div>
+              <div class="product-form-select-option" data-value="Сызрань">Сызрань</div>
+              <div class="product-form-select-option" data-value="Каменск-Уральский">Каменск-Уральский</div>
+              <div class="product-form-select-option" data-value="Златоуст">Златоуст</div>
+              <div class="product-form-select-option" data-value="Миасс">Миасс</div>
+              <div class="product-form-select-option" data-value="Копейск">Копейск</div>
+              <div class="product-form-select-option" data-value="Альметьевск">Альметьевск</div>
+              <div class="product-form-select-option" data-value="Пятигорск">Пятигорск</div>
+              <div class="product-form-select-option" data-value="Хасавюрт">Хасавюрт</div>
+              <div class="product-form-select-option" data-value="Коломна">Коломна</div>
+              <div class="product-form-select-option" data-value="Электросталь">Электросталь</div>
+              <div class="product-form-select-option" data-value="Майкоп">Майкоп</div>
+            </div>
+          </div>
+          <input type="text" class="product-form-input" id="nestedPriceInput" placeholder="Цена" data-testid="input-nested-price">
+          <input type="text" class="product-form-input" id="nestedOldPriceInput" placeholder="0" data-testid="input-nested-old-price">
+          <input type="text" class="product-form-input" id="nestedHappyPriceInput" placeholder="0" data-testid="input-nested-happy-price">
+          <button class="city-price-delete-btn" id="nestedDeleteBtn" data-testid="button-nested-delete">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="product-modal-footer" style="padding: 0;">
+        <button class="product-modal-btn green" id="btnNestedSave" data-testid="button-nested-save">Сохранить</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    // Product Modals Functionality
+    (function() {
+      const bulkAddBtn = document.querySelector('.add-btn.bulk');
+      const addBtn = document.querySelector('.add-btn:not(.bulk)');
+      const productsBody = document.querySelector('.products-body');
+      
+      // Bulk Modal
+      const bulkModalOverlay = document.getElementById('bulkModalOverlay');
+      const bulkModal = document.getElementById('bulkModal');
+      const bulkModalClose = document.getElementById('bulkModalClose');
+      const bulkTextarea = document.getElementById('bulkTextarea');
+      const btnBulkSave = document.getElementById('btnBulkSave');
+      
+      // Product Modal
+      const productModalOverlay = document.getElementById('productModalOverlay');
+      const productModal = document.getElementById('productModal');
+      const productModalClose = document.getElementById('productModalClose');
+      const productModalTitle = document.getElementById('productModalTitle');
+      const btnProductDelete = document.getElementById('btnProductDelete');
+      
+      // Nested Modal
+      const nestedModalOverlay = document.getElementById('nestedCityModalOverlay');
+      const nestedModal = document.getElementById('nestedCityModal');
+      const nestedModalClose = document.getElementById('nestedCityModalClose');
+      
+      // Tabs
+      const tabs = document.querySelectorAll('.product-modal-tab');
+      const tabContents = document.querySelectorAll('.product-tab-content');
+      
+      // Form fields
+      const groupSelect = document.getElementById('groupSelect');
+      const groupDropdown = document.getElementById('groupDropdown');
+      const groupSelectText = document.getElementById('groupSelectText');
+      const unitSelect = document.getElementById('unitSelect');
+      const unitDropdown = document.getElementById('unitDropdown');
+      const unitSelectText = document.getElementById('unitSelectText');
+      
+      const productNameInput = document.getElementById('productNameInput');
+      const productWeightInput = document.getElementById('productWeightInput');
+      const productPriceInput = document.getElementById('productPriceInput');
+      
+      // Nested city modal elements
+      const nestedCitySelect = document.getElementById('nestedCitySelect');
+      const nestedCityDropdown = document.getElementById('nestedCityDropdown');
+      const nestedCitySelectText = document.getElementById('nestedCitySelectText');
+      const nestedPriceInput = document.getElementById('nestedPriceInput');
+      const nestedOldPriceInput = document.getElementById('nestedOldPriceInput');
+      const nestedHappyPriceInput = document.getElementById('nestedHappyPriceInput');
+      
+      let editingProductId = null;
+      let nextProductId = 2000;
+      let cityPriceRowId = 2;
+      let selectedGroup = '';
+      let selectedUnit = 'г.';
+      let selectedNestedCity = '';
+      
+      function generateProductId() {
+        return nextProductId++;
+      }
+      
+      // Tab switching
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          const tabName = this.getAttribute('data-tab');
+          tabs.forEach(t => t.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById(tabName === 'info' ? 'tabInfo' : 'tabHappyHours').classList.add('active');
+        });
+      });
+      
+      // Dropdown functionality
+      function setupDropdown(selectEl, dropdownEl, textEl, callback) {
+        selectEl?.addEventListener('click', function(e) {
+          e.stopPropagation();
+          document.querySelectorAll('.product-form-select-dropdown').forEach(d => {
+            if (d !== dropdownEl) d.classList.remove('open');
+          });
+          dropdownEl.classList.toggle('open');
+        });
+        
+        dropdownEl?.querySelectorAll('.product-form-select-option').forEach(option => {
+          option.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            textEl.textContent = this.textContent;
+            dropdownEl.classList.remove('open');
+            if (callback) callback(value);
+          });
+        });
+      }
+      
+      setupDropdown(groupSelect, groupDropdown, groupSelectText, (val) => { selectedGroup = val; });
+      setupDropdown(unitSelect, unitDropdown, unitSelectText, (val) => { selectedUnit = val; });
+      setupDropdown(nestedCitySelect, nestedCityDropdown, nestedCitySelectText, (val) => { selectedNestedCity = val; });
+      
+      document.addEventListener('click', function() {
+        document.querySelectorAll('.product-form-select-dropdown').forEach(d => d.classList.remove('open'));
+      });
+      
+      // Bulk Modal Functions
+      function openBulkModal() {
+        bulkTextarea.value = '';
+        bulkModalOverlay.classList.add('active');
+      }
+      
+      function closeBulkModal() {
+        bulkModalOverlay.classList.remove('active');
+      }
+      
+      bulkAddBtn?.addEventListener('click', openBulkModal);
+      bulkModalClose?.addEventListener('click', closeBulkModal);
+      bulkModalOverlay?.addEventListener('click', (e) => {
+        if (e.target === bulkModalOverlay) closeBulkModal();
+      });
+      
+      btnBulkSave?.addEventListener('click', function() {
+        const text = bulkTextarea.value.trim();
+        if (text) {
+          const lines = text.split('\n');
+          lines.forEach(line => {
+            const parts = line.split(';');
+            if (parts.length >= 4) {
+              const name = parts[0].trim();
+              const weight = parts[1].trim();
+              const unit = parts[2].trim();
+              const price = parts[3].trim();
+              addProductToList(name, '', weight + ' ' + unit, price + ' ₽');
+            }
+          });
+          closeBulkModal();
+        }
+      });
+      
+      // Product Modal Functions
+      function openProductModal(isEdit, productData) {
+        editingProductId = isEdit ? productData?.id : null;
+        productModalTitle.textContent = isEdit ? 'Редактировать' : 'Добавить';
+        btnProductDelete.style.display = isEdit ? 'flex' : 'none';
+        
+        // Reset form
+        productNameInput.value = productData?.name || '';
+        productWeightInput.value = productData?.weight || '';
+        productPriceInput.value = productData?.price || '';
+        groupSelectText.textContent = productData?.group || 'Выберите';
+        selectedGroup = productData?.group || '';
+        
+        // Reset tabs to info
+        tabs.forEach(t => t.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        tabs[0].classList.add('active');
+        document.getElementById('tabInfo').classList.add('active');
+        
+        productModalOverlay.classList.add('active');
+      }
+      
+      function closeProductModal() {
+        productModalOverlay.classList.remove('active');
+        editingProductId = null;
+      }
+      
+      addBtn?.addEventListener('click', () => openProductModal(false));
+      productModalClose?.addEventListener('click', closeProductModal);
+      productModalOverlay?.addEventListener('click', (e) => {
+        if (e.target === productModalOverlay) closeProductModal();
+      });
+      
+      function createProductRow(id, name, group, weight, price) {
+        const row = document.createElement('div');
+        row.className = 'product-row';
+        row.setAttribute('data-product-id', id);
+        row.innerHTML = `
+          <div class="product-id">${id}</div>
+          <div class="product-name">${name}</div>
+          <div class="product-group">${group}</div>
+          <div class="product-weight">${weight}</div>
+          <div class="product-price">${price}</div>
+          <div class="product-action">
+            <button class="action-btn info">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        `;
+        row.style.animation = 'fadeInUp 0.3s ease forwards';
+        return row;
+      }
+      
+      function addProductToList(name, group, weight, price) {
+        if (!name || !productsBody) return null;
+        const id = generateProductId();
+        const row = createProductRow(id, name, group, weight, price);
+        productsBody.insertBefore(row, productsBody.firstChild);
+        return id;
+      }
+      
+      function updateProductInList(id, name, group, weight, price) {
+        const row = productsBody.querySelector(`[data-product-id="${id}"]`);
+        if (row) {
+          row.querySelector('.product-name').textContent = name;
+          row.querySelector('.product-group').textContent = group;
+          row.querySelector('.product-weight').textContent = weight;
+          row.querySelector('.product-price').textContent = price;
+          row.style.animation = 'none';
+          row.offsetHeight;
+          row.style.animation = 'fadeInUp 0.3s ease forwards';
+        }
+      }
+      
+      function deleteProductFromList(id) {
+        const row = productsBody.querySelector(`[data-product-id="${id}"]`);
+        if (row) {
+          row.style.animation = 'fadeOutDown 0.3s ease forwards';
+          setTimeout(() => row.remove(), 300);
+        }
+      }
+      
+      function getFormData() {
+        const name = productNameInput.value.trim();
+        const weight = productWeightInput.value.trim();
+        const price = productPriceInput.value.trim();
+        return {
+          name,
+          group: selectedGroup,
+          weight: weight + ' ' + selectedUnit,
+          price: price + ' ₽'
+        };
+      }
+      
+      document.getElementById('btnProductSaveAndAdd')?.addEventListener('click', function() {
+        const data = getFormData();
+        if (data.name) {
+          if (editingProductId) {
+            updateProductInList(editingProductId, data.name, data.group, data.weight, data.price);
+            editingProductId = null;
+            productModalTitle.textContent = 'Добавить';
+            btnProductDelete.style.display = 'none';
+          } else {
+            addProductToList(data.name, data.group, data.weight, data.price);
+          }
+          productNameInput.value = '';
+          productWeightInput.value = '';
+          productPriceInput.value = '';
+          productNameInput.focus();
+        }
+      });
+      
+      document.getElementById('btnProductApply')?.addEventListener('click', function() {
+        const data = getFormData();
+        if (data.name) {
+          if (editingProductId) {
+            updateProductInList(editingProductId, data.name, data.group, data.weight, data.price);
+          } else {
+            const newId = addProductToList(data.name, data.group, data.weight, data.price);
+            editingProductId = newId;
+            productModalTitle.textContent = 'Редактировать';
+            btnProductDelete.style.display = 'flex';
+          }
+        }
+      });
+      
+      document.getElementById('btnProductSave')?.addEventListener('click', function() {
+        const data = getFormData();
+        if (data.name) {
+          if (editingProductId) {
+            updateProductInList(editingProductId, data.name, data.group, data.weight, data.price);
+          } else {
+            addProductToList(data.name, data.group, data.weight, data.price);
+          }
+          closeProductModal();
+        }
+      });
+      
+      document.getElementById('btnProductDelete')?.addEventListener('click', function() {
+        if (editingProductId) {
+          deleteProductFromList(editingProductId);
+        }
+        closeProductModal();
+      });
+      
+      // Click on product rows to edit
+      productsBody?.addEventListener('click', function(e) {
+        const row = e.target.closest('.product-row');
+        const actionBtn = e.target.closest('.action-btn');
+        if (row && actionBtn) {
+          const id = row.getAttribute('data-product-id') || row.querySelector('.product-id').textContent;
+          const name = row.querySelector('.product-name').textContent;
+          const group = row.querySelector('.product-group').textContent;
+          const weight = row.querySelector('.product-weight').textContent.replace(/[^\d.]/g, '');
+          const price = row.querySelector('.product-price').textContent.replace(/[^\d.]/g, '');
+          openProductModal(true, { id, name, group, weight, price });
+        }
+      });
+      
+      // Set data-product-id on existing rows
+      document.querySelectorAll('.product-row').forEach(row => {
+        const id = row.querySelector('.product-id').textContent;
+        row.setAttribute('data-product-id', id);
+      });
+      
+      // City Prices State Management
+      const cityPricesEmpty = document.getElementById('cityPricesEmpty');
+      const cityPricesDynamic = document.getElementById('cityPricesDynamic');
+      const cityPricesBody = document.getElementById('cityPricesBody');
+      
+      function updateCityPricesState() {
+        const hasRows = cityPricesBody && cityPricesBody.children.length > 0;
+        if (hasRows) {
+          cityPricesEmpty.style.display = 'none';
+          cityPricesDynamic.style.display = 'block';
+        } else {
+          cityPricesEmpty.style.display = 'block';
+          cityPricesDynamic.style.display = 'none';
+        }
+      }
+      
+      // Nested City Price Modal
+      function openNestedCityModal() {
+        nestedCitySelectText.textContent = 'Город';
+        nestedPriceInput.value = '';
+        nestedOldPriceInput.value = '';
+        nestedHappyPriceInput.value = '';
+        selectedNestedCity = '';
+        nestedModalOverlay.classList.add('active');
+      }
+      
+      function closeNestedCityModal() {
+        nestedModalOverlay.classList.remove('active');
+      }
+      
+      document.getElementById('addCityPriceBtn')?.addEventListener('click', openNestedCityModal);
+      nestedModalClose?.addEventListener('click', closeNestedCityModal);
+      nestedModalOverlay?.addEventListener('click', (e) => {
+        if (e.target === nestedModalOverlay) closeNestedCityModal();
+      });
+      
+      document.getElementById('btnNestedSave')?.addEventListener('click', function() {
+        if (selectedNestedCity && nestedPriceInput.value) {
+          addCityPriceRow(selectedNestedCity, nestedPriceInput.value, nestedOldPriceInput.value, nestedHappyPriceInput.value);
+          closeNestedCityModal();
+        }
+      });
+      
+      function addCityPriceRow(city, price, oldPrice, happyPrice) {
+        const rowId = cityPriceRowId++;
+        const row = document.createElement('div');
+        row.className = 'city-price-row';
+        row.setAttribute('data-row-id', rowId);
+        row.innerHTML = `
+          <div class="product-form-select-wrapper">
+            <div class="product-form-select city-select" data-testid="select-city-${rowId}">
+              <span class="city-select-text">${city}</span>
+            </div>
+            <svg class="product-form-select-arrow" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <input type="text" class="product-form-input" value="${price}" placeholder="Цена" data-testid="input-city-price-${rowId}">
+          <input type="text" class="product-form-input" value="${oldPrice || '0'}" placeholder="0" data-testid="input-city-old-price-${rowId}">
+          <input type="text" class="product-form-input" value="${happyPrice || '0'}" placeholder="0" data-testid="input-city-happy-price-${rowId}">
+          <button class="city-price-delete-btn" data-testid="button-delete-city-price-${rowId}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/>
+            </svg>
+          </button>
+        `;
+        row.style.animation = 'fadeInUp 0.3s ease forwards';
+        cityPricesBody.appendChild(row);
+        updateCityPricesState();
+      }
+      
+      // Delete city price row
+      document.getElementById('cityPricesBody')?.addEventListener('click', function(e) {
+        const deleteBtn = e.target.closest('.city-price-delete-btn');
+        if (deleteBtn) {
+          const row = deleteBtn.closest('.city-price-row');
+          if (row) {
+            row.style.animation = 'fadeOutDown 0.3s ease forwards';
+            setTimeout(() => {
+              row.remove();
+              updateCityPricesState();
+            }, 300);
+          }
+        }
+      });
+      
+      // Initialize state
+      updateCityPricesState();
+      
+      // Close modals on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (nestedModalOverlay.classList.contains('active')) {
+            closeNestedCityModal();
+          } else if (productModalOverlay.classList.contains('active')) {
+            closeProductModal();
+          } else if (bulkModalOverlay.classList.contains('active')) {
+            closeBulkModal();
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | История</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item active">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="page-title">
+        <span>История</span>
+      </div>
+      
+      <div class="filters-bar history-filters">
+        <div class="filter-buttons-left">
+          <div class="filter-dropdown" id="courierFilter">
+            <button class="filter-btn" id="courierFilterBtn" data-testid="button-courier-filter">
+              <span id="courierFilterText">Курьер</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" class="dropdown-arrow"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="courierDropdownMenu">
+              <div class="courier-dropdown-item" data-courier="">Курьер</div>
+              <div class="courier-dropdown-item" data-courier="employee">Сотрудник</div>
+              <div class="courier-dropdown-item" data-courier="client">Клиент</div>
+            </div>
+          </div>
+          <div class="filter-dropdown" id="statusFilter">
+            <button class="filter-btn" id="statusFilterBtn" data-testid="button-status-filter">
+              <span id="statusFilterText">Статус</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" class="dropdown-arrow"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="filter-dropdown-menu" id="statusDropdownMenu">
+              <div class="filter-dropdown-item" data-status="">Все</div>
+              <div class="filter-dropdown-item" data-status="addresses">Адреса</div>
+              <div class="filter-dropdown-item" data-status="products">Товары</div>
+              <div class="filter-dropdown-item" data-status="districts">Районы</div>
+              <div class="filter-dropdown-item" data-status="cities">Города</div>
+              <div class="filter-dropdown-item" data-status="region">Регион</div>
+              <div class="filter-dropdown-item" data-status="bots">Боты</div>
+              <div class="filter-dropdown-item" data-status="payments">Оплаты</div>
+              <div class="filter-dropdown-item" data-status="bot-messages">Сообщения бота</div>
+              <div class="filter-dropdown-item" data-status="client-changes">Изменения клиентов</div>
+              <div class="filter-dropdown-item" data-status="settings">Настройки</div>
+              <div class="filter-dropdown-item" data-status="personal-messages">Личные сообщения</div>
+              <div class="filter-dropdown-item" data-status="promocodes">Промокоды</div>
+              <div class="filter-dropdown-item" data-status="balances">Балансы</div>
+              <div class="filter-dropdown-item" data-status="orders">Заказы</div>
+              <div class="filter-dropdown-item" data-status="reviews">Отзывы</div>
+              <div class="filter-dropdown-item" data-status="promo-actions">Промо-акции</div>
+              <div class="filter-dropdown-item" data-status="cumulative-discount">Накопительная скидка</div>
+              <div class="filter-dropdown-item" data-status="publications">Публикации</div>
+            </div>
+          </div>
+          <div class="filter-dropdown" id="dateFilter">
+            <button class="filter-btn" id="dateFilterBtn" data-testid="button-date-filter">
+              <span id="dateFilterText">2025-12-09 - 2025-12-15</span>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+            </button>
+            <div class="filter-dropdown-menu date-picker-menu" id="dateDropdownMenu">
+              <div class="date-picker-header">Выберите период</div>
+              <div class="date-picker-presets">
+                <div class="date-preset-item" data-preset="all">Все время</div>
+                <div class="date-preset-item" data-preset="today">Сегодня</div>
+                <div class="date-preset-item" data-preset="yesterday">Вчера</div>
+                <div class="date-preset-item" data-preset="week">Последние 7 дней</div>
+                <div class="date-preset-item" data-preset="month">Последние 30 дней</div>
+                <div class="date-preset-item" data-preset="quarter">Последние 3 месяца</div>
+              </div>
+              <div class="date-picker-divider"></div>
+              <div class="date-picker-custom">
+                <div class="date-input-group">
+                  <label>От</label>
+                  <input type="date" id="dateFrom" class="date-input" data-testid="input-date-from">
+                </div>
+                <div class="date-input-group">
+                  <label>До</label>
+                  <input type="date" id="dateTo" class="date-input" data-testid="input-date-to">
+                </div>
+                <button class="date-apply-btn" id="dateApplyBtn" data-testid="button-apply-date">Применить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="history-table">
+        <div class="history-header">
+          <span class="col-id">#</span>
+          <span class="col-employee">Сотрудник</span>
+          <span class="col-client">Клиент</span>
+          <span class="col-courier">Курьер</span>
+          <span class="col-description">Описание</span>
+          <span class="col-date">Дата</span>
+        </div>
+        
+        <div class="history-body">
+          <div class="history-row" data-status="orders" data-date="2025-12-18" data-courier="employee">
+            <div class="history-id">#43063</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Закрыл диспут по покупке #42748 с возвратом полно суммы клиенту. Вернули 3000.00 руб.</div>
+            <div class="history-date">18.12.2025 22:47:46</div>
+          </div>
+          
+          <div class="history-row" data-status="payments" data-date="2025-12-17" data-courier="client">
+            <div class="history-id">#43062</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Оплата заказа #42748 на сумму 3000.00 руб.</div>
+            <div class="history-date">17.12.2025 22:45:12</div>
+          </div>
+          
+          <div class="history-row" data-status="settings" data-date="2025-12-15" data-courier="employee">
+            <div class="history-id">#43061</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Изменены настройки магазина. Обновлен статус.</div>
+            <div class="history-date">15.12.2025 22:40:30</div>
+          </div>
+          
+          <div class="history-row" data-status="balances" data-date="2025-12-14" data-courier="employee">
+            <div class="history-id">#43060</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Сотрудник TestRUTOR вручную списал 20000 с баланса. Был баланс: 20000 -> баланс: 0</div>
+            <div class="history-date">14.12.2025 22:35:46</div>
+          </div>
+          
+          <div class="history-row compact" data-status="promocodes" data-date="2025-12-12" data-courier="client">
+            <div class="history-id">#43059</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Применен промокод SALE20. Скидка 20%.</div>
+            <div class="history-date">12.12.2025 22:30:46</div>
+          </div>
+          
+          <div class="history-row" data-status="reviews" data-date="2025-12-10" data-courier="client">
+            <div class="history-id">#43058</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Новый отзыв от клиента. Оценка: 5 звезд.</div>
+            <div class="history-date">10.12.2025 22:25:46</div>
+          </div>
+          
+          <div class="history-row" data-status="bot-messages" data-date="2025-12-08" data-courier="employee">
+            <div class="history-id">#43057</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Отправлено сообщение через бот. Тема: Уведомление о доставке.</div>
+            <div class="history-date">08.12.2025 22:20:46</div>
+          </div>
+          
+          <div class="history-row" data-status="addresses" data-date="2025-12-05" data-courier="client">
+            <div class="history-id">#43056</div>
+            <div class="history-employee"></div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Добавлен новый адрес доставки: ул. Ленина, д. 15.</div>
+            <div class="history-date">05.12.2025 22:15:46</div>
+          </div>
+          
+          <div class="history-row compact" data-status="products" data-date="2025-12-01" data-courier="employee">
+            <div class="history-id">#43055</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Добавлен новый товар: iPhone 15 Pro Max.</div>
+            <div class="history-date">01.12.2025 22:10:46</div>
+          </div>
+          
+          <div class="history-row" data-status="client-changes" data-date="2025-11-28" data-courier="client">
+            <div class="history-id">#43054</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Клиент изменил контактные данные. Телефон обновлен.</div>
+            <div class="history-date">28.11.2025 22:05:46</div>
+          </div>
+          
+          <div class="history-row" data-status="promo-actions" data-date="2025-11-20" data-courier="employee">
+            <div class="history-id">#43053</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Запущена промо-акция "Черная пятница". Скидка 30%.</div>
+            <div class="history-date">20.11.2025 22:00:46</div>
+          </div>
+          
+          <div class="history-row" data-status="bots" data-date="2025-10-15" data-courier="employee">
+            <div class="history-id">#43052</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Бот TurboShopBot перезапущен. Статус: активен.</div>
+            <div class="history-date">15.10.2025 21:55:46</div>
+          </div>
+          
+          <div class="history-row" data-status="orders" data-date="2025-10-10" data-courier="client">
+            <div class="history-id">#43051</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Alex Smith</div>
+            <div class="history-courier">Курьер2</div>
+            <div class="history-description">Новый заказ #42750 создан. Сумма: 5500.00 руб.</div>
+            <div class="history-date">10.10.2025 18:30:22</div>
+          </div>
+          
+          <div class="history-row" data-status="payments" data-date="2025-10-08" data-courier="employee">
+            <div class="history-id">#43050</div>
+            <div class="history-employee">AdminUser</div>
+            <div class="history-client">Maria Johnson</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Подтверждена оплата заказа #42749. Сумма: 12000.00 руб.</div>
+            <div class="history-date">08.10.2025 14:20:15</div>
+          </div>
+          
+          <div class="history-row" data-status="addresses" data-date="2025-10-05" data-courier="client">
+            <div class="history-id">#43049</div>
+            <div class="history-employee"></div>
+            <div class="history-client">Ivan Petrov</div>
+            <div class="history-courier">Курьер3</div>
+            <div class="history-description">Добавлен новый адрес: пр. Мира, д. 25, кв. 10.</div>
+            <div class="history-date">05.10.2025 11:45:33</div>
+          </div>
+          
+          <div class="history-row" data-status="products" data-date="2025-10-01" data-courier="employee">
+            <div class="history-id">#43048</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Krown Endy</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Обновлена цена товара: Samsung Galaxy S24. Новая цена: 89990 руб.</div>
+            <div class="history-date">01.10.2025 09:15:00</div>
+          </div>
+          
+          <div class="history-row" data-status="settings" data-date="2025-09-28" data-courier="employee">
+            <div class="history-id">#43047</div>
+            <div class="history-employee">AdminUser</div>
+            <div class="history-client">System</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Изменены настройки уведомлений. Email-рассылка включена.</div>
+            <div class="history-date">28.09.2025 16:30:45</div>
+          </div>
+          
+          <div class="history-row" data-status="balances" data-date="2025-09-25" data-courier="client">
+            <div class="history-id">#43046</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Elena Kozlova</div>
+            <div class="history-courier">Курьер2</div>
+            <div class="history-description">Пополнение баланса клиента на 15000 руб. Новый баланс: 27500 руб.</div>
+            <div class="history-date">25.09.2025 12:00:00</div>
+          </div>
+          
+          <div class="history-row" data-status="reviews" data-date="2025-09-22" data-courier="client">
+            <div class="history-id">#43045</div>
+            <div class="history-employee"></div>
+            <div class="history-client">Dmitry Sokolov</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Новый отзыв: "Отличный сервис! Доставка вовремя." Оценка: 5 звезд.</div>
+            <div class="history-date">22.09.2025 20:15:30</div>
+          </div>
+          
+          <div class="history-row" data-status="bot-messages" data-date="2025-09-20" data-courier="employee">
+            <div class="history-id">#43044</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">All Clients</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Массовая рассылка: "Скидки до 50% на все товары!"</div>
+            <div class="history-date">20.09.2025 10:00:00</div>
+          </div>
+          
+          <div class="history-row" data-status="promocodes" data-date="2025-09-18" data-courier="employee">
+            <div class="history-id">#43043</div>
+            <div class="history-employee">AdminUser</div>
+            <div class="history-client">VIP Clients</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Создан промокод AUTUMN25. Скидка 25% до 31.10.2025.</div>
+            <div class="history-date">18.09.2025 14:30:00</div>
+          </div>
+          
+          <div class="history-row" data-status="orders" data-date="2025-09-15" data-courier="client">
+            <div class="history-id">#43042</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">Anna Volkova</div>
+            <div class="history-courier">Курьер1</div>
+            <div class="history-description">Заказ #42745 доставлен. Клиент подтвердил получение.</div>
+            <div class="history-date">15.09.2025 17:45:22</div>
+          </div>
+          
+          <div class="history-row" data-status="client-changes" data-date="2025-09-12" data-courier="client">
+            <div class="history-id">#43041</div>
+            <div class="history-employee"></div>
+            <div class="history-client">Sergey Morozov</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Клиент обновил профиль. Добавлен новый email.</div>
+            <div class="history-date">12.09.2025 09:20:15</div>
+          </div>
+          
+          <div class="history-row" data-status="promo-actions" data-date="2025-09-10" data-courier="employee">
+            <div class="history-id">#43040</div>
+            <div class="history-employee">AdminUser</div>
+            <div class="history-client">All</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Запущена акция "Кэшбэк 10%" для всех покупок от 5000 руб.</div>
+            <div class="history-date">10.09.2025 08:00:00</div>
+          </div>
+          
+          <div class="history-row" data-status="cities" data-date="2025-09-08" data-courier="employee">
+            <div class="history-id">#43039</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">System</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Добавлен новый город доставки: Казань.</div>
+            <div class="history-date">08.09.2025 11:30:00</div>
+          </div>
+          
+          <div class="history-row" data-status="districts" data-date="2025-09-05" data-courier="employee">
+            <div class="history-id">#43038</div>
+            <div class="history-employee">TestRUTOR</div>
+            <div class="history-client">System</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Добавлен район: Советский район, г. Казань.</div>
+            <div class="history-date">05.09.2025 15:00:00</div>
+          </div>
+          
+          <div class="history-row" data-status="region" data-date="2025-09-01" data-courier="employee">
+            <div class="history-id">#43037</div>
+            <div class="history-employee">AdminUser</div>
+            <div class="history-client">System</div>
+            <div class="history-courier"></div>
+            <div class="history-description">Добавлен новый регион: Республика Татарстан.</div>
+            <div class="history-date">01.09.2025 10:00:00</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const historyRows = document.querySelectorAll('.history-row');
+      
+      // Current filter state
+      let currentStatus = '';
+      let currentCourier = '';
+      let currentDateFrom = null;
+      let currentDateTo = null;
+      
+      // ===== COURIER FILTER =====
+      const courierFilterBtn = document.getElementById('courierFilterBtn');
+      const courierDropdownMenu = document.getElementById('courierDropdownMenu');
+      const courierFilterText = document.getElementById('courierFilterText');
+      const courierItems = document.querySelectorAll('.courier-dropdown-item');
+      let courierOpen = false;
+      
+      courierFilterBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeStatusDropdown();
+        closeDateDropdown();
+        courierOpen = !courierOpen;
+        
+        if (courierOpen) {
+          courierFilterBtn.classList.add('active');
+          courierDropdownMenu.classList.add('open');
+        } else {
+          courierFilterBtn.classList.remove('active');
+          courierDropdownMenu.classList.remove('open');
+        }
+      });
+      
+      courierItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          const courier = this.getAttribute('data-courier');
+          const text = this.textContent;
+          
+          courierItems.forEach(i => i.classList.remove('selected'));
+          this.classList.add('selected');
+          
+          courierFilterText.textContent = courier ? text : 'Курьер';
+          currentCourier = courier;
+          
+          courierOpen = false;
+          courierFilterBtn.classList.remove('active');
+          courierDropdownMenu.classList.remove('open');
+          
+          applyFilters();
+        });
+      });
+      
+      function closeCourierDropdown() {
+        courierOpen = false;
+        courierFilterBtn.classList.remove('active');
+        courierDropdownMenu.classList.remove('open');
+      }
+      
+      // ===== STATUS FILTER =====
+      const statusFilterBtn = document.getElementById('statusFilterBtn');
+      const statusDropdownMenu = document.getElementById('statusDropdownMenu');
+      const statusFilterText = document.getElementById('statusFilterText');
+      const dropdownItems = document.querySelectorAll('.filter-dropdown-item');
+      let statusOpen = false;
+      
+      statusFilterBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeCourierDropdown();
+        closeDateDropdown();
+        statusOpen = !statusOpen;
+        
+        if (statusOpen) {
+          statusFilterBtn.classList.add('active');
+          statusDropdownMenu.classList.add('open');
+        } else {
+          statusFilterBtn.classList.remove('active');
+          statusDropdownMenu.classList.remove('open');
+        }
+      });
+      
+      dropdownItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          const status = this.getAttribute('data-status');
+          const text = this.textContent;
+          
+          dropdownItems.forEach(i => i.classList.remove('selected'));
+          this.classList.add('selected');
+          
+          statusFilterText.textContent = status ? text : 'Статус';
+          currentStatus = status;
+          
+          statusOpen = false;
+          statusFilterBtn.classList.remove('active');
+          statusDropdownMenu.classList.remove('open');
+          
+          applyFilters();
+        });
+      });
+      
+      function closeStatusDropdown() {
+        statusOpen = false;
+        statusFilterBtn.classList.remove('active');
+        statusDropdownMenu.classList.remove('open');
+      }
+      
+      // ===== DATE FILTER =====
+      const dateFilterBtn = document.getElementById('dateFilterBtn');
+      const dateDropdownMenu = document.getElementById('dateDropdownMenu');
+      const dateFilterText = document.getElementById('dateFilterText');
+      const datePresets = document.querySelectorAll('.date-preset-item');
+      const dateFromInput = document.getElementById('dateFrom');
+      const dateToInput = document.getElementById('dateTo');
+      const dateApplyBtn = document.getElementById('dateApplyBtn');
+      let dateOpen = false;
+      
+      dateFilterBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeStatusDropdown();
+        dateOpen = !dateOpen;
+        
+        if (dateOpen) {
+          dateFilterBtn.classList.add('active');
+          dateDropdownMenu.classList.add('open');
+        } else {
+          dateFilterBtn.classList.remove('active');
+          dateDropdownMenu.classList.remove('open');
+        }
+      });
+      
+      datePresets.forEach(function(preset) {
+        preset.addEventListener('click', function() {
+          const presetType = this.getAttribute('data-preset');
+          const today = new Date();
+          let fromDate = null;
+          let toDate = new Date();
+          
+          datePresets.forEach(p => p.classList.remove('selected'));
+          this.classList.add('selected');
+          
+          switch(presetType) {
+            case 'all':
+              fromDate = null;
+              toDate = null;
+              break;
+            case 'today':
+              fromDate = new Date(today);
+              break;
+            case 'yesterday':
+              fromDate = new Date(today);
+              fromDate.setDate(fromDate.getDate() - 1);
+              toDate = new Date(fromDate);
+              break;
+            case 'week':
+              fromDate = new Date(today);
+              fromDate.setDate(fromDate.getDate() - 7);
+              break;
+            case 'month':
+              fromDate = new Date(today);
+              fromDate.setDate(fromDate.getDate() - 30);
+              break;
+            case 'quarter':
+              fromDate = new Date(today);
+              fromDate.setMonth(fromDate.getMonth() - 3);
+              break;
+          }
+          
+          currentDateFrom = fromDate;
+          currentDateTo = toDate;
+          
+          if (fromDate && toDate) {
+            dateFilterText.textContent = formatDateRange(fromDate, toDate);
+          } else if (fromDate) {
+            dateFilterText.textContent = formatDateRange(fromDate, today);
+          } else {
+            dateFilterText.textContent = 'Все время';
+          }
+          
+          dateFromInput.value = fromDate ? formatDateForInput(fromDate) : '';
+          dateToInput.value = toDate ? formatDateForInput(toDate) : '';
+          
+          dateOpen = false;
+          dateFilterBtn.classList.remove('active');
+          dateDropdownMenu.classList.remove('open');
+          
+          applyFilters();
+        });
+      });
+      
+      dateApplyBtn.addEventListener('click', function() {
+        const fromValue = dateFromInput.value;
+        const toValue = dateToInput.value;
+        
+        currentDateFrom = fromValue ? new Date(fromValue) : null;
+        currentDateTo = toValue ? new Date(toValue) : null;
+        
+        datePresets.forEach(p => p.classList.remove('selected'));
+        
+        if (currentDateFrom && currentDateTo) {
+          dateFilterText.textContent = formatDateRange(currentDateFrom, currentDateTo);
+        } else if (currentDateFrom) {
+          dateFilterText.textContent = 'С ' + formatDate(currentDateFrom);
+        } else if (currentDateTo) {
+          dateFilterText.textContent = 'До ' + formatDate(currentDateTo);
+        } else {
+          dateFilterText.textContent = 'Все время';
+        }
+        
+        dateOpen = false;
+        dateFilterBtn.classList.remove('active');
+        dateDropdownMenu.classList.remove('open');
+        
+        applyFilters();
+      });
+      
+      function closeDateDropdown() {
+        dateOpen = false;
+        dateFilterBtn.classList.remove('active');
+        dateDropdownMenu.classList.remove('open');
+      }
+      
+      // ===== CLOSE DROPDOWNS ON OUTSIDE CLICK =====
+      document.addEventListener('click', function(e) {
+        if (!courierFilterBtn.contains(e.target) && !courierDropdownMenu.contains(e.target)) {
+          closeCourierDropdown();
+        }
+        if (!statusFilterBtn.contains(e.target) && !statusDropdownMenu.contains(e.target)) {
+          closeStatusDropdown();
+        }
+        if (!dateFilterBtn.contains(e.target) && !dateDropdownMenu.contains(e.target)) {
+          closeDateDropdown();
+        }
+      });
+      
+      // ===== COMBINED FILTER FUNCTION =====
+      function applyFilters() {
+        historyRows.forEach(function(row, index) {
+          const rowStatus = row.getAttribute('data-status');
+          const rowCourier = row.getAttribute('data-courier');
+          const rowDateStr = row.getAttribute('data-date');
+          const rowDate = rowDateStr ? new Date(rowDateStr) : null;
+          
+          let statusMatch = !currentStatus || rowStatus === currentStatus;
+          let courierMatch = !currentCourier || rowCourier === currentCourier;
+          let dateMatch = true;
+          
+          if (currentDateFrom && rowDate) {
+            dateMatch = dateMatch && rowDate >= currentDateFrom;
+          }
+          if (currentDateTo && rowDate) {
+            const endOfDay = new Date(currentDateTo);
+            endOfDay.setHours(23, 59, 59, 999);
+            dateMatch = dateMatch && rowDate <= endOfDay;
+          }
+          
+          setTimeout(function() {
+            if (statusMatch && courierMatch && dateMatch) {
+              row.classList.remove('hidden');
+              row.classList.add('visible');
+              row.style.display = '';
+            } else {
+              row.classList.add('hidden');
+              row.classList.remove('visible');
+              setTimeout(function() {
+                if (row.classList.contains('hidden')) {
+                  row.style.display = 'none';
+                }
+              }, 300);
+            }
+          }, index * 30);
+        });
+      }
+      
+      // ===== HELPER FUNCTIONS =====
+      function formatDate(date) {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return day + '.' + month + '.' + year;
+      }
+      
+      function formatDateForInput(date) {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return year + '-' + month + '-' + day;
+      }
+      
+      function formatDateRange(from, to) {
+        return formatDateForInput(from) + ' - ' + formatDateForInput(to);
+      }
+    });
+  </script>
+</body>
+</html>

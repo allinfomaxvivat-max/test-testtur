@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Статистика покупок</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .page-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1000;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+    
+    .filter-dropdown-wrapper {
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .filter-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .filter-dropdown:hover {
+      background: #252525;
+    }
+    
+    .filter-dropdown svg {
+      width: 16px;
+      height: 16px;
+      fill: #969696;
+      transition: transform 0.2s;
+    }
+    
+    .filter-dropdown.open svg {
+      transform: rotate(180deg);
+    }
+    
+    .filter-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 4px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+      z-index: 9999;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    
+    .filter-dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .filter-dropdown-item {
+      padding: 12px 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #ccc;
+      cursor: pointer;
+      transition: background 0.15s;
+      background: #1a1a1a;
+    }
+    
+    .filter-dropdown-item:hover {
+      background: #2a2a2a;
+    }
+    
+    .filter-dropdown-item.active {
+      background: #0a3a50;
+      color: #00b4dc;
+    }
+    
+    .date-picker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      margin-left: 16px;
+    }
+    
+    .date-picker svg {
+      width: 16px;
+      height: 16px;
+      fill: #969696;
+    }
+    
+    .stats-summary {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      color: #969696;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.5s ease 0.1s both;
+    }
+    
+    .stats-summary .highlight {
+      color: #00b4dc;
+      font-weight: 500;
+    }
+    
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    
+    .chart-card {
+      background: rgba(15, 15, 15, 0.6);
+      border: 1px solid #1c1c1c;
+      border-radius: 18px;
+      padding: 24px;
+      animation: fadeInUp 0.5s ease both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .chart-card:nth-child(1) { animation-delay: 0.2s; }
+    .chart-card:nth-child(2) { animation-delay: 0.3s; }
+    .chart-card:nth-child(3) { animation-delay: 0.4s; }
+    .chart-card:nth-child(4) { animation-delay: 0.5s; }
+    
+    .chart-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0, 143, 205, 0.1);
+    }
+    
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      gap: 16px;
+    }
+    
+    .chart-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+    }
+    
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: #969696;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    
+    .legend-item:hover {
+      opacity: 0.8;
+    }
+    
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    
+    .legend-dot.cyan { background: #00b4dc; }
+    .legend-dot.coral { background: #ff6b6b; }
+    .legend-dot.purple { background: #9b6dff; }
+    .legend-dot.green { background: #4ade80; }
+    .legend-dot.orange { background: #fb923c; }
+    
+    .donut-chart-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 220px;
+      position: relative;
+    }
+    
+    .donut-chart {
+      width: 180px;
+      height: 180px;
+      position: relative;
+    }
+    
+    .donut-chart svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    
+    .donut-ring {
+      fill: none;
+      stroke-width: 20;
+      transition: opacity 0.3s;
+    }
+    
+    .donut-ring.background {
+      stroke: #2a2a2a;
+    }
+    
+    .donut-ring.cyan { stroke: #00b4dc; }
+    .donut-ring.coral { stroke: #ff6b6b; }
+    .donut-ring.purple { stroke: #9b6dff; }
+    .donut-ring.green { stroke: #4ade80; }
+    .donut-ring.orange { stroke: #fb923c; }
+    
+    .donut-segment {
+      stroke-dashoffset: 251.2;
+      animation: donutDraw 1.2s ease-out forwards;
+      animation-delay: var(--anim-delay, 0.3s);
+    }
+    
+    @keyframes donutDraw {
+      to {
+        stroke-dashoffset: var(--final-offset, 0);
+      }
+    }
+    
+    .donut-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      pointer-events: none;
+    }
+    
+    .donut-center-value {
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+    }
+    
+    .donut-center-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      color: #969696;
+    }
+    
+    .chart-tooltip {
+      position: absolute;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      color: white;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+      z-index: 100;
+      min-width: 150px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .chart-tooltip.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .chart-tooltip-title {
+      font-weight: 500;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #333;
+    }
+    
+    .chart-tooltip-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    
+    .chart-tooltip-row:last-child {
+      margin-bottom: 0;
+    }
+    
+    .chart-tooltip-label {
+      color: #969696;
+    }
+    
+    .chart-tooltip-value {
+      font-weight: 500;
+    }
+    
+    .donut-segment {
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      transform-origin: center;
+    }
+    
+    .donut-segment:hover {
+      opacity: 0.8;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .no-data-message {
+      text-align: center;
+      padding: 60px 20px;
+      color: #969696;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      display: none;
+    }
+    
+    /* ============================================
+       RESPONSIVE STYLES - PURCHASES CHART PAGE
+       ============================================ */
+    
+    @media screen and (max-width: 1024px) {
+      .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .page-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      
+      .filter-dropdown-wrapper,
+      .date-picker {
+        width: 100%;
+        margin-left: 0;
+      }
+      
+      .filter-dropdown {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      .date-picker {
+        justify-content: space-between;
+      }
+      
+      .chart-card {
+        padding: 16px;
+      }
+      
+      .chart-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .chart-card {
+        padding: 12px;
+        border-radius: 12px;
+      }
+      
+      .stats-summary {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item active">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Статистика</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Графики покупок</span>
+      </div>
+      
+      <div class="page-toolbar">
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="cityFilterBtn" data-testid="button-city-filter">
+            <span id="cityFilterText">Города</span>
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="cityFilterMenu">
+            <div class="filter-dropdown-item active" data-value="all">Все города</div>
+            <div class="filter-dropdown-item" data-value="moscow">Москва</div>
+            <div class="filter-dropdown-item" data-value="saratov">Саратов</div>
+            <div class="filter-dropdown-item" data-value="spb">Санкт-Петербург</div>
+            <div class="filter-dropdown-item" data-value="kazan">Казань</div>
+          </div>
+        </div>
+        
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="productFilterBtn" data-testid="button-product-filter">
+            <span id="productFilterText">Товар</span>
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="productFilterMenu">
+            <div class="filter-dropdown-item active" data-value="all">Все товары</div>
+            <div class="filter-dropdown-item" data-value="alpha">Альфа</div>
+            <div class="filter-dropdown-item" data-value="hash">Hash Amezia</div>
+            <div class="filter-dropdown-item" data-value="crystal">White Crystal</div>
+            <div class="filter-dropdown-item" data-value="premium">Premium Gold</div>
+          </div>
+        </div>
+        
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="statusFilterBtn" data-testid="button-status-filter">
+            <span id="statusFilterText">Статус</span>
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="statusFilterMenu">
+            <div class="filter-dropdown-item active" data-value="all">Все статусы</div>
+            <div class="filter-dropdown-item" data-value="completed">Выполнен</div>
+            <div class="filter-dropdown-item" data-value="pending">В ожидании</div>
+            <div class="filter-dropdown-item" data-value="cancelled">Отменён</div>
+          </div>
+        </div>
+        
+        <div class="filter-dropdown-wrapper">
+          <div class="filter-dropdown" id="dateFilterBtn" data-testid="button-date-filter">
+            <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+            <span id="dateFilterText">2025-12-09 - 2025-12-15</span>
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </div>
+          <div class="filter-dropdown-menu" id="dateFilterMenu">
+            <div class="filter-dropdown-item active" data-value="week" id="dateOptionWeek">Последние 7 дней</div>
+            <div class="filter-dropdown-item" data-value="today" id="dateOptionToday">Сегодня</div>
+            <div class="filter-dropdown-item" data-value="yesterday" id="dateOptionYesterday">Вчера</div>
+            <div class="filter-dropdown-item" data-value="month" id="dateOptionMonth">Последний месяц</div>
+            <div class="filter-dropdown-item" data-value="all" data-label="Все время">Все время</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-summary" id="statsSummary">
+        Всего покупок: <span class="highlight" id="totalCount">4</span>, на сумму <span class="highlight" id="totalAmount">15 000.00</span> ₽ общим весом <span class="highlight" id="totalWeight">5</span> г.
+      </div>
+      
+      <div class="charts-grid" id="chartsGrid">
+        <div class="chart-card" data-city="moscow">
+          <div class="chart-header">
+            <div class="chart-title">Москва</div>
+            <div class="chart-legend">
+              <div class="legend-item" data-product="alpha1">
+                <span class="legend-dot cyan"></span>
+                <span>Альфа 1 грамм</span>
+              </div>
+            </div>
+          </div>
+          <div class="donut-chart-wrapper">
+            <div class="donut-chart" id="moscowChart">
+              <svg viewBox="0 0 100 100">
+                <circle class="donut-ring background" cx="50" cy="50" r="40"/>
+                <circle class="donut-ring cyan donut-segment" cx="50" cy="50" r="40" 
+                  data-product="Альфа 1 грамм" data-count="2" data-amount="5000" data-weight="2"
+                  stroke-dasharray="251.2 0" style="--final-offset: 0; --anim-delay: 0.3s;"/>
+              </svg>
+              <div class="donut-center">
+                <div class="donut-center-value">2</div>
+                <div class="donut-center-label">покупки</div>
+              </div>
+            </div>
+            <div class="chart-tooltip" id="moscowTooltip"></div>
+          </div>
+        </div>
+        
+        <div class="chart-card" data-city="saratov">
+          <div class="chart-header">
+            <div class="chart-title">Саратов</div>
+            <div class="chart-legend">
+              <div class="legend-item" data-product="hash1">
+                <span class="legend-dot coral"></span>
+                <span>Hash Amezia 1 г.</span>
+              </div>
+              <div class="legend-item" data-product="hash3">
+                <span class="legend-dot cyan"></span>
+                <span>Hash Amezia 3 г.</span>
+              </div>
+            </div>
+          </div>
+          <div class="donut-chart-wrapper">
+            <div class="donut-chart" id="saratovChart">
+              <svg viewBox="0 0 100 100">
+                <circle class="donut-ring background" cx="50" cy="50" r="40"/>
+                <circle class="donut-ring coral donut-segment" cx="50" cy="50" r="40" 
+                  data-product="Hash Amezia 1 г." data-count="1" data-amount="3500" data-weight="1"
+                  stroke-dasharray="150.72 100.48" style="--final-offset: 0; --anim-delay: 0.3s;"/>
+                <circle class="donut-ring cyan donut-segment" cx="50" cy="50" r="40" 
+                  data-product="Hash Amezia 3 г." data-count="1" data-amount="6500" data-weight="3"
+                  stroke-dasharray="100.48 150.72" style="--final-offset: -150.72; --anim-delay: 0.5s;"/>
+              </svg>
+              <div class="donut-center">
+                <div class="donut-center-value">2</div>
+                <div class="donut-center-label">покупки</div>
+              </div>
+            </div>
+            <div class="chart-tooltip" id="saratovTooltip"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="no-data-message" id="noDataMessage">
+        Нет данных для отображения
+      </div>
+    </main>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initPurchasesChartPage();
+    });
+    
+    function initPurchasesChartPage() {
+      const chartsGrid = document.getElementById('chartsGrid');
+      if (!chartsGrid) return;
+      
+      // Initialize dynamic dates
+      initDynamicDates();
+      
+      function formatDateISO(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return year + '-' + month + '-' + day;
+      }
+      
+      function initDynamicDates() {
+        const today = new Date();
+        const todayStr = formatDateISO(today);
+        
+        const yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yesterdayStr = formatDateISO(yesterday);
+        
+        const weekAgo = new Date(today);
+        weekAgo.setDate(weekAgo.getDate() - 7);
+        const weekAgoStr = formatDateISO(weekAgo);
+        
+        const monthAgo = new Date(today);
+        monthAgo.setMonth(monthAgo.getMonth() - 1);
+        const monthAgoStr = formatDateISO(monthAgo);
+        
+        // Update date filter text (default: last 7 days)
+        const dateFilterText = document.getElementById('dateFilterText');
+        if (dateFilterText) {
+          dateFilterText.textContent = weekAgoStr + ' - ' + todayStr;
+        }
+        
+        // Update date options with dynamic labels
+        const optionWeek = document.getElementById('dateOptionWeek');
+        const optionToday = document.getElementById('dateOptionToday');
+        const optionYesterday = document.getElementById('dateOptionYesterday');
+        const optionMonth = document.getElementById('dateOptionMonth');
+        
+        if (optionWeek) optionWeek.dataset.label = weekAgoStr + ' - ' + todayStr;
+        if (optionToday) optionToday.dataset.label = todayStr;
+        if (optionYesterday) optionYesterday.dataset.label = yesterdayStr;
+        if (optionMonth) optionMonth.dataset.label = monthAgoStr + ' - ' + todayStr;
+      }
+      
+      // Data
+      const purchasesData = {
+        moscow: { count: 2, amount: 5000, weight: 2, products: [{name: 'Альфа 1 грамм', count: 2, amount: 5000, weight: 2, color: 'cyan'}] },
+        saratov: { count: 2, amount: 10000, weight: 4, products: [{name: 'Hash Amezia 1 г.', count: 1, amount: 3500, weight: 1, color: 'coral'}, {name: 'Hash Amezia 3 г.', count: 1, amount: 6500, weight: 3, color: 'cyan'}] }
+      };
+      
+      let currentFilters = { city: 'all', product: 'all', status: 'all', date: 'week' };
+      
+      // Setup filters
+      setupChartFilter('cityFilterBtn', 'cityFilterMenu', 'cityFilterText', function(value) {
+        currentFilters.city = value;
+        filterCharts();
+      });
+      
+      setupChartFilter('productFilterBtn', 'productFilterMenu', 'productFilterText', function(value) {
+        currentFilters.product = value;
+        filterCharts();
+      });
+      
+      setupChartFilter('statusFilterBtn', 'statusFilterMenu', 'statusFilterText', function(value) {
+        currentFilters.status = value;
+        filterCharts();
+      });
+      
+      // Date filter with label update
+      setupDateFilter();
+      
+      function setupChartFilter(btnId, menuId, textId, onSelect) {
+        const btn = document.getElementById(btnId);
+        const menu = document.getElementById(menuId);
+        if (!btn || !menu) return;
+        
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          document.querySelectorAll('.filter-dropdown-menu.show').forEach(function(m) {
+            if (m !== menu) m.classList.remove('show');
+          });
+          document.querySelectorAll('.filter-dropdown.open').forEach(function(b) {
+            if (b !== btn) b.classList.remove('open');
+          });
+          menu.classList.toggle('show');
+          btn.classList.toggle('open');
+        });
+        
+        menu.querySelectorAll('.filter-dropdown-item').forEach(function(item) {
+          item.addEventListener('click', function() {
+            const value = this.dataset.value;
+            const text = this.textContent;
+            
+            menu.querySelectorAll('.filter-dropdown-item').forEach(function(i) {
+              i.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            const textEl = document.getElementById(textId);
+            if (textEl) {
+              textEl.textContent = value === 'all' ? btn.querySelector('span').textContent.split(' ')[0] : text;
+            }
+            
+            menu.classList.remove('show');
+            btn.classList.remove('open');
+            onSelect(value);
+          });
+        });
+      }
+      
+      function setupDateFilter() {
+        const btn = document.getElementById('dateFilterBtn');
+        const menu = document.getElementById('dateFilterMenu');
+        const textEl = document.getElementById('dateFilterText');
+        if (!btn || !menu) return;
+        
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          document.querySelectorAll('.filter-dropdown-menu.show').forEach(function(m) {
+            if (m !== menu) m.classList.remove('show');
+          });
+          document.querySelectorAll('.filter-dropdown.open').forEach(function(b) {
+            if (b !== btn) b.classList.remove('open');
+          });
+          menu.classList.toggle('show');
+          btn.classList.toggle('open');
+        });
+        
+        menu.querySelectorAll('.filter-dropdown-item').forEach(function(item) {
+          item.addEventListener('click', function() {
+            const value = this.dataset.value;
+            const label = this.dataset.label;
+            
+            menu.querySelectorAll('.filter-dropdown-item').forEach(function(i) {
+              i.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            if (textEl) {
+              textEl.textContent = label;
+            }
+            
+            menu.classList.remove('show');
+            btn.classList.remove('open');
+            currentFilters.date = value;
+            filterCharts();
+          });
+        });
+      }
+      
+      document.addEventListener('click', function() {
+        document.querySelectorAll('.filter-dropdown-menu.show').forEach(function(m) {
+          m.classList.remove('show');
+        });
+        document.querySelectorAll('.filter-dropdown.open').forEach(function(b) {
+          b.classList.remove('open');
+        });
+      });
+      
+      function filterCharts() {
+        const cards = chartsGrid.querySelectorAll('.chart-card');
+        let visibleCount = 0;
+        let totalCount = 0;
+        let totalAmount = 0;
+        let totalWeight = 0;
+        
+        cards.forEach(function(card) {
+          const city = card.dataset.city;
+          let visible = true;
+          
+          if (currentFilters.city !== 'all' && city !== currentFilters.city) {
+            visible = false;
+          }
+          
+          if (visible) {
+            card.style.display = '';
+            visibleCount++;
+            
+            const data = purchasesData[city];
+            if (data) {
+              totalCount += data.count;
+              totalAmount += data.amount;
+              totalWeight += data.weight;
+            }
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        updateStats(totalCount, totalAmount, totalWeight);
+        
+        const noData = document.getElementById('noDataMessage');
+        if (noData) {
+          noData.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      }
+      
+      function updateStats(count, amount, weight) {
+        const countEl = document.getElementById('totalCount');
+        const amountEl = document.getElementById('totalAmount');
+        const weightEl = document.getElementById('totalWeight');
+        
+        if (countEl) animateValue(countEl, parseInt(countEl.textContent) || 0, count, 500);
+        if (amountEl) animateValue(amountEl, parseFloat(amountEl.textContent.replace(/\s/g, '')) || 0, amount, 500, true);
+        if (weightEl) animateValue(weightEl, parseInt(weightEl.textContent) || 0, weight, 500);
+      }
+      
+      function animateValue(el, start, end, duration, isAmount) {
+        const startTime = performance.now();
+        
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeProgress = 1 - Math.pow(1 - progress, 3);
+          const current = start + (end - start) * easeProgress;
+          
+          if (isAmount) {
+            el.textContent = formatAmount(current);
+          } else {
+            el.textContent = Math.round(current);
+          }
+          
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        
+        requestAnimationFrame(update);
+      }
+      
+      function formatAmount(num) {
+        return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      }
+      
+      // Setup hover tooltips for charts
+      setupChartTooltips();
+      
+      function setupChartTooltips() {
+        const chartWrappers = document.querySelectorAll('.donut-chart-wrapper');
+        
+        chartWrappers.forEach(function(wrapper) {
+          const segments = wrapper.querySelectorAll('.donut-segment');
+          const tooltip = wrapper.querySelector('.chart-tooltip');
+          
+          segments.forEach(function(segment) {
+            segment.addEventListener('mouseenter', function(e) {
+              const product = this.dataset.product;
+              const count = this.dataset.count;
+              const amount = this.dataset.amount;
+              const weight = this.dataset.weight;
+              
+              if (tooltip) {
+                tooltip.innerHTML = 
+                  '<div class="chart-tooltip-title">' + product + '</div>' +
+                  '<div class="chart-tooltip-row"><span class="chart-tooltip-label">Покупок:</span><span class="chart-tooltip-value">' + count + '</span></div>' +
+                  '<div class="chart-tooltip-row"><span class="chart-tooltip-label">Сумма:</span><span class="chart-tooltip-value">' + formatAmount(parseFloat(amount)) + ' ₽</span></div>' +
+                  '<div class="chart-tooltip-row"><span class="chart-tooltip-label">Вес:</span><span class="chart-tooltip-value">' + weight + ' г.</span></div>';
+                
+                tooltip.classList.add('visible');
+              }
+            });
+            
+            segment.addEventListener('mouseleave', function() {
+              if (tooltip) {
+                tooltip.classList.remove('visible');
+              }
+            });
+            
+            segment.addEventListener('mousemove', function(e) {
+              if (tooltip) {
+                const rect = wrapper.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                tooltip.style.left = (x + 15) + 'px';
+                tooltip.style.top = (y - 10) + 'px';
+              }
+            });
+          });
+        });
+      }
+      
+      // Initial stats calculation
+      let initialCount = 0;
+      let initialAmount = 0;
+      let initialWeight = 0;
+      
+      Object.keys(purchasesData).forEach(function(city) {
+        initialCount += purchasesData[city].count;
+        initialAmount += purchasesData[city].amount;
+        initialWeight += purchasesData[city].weight;
+      });
+      
+      document.getElementById('totalCount').textContent = initialCount;
+      document.getElementById('totalAmount').textContent = formatAmount(initialAmount);
+      document.getElementById('totalWeight').textContent = initialWeight;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Курьеры</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item active">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Склад</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Курьеры</span>
+      </div>
+      
+      <div class="regions-toolbar">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" placeholder="номер, имя или токен" class="search-input">
+        </div>
+        <button class="add-btn">
+          <span>Добавить</span>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+      </div>
+      
+      <div class="couriers-table">
+        <div class="couriers-header">
+          <span class="col-id">#</span>
+          <span class="col-courier">Курьер</span>
+          <span class="col-stats">Статистика</span>
+          <span class="col-products">Доступные товары</span>
+          <span class="col-tg">ТГакк / Коммент</span>
+          <span class="col-balance">Баланс</span>
+          <span class="col-actions">Действия</span>
+          <span class="col-bot">Бот</span>
+        </div>
+        
+        <div class="couriers-body">
+          <div class="courier-row">
+            <div class="courier-id">208</div>
+            <div class="courier-name">Курьер 1</div>
+            <div class="courier-stats">
+              <div class="stat-line">Доступно адресов: 6</div>
+              <div class="stat-line">Споров всего: 2</div>
+              <div class="stat-line">Возвратов: 0</div>
+              <div class="stat-line">Продано: 4</div>
+              <div class="stat-line">Заработано: 0.00</div>
+            </div>
+            <div class="courier-products">Все</div>
+            <div class="courier-tg">@</div>
+            <div class="courier-balance">
+              <div class="balance-line">Баланс: 0.00</div>
+              <div class="balance-line">Депозит: 0.00</div>
+              <div class="balance-link">История начислений /списаний</div>
+            </div>
+            <div class="courier-actions">
+              <div class="action-link">Выплатить зарплату</div>
+              <div class="action-link">Начислить средства</div>
+            </div>
+            <div class="courier-bot">
+              <span class="bot-status">Личный Бот не подключен!</span>
+              <button class="action-btn info">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#0088FF"/><circle cx="12" cy="12" r="7.5" fill="#33363F"/><line class="clock-hand-hour" x1="12" y1="12" x2="12" y2="6.5" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/><line class="clock-hand-minute" x1="12" y1="12" x2="15.5" y2="12" stroke="#0088FF" stroke-width="1.67" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Courier Modal -->
+  <div class="courier-modal-overlay" id="courierModalOverlay">
+    <div class="courier-modal">
+      <div class="courier-modal-header">
+        <span class="courier-modal-title" id="courierModalTitle">Добавить</span>
+        <button class="courier-modal-close" id="courierModalClose" data-testid="button-close-courier-modal">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+            <path d="M4 4L15 15M15 4L4 15" stroke="white" stroke-width="1.58" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="courier-modal-body">
+        <div class="courier-modal-field">
+          <label class="courier-modal-label">Имя курьера</label>
+          <input type="text" class="courier-modal-input" id="courierNameInput" value="Курьер" data-testid="input-courier-name">
+        </div>
+        
+        <div class="courier-modal-field">
+          <label class="courier-modal-label">Комментарий</label>
+          <textarea class="courier-modal-textarea" id="courierCommentInput" placeholder="" data-testid="input-courier-comment"></textarea>
+        </div>
+        
+        <div class="courier-modal-field courier-dropdown-container">
+          <label class="courier-modal-label">Товары, доступные к загрузке</label>
+          <div class="courier-modal-select" id="courierProductsSelect" data-testid="select-courier-products">
+            <span>Все товары</span>
+            <svg class="courier-dropdown-arrow" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="courier-dropdown-list" id="courierProductsDropdown">
+            <div class="courier-dropdown-item" data-value="Все товары">Все товары</div>
+            <div class="courier-dropdown-item" data-value="01">01</div>
+            <div class="courier-dropdown-item" data-value="Aaaa">Aaaa</div>
+            <div class="courier-dropdown-item" data-value="Альфа 1 грам">Альфа 1 грам</div>
+            <div class="courier-dropdown-item" data-value="Мёд 1гр">Мёд 1гр</div>
+            <div class="courier-dropdown-item" data-value="Обновление!">Обновление!</div>
+            <div class="courier-dropdown-item" data-value="соль">соль</div>
+            <div class="courier-dropdown-item" data-value="Hash Amezia 1 г.">Hash Amezia 1 г.</div>
+            <div class="courier-dropdown-item" data-value="Hash Amezia 2 г.">Hash Amezia 2 г.</div>
+            <div class="courier-dropdown-item" data-value="Hash Amezia 3 г">Hash Amezia 3 г</div>
+            <div class="courier-dropdown-item" data-value="Hash Amezia 4 г.">Hash Amezia 4 г.</div>
+            <div class="courier-dropdown-item" data-value="Hash Amezia 5 г">Hash Amezia 5 г</div>
+            <div class="courier-dropdown-item" data-value="Hash Amezia 6 г.">Hash Amezia 6 г.</div>
+          </div>
+          <div class="courier-modal-hint">Если не выбрано - тогда курьер сможет выкладывать все товары, которые есть в магазине.</div>
+        </div>
+        
+        <div class="courier-modal-row">
+          <div class="courier-modal-balance">
+            <span class="balance-label">Баланс:</span>
+            <span class="balance-value" style="color: #FF383C;">0.00 ₽</span>
+          </div>
+          <div class="courier-modal-balance">
+            <span class="balance-label">Депозит:</span>
+            <span class="balance-value" style="color: #FF383C;">0.00 ₽</span>
+          </div>
+          <a href="deposits-dynamics.html" class="courier-modal-link">История начислений/списаний</a>
+        </div>
+        
+        <div class="courier-modal-field courier-dropdown-container">
+          <label class="courier-modal-label">Когда считать ЗП:</label>
+          <div class="courier-modal-select" id="courierSalarySelect" data-testid="select-courier-salary">
+            <span>После продажи адреса</span>
+            <svg class="courier-dropdown-arrow" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="courier-dropdown-list" id="courierSalaryDropdown">
+            <div class="courier-dropdown-item selected" data-value="После продажи адреса">После продажи адреса</div>
+            <div class="courier-dropdown-item" data-value="При модерации">При модерации</div>
+          </div>
+        </div>
+        
+        <div class="courier-modal-field courier-dropdown-container">
+          <label class="courier-modal-label">Модерировать адреса от этого курьера:</label>
+          <div class="courier-modal-select" id="courierModerateSelect" data-testid="select-courier-moderate">
+            <span>Не модерировать</span>
+            <svg class="courier-dropdown-arrow" viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="courier-dropdown-list" id="courierModerateDropdown">
+            <div class="courier-dropdown-item selected" data-value="Не модерировать">Не модерировать</div>
+            <div class="courier-dropdown-item" data-value="Модерировать">Модерировать</div>
+          </div>
+        </div>
+        
+        <div class="courier-modal-field">
+          <label class="courier-modal-label">Token</label>
+          <input type="text" class="courier-modal-input" id="courierTokenInput" placeholder="Введите токен личного бота курьера (не обязательно)" data-testid="input-courier-token">
+        </div>
+        
+        <div class="courier-modal-status">
+          <label class="courier-modal-label">Статус бота:</label>
+          <div class="bot-status-warning">Личный Бот не подключен!</div>
+          <div class="bot-status-text">
+            Вы можете создать курьеру личный тг-бота, через которого он будет выкладывать адреса и общаться с клиентами. Для этого необходимо в поле TOKEN - вставить токен созданного бота в @botfather и нажать кнопку Применить.<br>
+            После этого под полем токена появится ссылка для подключения, перешлите её курьеру.<br>
+            Отключать работу личного бота вы можете на странице списка курьеров а также удалив токен из настроек курьера.
+          </div>
+        </div>
+        
+        <div class="courier-modal-section">
+          <label class="courier-modal-label">Настройки выплат</label>
+          <div class="courier-payout-table">
+            <div class="courier-payout-header">
+              <span>Товар</span>
+              <span>Штраф за возврат</span>
+              <span>Зарплата за единицу</span>
+              <span>На депозит</span>
+            </div>
+            <div class="courier-payout-body" id="courierPayoutBody">
+            </div>
+          </div>
+          <button class="courier-add-row-btn" id="courierAddRowBtn" data-testid="button-add-payout-row">Добавить строку</button>
+        </div>
+      </div>
+      
+      <div class="courier-modal-footer">
+        <div class="courier-modal-buttons">
+          <button class="courier-modal-btn courier-modal-btn-green" id="courierSaveAndAdd" data-testid="button-save-and-add-courier">Сохранить и добавить другой</button>
+          <button class="courier-modal-btn courier-modal-btn-green" id="courierApply" data-testid="button-apply-courier">Применить</button>
+          <button class="courier-modal-btn courier-modal-btn-green" id="courierSave" data-testid="button-save-courier">Сохранить</button>
+          <button class="courier-modal-btn courier-modal-btn-red" id="courierDelete" data-testid="button-delete-courier">Удалить</button>
+        </div>
+        <div class="courier-modal-dates">
+          <div class="courier-date-item">
+            <span class="date-label">Дата создания:</span>
+            <span class="date-value" id="courierCreatedDate">10.10.2025 20:33:05</span>
+          </div>
+          <div class="courier-date-item">
+            <span class="date-label">Дата изменения:</span>
+            <span class="date-value" id="courierModifiedDate">03.12.2025 22:47:46</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+</body>
+</html>

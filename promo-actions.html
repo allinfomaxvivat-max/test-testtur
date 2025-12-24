@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Промо-акции</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/css/layout.css" />
+    <link rel="stylesheet" href="styles/css/sidebar.css" />
+    <link rel="stylesheet" href="styles/css/pages/promo-actions.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item active">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Маркетинг</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Промо-акции</span>
+      </div>
+      
+      <div class="toolbar">
+        <div class="filter-select-wrapper">
+          <select class="filter-select" id="actionTypeFilter" data-testid="select-action-type">
+            <option value="">Тип</option>
+            <option value="По сумме депозита">По сумме депозита</option>
+            <option value="Скидка на следующую покупку">Скидка на следующую покупку</option>
+            <option value="По кол-ву покупок">По кол-ву покупок</option>
+            <option value="За оставленный отзыв">За оставленный отзыв</option>
+            <option value="Распродажа">Распродажа</option>
+          </select>
+        </div>
+        
+        <div class="filter-select-wrapper">
+          <select class="filter-select" id="actionStatusFilter" data-testid="select-action-status">
+            <option value="">Статус</option>
+            <option value="Активный">Активный</option>
+            <option value="Остановлена">Остановлена</option>
+          </select>
+        </div>
+        
+        <div class="date-range-wrapper">
+          <button class="date-range-btn" id="actionDateRangeBtn" data-testid="button-action-date-range">
+            <span id="actionDateRangeText">2025-12-09 - 2025-12-15</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+          </button>
+          <div class="date-range-panel" id="actionDateRangePanel">
+            <div class="date-input-group">
+              <label>От</label>
+              <input type="date" id="actionDateFrom" data-testid="input-action-date-from" value="2025-12-09">
+            </div>
+            <div class="date-input-group">
+              <label>До</label>
+              <input type="date" id="actionDateTo" data-testid="input-action-date-to" value="2025-12-15">
+            </div>
+            <button class="btn-apply-date" id="applyActionDateBtn" data-testid="button-apply-action-date">Применить</button>
+          </div>
+        </div>
+        
+        <button class="btn-add-right" id="addActionBtn" data-testid="button-add-action">
+          <span>Добавить</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+      </div>
+      
+      <div class="promo-actions-table">
+        <div class="promo-actions-header">
+          <span class="col-action-id promocode-actions-title">#</span>
+          <span class="col-action-type promocode-actions-title">Тип</span>
+          <span class="col-action-start promocode-actions-title">Старт</span>
+          <span class="col-action-end promocode-actions-title">Окончание</span>
+          <span class="col-action-status promocode-actions-title">Статус</span>
+          <span class="col-action-count promocode-actions-title">Кол-во покупок/<br>Сумма пополнений/<br>Кол-во отзывов</span>
+          <span class="col-action-bonus promocode-actions-title">Бонус</span>
+        </div>
+        
+        <div class="promo-actions-body">
+
+          <div class="action-row" data-testid="row-action-1425" data-type="По сумме депозита">
+            <div class="promo-actions-col promo-actions-col--fixed">
+                <span class="col-action-id promocode-actions-title--tablet">#</span>
+                <span class="action-id" data-testid="text-action-id-1425">1425</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-type promocode-actions-title--tablet">Тип</span>
+                <span class="action-type" data-testid="text-action-type-1425">По сумме депозита</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-start promocode-actions-title--tablet">Старт</span>
+                <span class="action-start">03.12.2025 22:47:46</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-end promocode-actions-title--tablet">Окончание</span>
+                <span class="action-end">15.12.2025 21:26:00</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-status promocode-actions-title--tablet">Статус</span>
+                <span class="action-status status-active" data-testid="text-action-status-1425">Активный</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-count promocode-actions-title--tablet">Кол-во покупок/<br>Сумма пополнений/<br>Кол-во отзывов</span>
+                <span class="action-count">6</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-bonus promocode-actions-title--tablet">Бонус</span>
+                <span class="action-bonus">500 ₽</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="action-bonus">&nbsp;</span>
+                <div class="action-actions">
+                    <svg class="action-icon edit" data-testid="button-edit-action-1425" viewBox="0 0 24 24" fill="#0088ff"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                </div>
+            </div>
+            
+          </div>
+          
+          <div class="action-row" data-testid="row-action-1426" data-type="Скидка на следующую покупку">
+            <div class="promo-actions-col promo-actions-col--fixed">
+                <span class="col-action-id promocode-actions-title--tablet">#</span>
+                <span class="action-id" data-testid="text-action-id-1426">1426</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-type promocode-actions-title--tablet">Тип</span>
+                <span class="action-type" data-testid="text-action-type-1426">Скидка на следующую покупку</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-start promocode-actions-title--tablet">Старт</span>
+                <span class="action-start">03.12.2025 22:47:46</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-end promocode-actions-title--tablet">Окончание</span>
+                <span class="action-end">15.12.2025 21:26:00</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-status promocode-actions-title--tablet">Статус</span>
+                <span class="action-status status-active" data-testid="text-action-status-1426">Активный</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-count promocode-actions-title--tablet">Кол-во покупок/<br>Сумма пополнений/<br>Кол-во отзывов</span>
+                <span class="action-count">6</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-bonus promocode-actions-title--tablet">Бонус</span>
+                <span class="action-bonus">500 ₽</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="action-bonus">&nbsp;</span>
+                <div class="action-actions">
+                    <svg class="action-icon edit" data-testid="button-edit-action-1426" viewBox="0 0 24 24" fill="#0088ff"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                </div>
+            </div>
+            
+          </div>
+          
+          <div class="action-row" data-testid="row-action-1427" data-type="По сумме депозита">
+            <div class="promo-actions-col promo-actions-col--fixed">
+                <span class="col-action-id promocode-actions-title--tablet">#</span>
+                <span class="action-id" data-testid="text-action-id-1427">1427</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-type promocode-actions-title--tablet">Тип</span>
+                <span class="action-type" data-testid="text-action-type-1427">По сумме депозита</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-start promocode-actions-title--tablet">Старт</span>
+                <span class="action-start">03.12.2025 22:47:46</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-end promocode-actions-title--tablet">Окончание</span>
+                <span class="action-end">15.12.2025 21:26:00</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-status promocode-actions-title--tablet">Статус</span>
+                <span class="action-status status-paused" data-testid="text-action-status-1427">Остановлена</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-count promocode-actions-title--tablet">Кол-во покупок/<br>Сумма пополнений/<br>Кол-во отзывов</span>
+                <span class="action-count">6</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-bonus promocode-actions-title--tablet">Бонус</span>
+                <span class="action-bonus">2 500 ₽</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="action-bonus">&nbsp;</span>
+                <div class="action-actions">
+                    <svg class="action-icon edit" data-testid="button-edit-action-1427" viewBox="0 0 24 24" fill="#0088ff"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                </div>
+            </div>
+            
+          </div>
+          
+          <div class="action-row" data-testid="row-action-1428" data-type="По кол-ву покупок">
+            <div class="promo-actions-col promo-actions-col--fixed">
+                <span class="col-action-id promocode-actions-title--tablet">#</span>
+                <span class="action-id" data-testid="text-action-id-1428">1428</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-type promocode-actions-title--tablet">Тип</span>
+                <span class="action-type" data-testid="text-action-type-1428">По кол-ву покупок</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-start promocode-actions-title--tablet">Старт</span>
+                <span class="action-start">03.12.2025 22:47:46</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="action-end">15.12.2025 21:26:00</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-status promocode-actions-title--tablet">Статус</span>
+                <span class="action-status status-active" data-testid="text-action-status-1428">Активный</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-count promocode-actions-title--tablet">Кол-во покупок/<br>Сумма пополнений/<br>Кол-во отзывов</span>
+                <span class="action-count">6</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="col-action-bonus promocode-actions-title--tablet">Бонус</span>
+                <span class="action-bonus">5 000 ₽</span>
+            </div>
+            
+            <div class="promo-actions-col">
+                <span class="action-bonus">&nbsp;</span>
+                <div class="action-actions">
+                <svg class="action-icon edit" data-testid="button-edit-action-1428" viewBox="0 0 24 24" fill="#0088ff"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></svg>
+                </div>
+            </div>
+            
+          </div>
+
+
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <div class="modal-overlay" id="addActionModalOverlay">
+    <div class="modal-window modal-715">
+        <div class="modal-for-scroll">
+            <div class="modal-header">
+                <span class="modal-title">Добавить</span>
+                <button class="modal-close" id="closeActionModal" data-testid="button-close-action-modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                <label class="form-label">Тип промо-акции</label>
+                <div class="form-select" id="actionTypeSelect" data-testid="select-action-type-modal">
+                    <span id="actionTypeText">По кол-ву покупок</span>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                    <div class="form-select-menu">
+                    <div class="form-select-item" data-value="По кол-ву покупок">По кол-ву покупок</div>
+                    <div class="form-select-item" data-value="По сумме депозита">По сумме депозита</div>
+                    <div class="form-select-item" data-value="За оставленный отзыв">За оставленный отзыв</div>
+                    <div class="form-select-item" data-value="Скидка на следующую покупку">Скидка на следующую покупку</div>
+                    <div class="form-select-item" data-value="Распродажа">Распродажа</div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="form-row">
+                <div class="form-group half">
+                    <label class="form-label">Дата начала</label>
+                    <div class="date-input-wrapper">
+                    <input type="text" class="form-input" id="actionStartDate" data-testid="input-action-start-date" value="20-12-2025 02:24:02">
+                    <svg class="date-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+                    </div>
+                </div>
+                <div class="form-group half">
+                    <label class="form-label">Дата конца</label>
+                    <div class="date-input-wrapper">
+                    <input type="text" class="form-input" id="actionEndDate" data-testid="input-action-end-date" value="20-12-2025 02:24:02">
+                    <svg class="date-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="form-group">
+                <label class="form-label">Статус</label>
+                <div class="form-select" id="actionStatusSelect" data-testid="select-action-status-modal">
+                    <span id="actionStatusText">Не выбрано</span>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+                    <div class="form-select-menu">
+                    <div class="form-select-item" data-value="Не выбрано">Не выбрано</div>
+                    <div class="form-select-item" data-value="Активный">Активный</div>
+                    <div class="form-select-item" data-value="Остановлена">Остановлена</div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="form-group">
+                <label class="form-label">Кол-во покупок/Сумма пополнений/Кол-во отзывов</label>
+                <input type="number" class="form-input" id="actionCountInput" data-testid="input-action-count" value="5" min="0">
+                </div>
+                
+                <div class="form-group">
+                <label class="form-label">Бонус, в валюте магазина</label>
+                <input type="number" class="form-input" id="actionBonusInput" data-testid="input-action-bonus" value="50" min="0">
+                </div>
+            </div>
+            
+            <div class="modal-footer promo-footer">
+                <button class="btn-green" id="saveAndAddActionBtn" data-testid="button-save-add-action">Сохранить и добавить другой</button>
+                <button class="btn-gray" id="applyActionBtn" data-testid="button-apply-action">Применить</button>
+                <button class="btn-green" id="saveActionBtn" data-testid="button-save-action">Сохранить</button>
+                <button class="btn-red" id="deleteActionBtn" data-testid="button-delete-action">Удалить</button>
+            </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Адреса</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item active">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Склад</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Адреса</span>
+      </div>
+      
+      <div class="addresses-toolbar">
+        <!-- Row 1: Search -->
+        <div class="toolbar-search-row">
+          <div class="search-box addresses-search">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+              <circle cx="11" cy="11" r="7" stroke="#969696" stroke-width="1.5"/>
+              <path d="M20 20l-4-4" stroke="#969696" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <input type="text" placeholder="Поиск по id" class="search-input" id="addressSearchInput" data-testid="input-address-search">
+          </div>
+        </div>
+        
+        <!-- Row 2: Filters + Buttons -->
+        <div class="toolbar-filters-row">
+          <div class="filters-left">
+            <div class="filter-dropdown-wrapper">
+              <div class="filter-dropdown filter-city" data-testid="filter-city" id="cityFilterToggle">
+                <span id="cityFilterText">Город</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="filter-menu" id="cityFilterMenu">
+                <div class="filter-menu-item" data-value="0">Город</div>
+                <div class="filter-menu-item" data-value="464">Москва</div>
+                <div class="filter-menu-item" data-value="527">Обновление!</div>
+                <div class="filter-menu-item" data-value="197">Саратов</div>
+              </div>
+            </div>
+            <div class="filter-dropdown-wrapper">
+              <div class="filter-dropdown filter-product" data-testid="filter-product" id="productFilterToggle">
+                <span id="productFilterText">Товар</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="filter-menu" id="productFilterMenu">
+                <div class="filter-menu-item" data-value="0">-Товар</div>
+                <div class="filter-menu-item" data-value="1268">01</div>
+                <div class="filter-menu-item" data-value="1485">Альфа 1 грам</div>
+                <div class="filter-menu-item" data-value="1448">Мёд 1гр</div>
+                <div class="filter-menu-item" data-value="1667">Обновление!</div>
+                <div class="filter-menu-item" data-value="1085">Hash Amezia 1 г.</div>
+                <div class="filter-menu-item" data-value="1086">Hash Amezia 2 г.</div>
+                <div class="filter-menu-item" data-value="1087">Hash Amezia 3 г.</div>
+              </div>
+            </div>
+            <div class="filter-dropdown-wrapper">
+              <div class="filter-dropdown filter-courier" data-testid="filter-courier" id="courierFilterToggle">
+                <span id="courierFilterText">Курьер</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="filter-menu" id="courierFilterMenu">
+                <div class="filter-menu-item" data-value="0">Курьер</div>
+                <div class="filter-menu-item" data-value="178">Курьер1</div>
+                <div class="filter-menu-item" data-value="262">хз</div>
+              </div>
+            </div>
+            <div class="filter-dropdown-wrapper">
+              <div class="filter-dropdown filter-type" data-testid="filter-type" id="typeFilterToggle">
+                <span id="typeFilterText">Тип</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="filter-menu" id="typeFilterMenu">
+                <div class="filter-menu-item" data-value="0">Тип</div>
+                <div class="filter-menu-item" data-value="3">Магнит</div>
+                <div class="filter-menu-item" data-value="2">Прикоп</div>
+                <div class="filter-menu-item" data-value="1">Подъезд</div>
+                <div class="filter-menu-item" data-value="7">Снежный тайник</div>
+                <div class="filter-menu-item" data-value="4">Тайник</div>
+                <div class="filter-menu-item" data-value="5">Камень</div>
+                <div class="filter-menu-item" data-value="10">Без типа</div>
+              </div>
+            </div>
+            <div class="filter-dropdown-wrapper">
+              <div class="filter-dropdown filter-status" data-testid="filter-status" id="statusFilterToggle">
+                <span id="statusFilterText">Статус</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="filter-menu" id="statusFilterMenu">
+                <div class="filter-menu-item" data-value="0">Статус</div>
+                <div class="filter-menu-item" data-value="new">Новый</div>
+                <div class="filter-menu-item" data-value="paid">Оплачен</div>
+                <div class="filter-menu-item" data-value="return">Возврат</div>
+              </div>
+            </div>
+            <div class="filter-dropdown-wrapper">
+              <div class="filter-dropdown filter-calendar" data-testid="filter-date" id="dateFilterToggle">
+                <span id="dateFilterText">2025-12-09 - 2025-12-15</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#969696" stroke-width="1.33"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#969696" stroke-width="1.33" stroke-linecap="round"/></svg>
+              </div>
+              <div class="filter-menu date-picker-menu" id="dateFilterMenu">
+                <div class="date-picker-inputs">
+                  <div class="date-input-group">
+                    <label>От</label>
+                    <input type="date" id="dateFromInput" value="2025-12-09">
+                  </div>
+                  <div class="date-input-group">
+                    <label>До</label>
+                    <input type="date" id="dateToInput" value="2025-12-15">
+                  </div>
+                </div>
+                <button class="date-apply-btn" id="dateApplyBtn">Применить</button>
+              </div>
+            </div>
+          </div>
+          <div class="buttons-right">
+            <button class="add-btn btn-add" data-testid="button-add-address">
+              <span>Добавить</span>
+              <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <button class="add-btn btn-add-bulk" data-testid="button-add-bulk">
+              <span>Добавить массово</span>
+              <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+        
+        <div class="toolbar-row-bottom">
+          <div class="action-section">
+            <span class="action-label">Действие:</span>
+            <div class="action-dropdown-wrapper">
+              <div class="filter-dropdown action-dropdown" data-testid="select-action" id="actionDropdownToggle">
+                <span id="actionDropdownText">Не выбрано</span>
+                <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="action-dropdown-menu" id="actionDropdownMenu">
+                <div class="action-dropdown-item" data-value="">Не выбрано</div>
+                <div class="action-dropdown-divider"></div>
+                <div class="action-dropdown-item" data-value="delete">Удалить выбранные адреса</div>
+                <div class="action-dropdown-item" data-value="available">Активировать адреса для продажи</div>
+                <div class="action-dropdown-item" data-value="unavailable">Снять адреса с продажи</div>
+                <div class="action-dropdown-divider"></div>
+                <div class="action-dropdown-item" data-value="type_1">Сменить тип на Подъезд</div>
+                <div class="action-dropdown-item" data-value="type_2">Сменить тип на Прикоп</div>
+                <div class="action-dropdown-item" data-value="type_3">Сменить тип на Магнит</div>
+                <div class="action-dropdown-item" data-value="type_4">Сменить тип на Тайник</div>
+                <div class="action-dropdown-item" data-value="type_5">Сменить тип на Камень</div>
+                <div class="action-dropdown-item" data-value="type_6">Сменить тип на Снежный прикоп</div>
+                <div class="action-dropdown-item" data-value="type_7">Сменить тип на Снежный тайник</div>
+                <div class="action-dropdown-item" data-value="type_8">Сменить тип на Кнопка</div>
+                <div class="action-dropdown-item" data-value="type_9">Сменить тип на Земляной прикоп</div>
+                <div class="action-dropdown-item" data-value="type_10">Сменить тип на Без типа</div>
+                <div class="action-dropdown-divider"></div>
+                <div class="action-dropdown-item" data-value="courier_178">Сменить курьера на Курьер1</div>
+                <div class="action-dropdown-item" data-value="courier_262">Сменить курьера на хз</div>
+                <div class="action-dropdown-divider"></div>
+                <div class="action-dropdown-item" data-value="location_1206">Сменить район на Москва Кузнецкий мост</div>
+                <div class="action-dropdown-item" data-value="location_1385">Сменить район на Обновление! Обновлени!</div>
+                <div class="action-dropdown-item" data-value="location_1384">Сменить район на Обновление! Обновление!</div>
+                <div class="action-dropdown-item" data-value="location_776">Сменить район на Саратов Ленинский</div>
+                <div class="action-dropdown-divider"></div>
+                <div class="action-dropdown-item" data-value="product_1268">Сменить товар на 01</div>
+                <div class="action-dropdown-item" data-value="product_1269">Сменить товар на Aaaa</div>
+                <div class="action-dropdown-item" data-value="product_1485">Сменить товар на Альфа 1 грам</div>
+                <div class="action-dropdown-item" data-value="product_1448">Сменить товар на Мёд 1гр</div>
+                <div class="action-dropdown-item" data-value="product_1667">Сменить товар на Обновление!</div>
+                <div class="action-dropdown-item" data-value="product_1431">Сменить товар на соль</div>
+              </div>
+            </div>
+            <button class="execute-btn" data-testid="button-execute">Выполнить</button>
+          </div>
+          <div class="page-stats">
+            <span data-testid="text-page-stats">На этой странице 10 шт. на 47290 руб</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="addresses-data-table">
+        <div class="data-table-header" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 12px 14px; gap: 8px; margin-bottom: 10px;">
+          <div class="col-checkbox"><input type="checkbox" class="table-checkbox" id="selectAllAddresses" data-testid="checkbox-select-all"></div>
+          <div class="col-num" style="color: #969696; font-size: 14px;">#</div>
+          <div class="col-product" style="color: #969696; font-size: 14px;">Товар</div>
+          <div class="col-district" style="color: #969696; font-size: 14px;">Район</div>
+          <div class="col-courier" style="color: #969696; font-size: 14px;">Курьер</div>
+          <div class="col-status" style="color: #969696; font-size: 14px;">Статус</div>
+          <div class="col-info" style="color: #969696; font-size: 14px;">Инфо</div>
+          <div class="col-type" style="color: #969696; font-size: 14px;">Тип</div>
+          <div class="col-priority" style="color: #969696; font-size: 14px;">Приоритет</div>
+          <div class="col-date" style="color: #969696; font-size: 14px;">Дата</div>
+          <div class="col-action"></div>
+        </div>
+        
+        <div class="data-table-body" id="addressesTableBody" style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Кузнецкий мост Москва Курьер 1 Новый">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-1"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Кузнецкий мост (Москва)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #117c2c; font-size: 14px; font-weight: 500;">Новый</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-1" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Кузнецкий мост Москва Курьер 1 Оплачен">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-2"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Кузнецкий мост (Москва)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #117c2c; font-size: 14px; font-weight: 500;">Оплачен</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-2" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Ленинский Саратов Курьер 1 Возврат">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-3"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Ленинский (Саратов)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #ff383c; font-size: 14px; font-weight: 500;">Возврат</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-3" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Ленинский Саратов Курьер 1 Возврат">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-4"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Ленинский (Саратов)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #ff383c; font-size: 14px; font-weight: 500;">Возврат</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-4" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Кузнецкий мост Москва Курьер 1 Оплачен">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-5"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Кузнецкий мост (Москва)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #117c2c; font-size: 14px; font-weight: 500;">Оплачен</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-5" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Ленинский Саратов Курьер 1 Возврат">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-6"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Ленинский (Саратов)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #ff383c; font-size: 14px; font-weight: 500;">Возврат</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-6" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Кузнецкий мост Москва Курьер 1 Оплачен">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-7"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Кузнецкий мост (Москва)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #117c2c; font-size: 14px; font-weight: 500;">Оплачен</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-7" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Кузнецкий мост Москва Курьер 1 Оплачен">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-8"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Кузнецкий мост (Москва)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #117c2c; font-size: 14px; font-weight: 500;">Оплачен</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-8" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Кузнецкий мост Москва Курьер 1 Оплачен">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-9"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Кузнецкий мост (Москва)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #117c2c; font-size: 14px; font-weight: 500;">Оплачен</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-9" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="data-table-row" style="display: grid; grid-template-columns: 34px 50px 110px 180px 80px 80px 100px 70px 80px 100px 36px; padding: 14px; gap: 8px; background: #161616; border: 1px solid #1c1c1c; border-radius: 10px; align-items: center; min-height: 68px;" data-searchable="208 Альфа 1 грам Кузнецкий мост Москва Курьер 1 Оплачен">
+            <div class="col-checkbox"><input type="checkbox" class="table-checkbox" data-testid="checkbox-row-10"></div>
+            <div class="col-num" style="color: #969696; font-size: 14px;">208</div>
+            <div class="col-product" style="color: #fff; font-size: 14px;">Альфа 1 грам</div>
+            <div class="col-district" style="color: #fff; font-size: 14px;">Кузнецкий мост (Москва)</div>
+            <div class="col-courier" style="color: #fff; font-size: 14px;">Курьер 1</div>
+            <div class="col-status"><span style="color: #117c2c; font-size: 14px; font-weight: 500;">Оплачен</span></div>
+            <div class="col-info" style="display: flex; flex-direction: column; gap: 2px;">
+              <a href="#" style="color: #fff; font-size: 14px; text-decoration: none;">Фото</a>
+              <button type="button" class="copy-btn" data-copy="ICE ICE" data-testid="button-copy" style="background: transparent; border: none; color: #fff; font-size: 14px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">ICE ICE <svg viewBox="0 0 16 16" fill="none" width="16" height="16"><rect x="5" y="5" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/><rect x="2" y="2" width="7" height="7" rx="1" stroke="white" stroke-width="1.3"/></svg></button>
+            </div>
+            <div class="col-type" style="color: #fff; font-size: 14px;">Тайник</div>
+            <div class="col-priority" style="color: #fff; font-size: 14px;">0</div>
+            <div class="col-date" style="color: #fff; font-size: 14px; line-height: 1.4;">
+              <div>03.12.2025</div>
+              <div>22:47:46</div>
+            </div>
+            <div class="col-action" style="display: flex; justify-content: center;">
+              <button class="action-btn" data-testid="button-action-10" style="background: transparent; border: none; cursor: pointer; padding: 0; width: 20px; height: 20px;">
+                <svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="7.5" fill="#0088FF"/><circle cx="10" cy="10" r="5.5" fill="#161616"/><path d="M10 6v4.5l2.5 1.5" stroke="#0088FF" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Add Address Modal -->
+  <div class="modal-overlay" id="addAddressModalOverlay">
+    <div class="address-modal" id="addAddressModal">
+      <div class="address-modal-header">
+        <span class="address-modal-title">Добавить</span>
+        <button class="address-modal-close" id="closeAddAddressModal">
+          <svg viewBox="0 0 24 24" fill="none" width="19" height="19">
+            <path d="M18 6L6 18M6 6l12 12" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="address-modal-body">
+        <div class="address-form-group">
+          <label class="address-form-label">Курьер</label>
+          <div class="address-form-dropdown-wrapper">
+            <div class="address-form-dropdown" id="addCourierDropdownToggle">
+              <span id="addCourierDropdownText">Не выбрано</span>
+              <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="address-form-dropdown-menu" id="addCourierDropdownMenu">
+              <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+              <div class="address-form-dropdown-item" data-value="178">Курьер1</div>
+              <div class="address-form-dropdown-item" data-value="262">хз</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="address-form-row">
+          <div class="address-form-group half">
+            <label class="address-form-label">Курьер</label>
+            <div class="address-form-dropdown-wrapper">
+              <div class="address-form-dropdown" id="addCourier2DropdownToggle">
+                <span id="addCourier2DropdownText">Не выбрано</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="address-form-dropdown-menu" id="addCourier2DropdownMenu">
+                <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+                <div class="address-form-dropdown-item" data-value="178">Курьер1</div>
+                <div class="address-form-dropdown-item" data-value="262">хз</div>
+              </div>
+            </div>
+          </div>
+          <div class="address-form-group half">
+            <label class="address-form-label">Район</label>
+            <div class="address-form-dropdown-wrapper">
+              <div class="address-form-dropdown" id="addDistrictDropdownToggle">
+                <span id="addDistrictDropdownText">Не выбрано</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="address-form-dropdown-menu" id="addDistrictDropdownMenu">
+                <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+                <div class="address-form-dropdown-item" data-value="1206">Москва Кузнецкий мост</div>
+                <div class="address-form-dropdown-item" data-value="776">Саратов Ленинский</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Товар</label>
+          <div class="address-form-dropdown-wrapper">
+            <div class="address-form-dropdown" id="addProductDropdownToggle">
+              <span id="addProductDropdownText">Не выбрано</span>
+              <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="address-form-dropdown-menu" id="addProductDropdownMenu">
+              <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+              <div class="address-form-dropdown-item" data-value="1268">01</div>
+              <div class="address-form-dropdown-item" data-value="1485">Альфа 1 грам</div>
+              <div class="address-form-dropdown-item" data-value="1448">Мёд 1гр</div>
+              <div class="address-form-dropdown-item" data-value="1667">Обновление!</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Тип</label>
+          <div class="address-form-dropdown-wrapper">
+            <div class="address-form-dropdown" id="addTypeDropdownToggle">
+              <span id="addTypeDropdownText">Не выбрано</span>
+              <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="address-form-dropdown-menu" id="addTypeDropdownMenu">
+              <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+              <div class="address-form-dropdown-item" data-value="1">Подъезд</div>
+              <div class="address-form-dropdown-item" data-value="2">Прикоп</div>
+              <div class="address-form-dropdown-item" data-value="3">Магнит</div>
+              <div class="address-form-dropdown-item" data-value="4">Тайник</div>
+              <div class="address-form-dropdown-item" data-value="5">Камень</div>
+              <div class="address-form-dropdown-item" data-value="7">Снежный тайник</div>
+              <div class="address-form-dropdown-item" data-value="10">Без типа</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Фотография (не обязательно)</label>
+          <div class="file-upload-row">
+            <button class="file-upload-btn" id="addPhotoBtn">Выберите файл</button>
+            <span class="file-upload-text" id="addPhotoText">Файл не выбран</span>
+            <input type="file" id="addPhotoInput" accept="image/*" style="display:none;">
+          </div>
+        </div>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Описание (не обязательно, максимум 1024 символа)</label>
+          <textarea class="address-form-textarea" id="addDescription" maxlength="1024"></textarea>
+        </div>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Приоритет (если нужно)</label>
+          <input type="number" class="address-form-input" id="addPriority" value="0">
+        </div>
+      </div>
+      
+      <div class="address-modal-footer">
+        <button class="address-btn primary" id="addSaveAndNewBtn">Сохранить и добавить другой</button>
+        <button class="address-btn secondary" id="addApplyBtn">Применить</button>
+        <button class="address-btn secondary" id="addSaveBtn">Сохранить</button>
+        <button class="address-btn danger" id="addDeleteBtn">Удалить</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bulk Add Address Modal -->
+  <div class="modal-overlay" id="bulkAddModalOverlay">
+    <div class="address-modal bulk-modal" id="bulkAddModal">
+      <div class="address-modal-header">
+        <span class="address-modal-title">Массовое добавление</span>
+        <button class="address-modal-close" id="closeBulkAddModal">
+          <svg viewBox="0 0 24 24" fill="none" width="19" height="19">
+            <path d="M18 6L6 18M6 6l12 12" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="address-modal-body">
+        <p class="bulk-info-text muted">Вы можете воспользоваться нашим фотохостингом и выбрать одно или несколько изображений, которые будут загружены сразу после выбора.</p>
+        
+        <p class="bulk-info-text warning">Мы делаем все, что в наших силах для того, что бы не утерять доступ к фотохостингу. Но, рекомендуем, до продажи товаров сохранять фотографии у себя, для большей уверенности в том, что вы не потеряете товар ни при каких обстоятельствах.</p>
+        
+        <p class="bulk-info-text muted">Для каждого изображения будет создан адрес. Также необходимо добавить подпись к каждому изображению или одну на всех.</p>
+        
+        <p class="bulk-info-text white">Сделать это можно в поле Описание.<br>Подписи к изображениям разделяются пустой строкой. Например:</p>
+        
+        <p class="bulk-info-text muted-light">Подпись к первому изображению</p>
+        <p class="bulk-info-text muted-light">Подпись ко 2-му изображению</p>
+        <p class="bulk-info-text muted-light">Подпись к 3-му изображению</p>
+        
+        <p class="bulk-info-text muted">После загрузки фото отобразятся в миниатюрном виде, обязательно проверьте подписи для каждого клада и затем нажимайте кнопку Сохранить.</p>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Курьер</label>
+          <div class="address-form-dropdown-wrapper">
+            <div class="address-form-dropdown" id="bulkCourierDropdownToggle">
+              <span id="bulkCourierDropdownText">Не выбрано</span>
+              <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="address-form-dropdown-menu" id="bulkCourierDropdownMenu">
+              <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+              <div class="address-form-dropdown-item" data-value="178">Курьер1</div>
+              <div class="address-form-dropdown-item" data-value="262">хз</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="address-form-row">
+          <div class="address-form-group half">
+            <label class="address-form-label">Курьер</label>
+            <div class="address-form-dropdown-wrapper">
+              <div class="address-form-dropdown" id="bulkCourier2DropdownToggle">
+                <span id="bulkCourier2DropdownText">Не выбрано</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="address-form-dropdown-menu" id="bulkCourier2DropdownMenu">
+                <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+                <div class="address-form-dropdown-item" data-value="178">Курьер1</div>
+                <div class="address-form-dropdown-item" data-value="262">хз</div>
+              </div>
+            </div>
+          </div>
+          <div class="address-form-group half">
+            <label class="address-form-label">Район</label>
+            <div class="address-form-dropdown-wrapper">
+              <div class="address-form-dropdown" id="bulkDistrictDropdownToggle">
+                <span id="bulkDistrictDropdownText">Не выбрано</span>
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="address-form-dropdown-menu" id="bulkDistrictDropdownMenu">
+                <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+                <div class="address-form-dropdown-item" data-value="1206">Москва Кузнецкий мост</div>
+                <div class="address-form-dropdown-item" data-value="776">Саратов Ленинский</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Товар</label>
+          <div class="address-form-dropdown-wrapper">
+            <div class="address-form-dropdown" id="bulkProductDropdownToggle">
+              <span id="bulkProductDropdownText">Не выбрано</span>
+              <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="address-form-dropdown-menu" id="bulkProductDropdownMenu">
+              <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+              <div class="address-form-dropdown-item" data-value="1268">01</div>
+              <div class="address-form-dropdown-item" data-value="1485">Альфа 1 грам</div>
+              <div class="address-form-dropdown-item" data-value="1448">Мёд 1гр</div>
+              <div class="address-form-dropdown-item" data-value="1667">Обновление!</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Тип</label>
+          <div class="address-form-dropdown-wrapper">
+            <div class="address-form-dropdown" id="bulkTypeDropdownToggle">
+              <span id="bulkTypeDropdownText">Не выбрано</span>
+              <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M6 9l6 6 6-6" stroke="#969696" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="address-form-dropdown-menu" id="bulkTypeDropdownMenu">
+              <div class="address-form-dropdown-item" data-value="">Не выбрано</div>
+              <div class="address-form-dropdown-item" data-value="1">Подъезд</div>
+              <div class="address-form-dropdown-item" data-value="2">Прикоп</div>
+              <div class="address-form-dropdown-item" data-value="3">Магнит</div>
+              <div class="address-form-dropdown-item" data-value="4">Тайник</div>
+              <div class="address-form-dropdown-item" data-value="5">Камень</div>
+              <div class="address-form-dropdown-item" data-value="7">Снежный тайник</div>
+              <div class="address-form-dropdown-item" data-value="10">Без типа</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="address-form-group">
+          <label class="address-form-label">Описание (обязательно подпись к каждому изображению или одна на всех)</label>
+          <textarea class="address-form-textarea large" id="bulkDescription"></textarea>
+        </div>
+        
+        <div class="drop-zone" id="bulkDropZone">
+          <div class="drop-zone-icon">
+            <svg viewBox="0 0 24 24" fill="none" width="48" height="48">
+              <circle cx="12" cy="12" r="10" stroke="#0088FF" stroke-width="2"/>
+              <path d="M12 8v8M8 12h8" stroke="#0088FF" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="drop-zone-text">Выбирайте фотографии или перетаскивайте их в эту область</p>
+          <p class="drop-zone-subtext">Выбирайте фотографии или перетаскивайте их в эту область</p>
+          <input type="file" id="bulkFileInput" multiple accept="image/*" style="display:none;">
+        </div>
+      </div>
+      
+      <div class="address-modal-footer">
+        <button class="address-btn primary" id="bulkSaveBtn">Сохранить</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+</body>
+</html>

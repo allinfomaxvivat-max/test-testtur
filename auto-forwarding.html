@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TURBO | Рассылки</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/auto-forwarding.css">
+  <link rel="stylesheet" href="styles/auto-forwarding-modal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <img src="assets/---.png" alt="Background" class="background-image">
+    
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-logo-link"><img src="assets/turbo-2-1.svg" alt="TURBO" class="sidebar-logo"></a>
+      
+      <nav class="sidebar-nav">
+        <div class="separator"></div>
+        
+        <div class="menu-items">
+          <a href="index.html" class="menu-item">
+            <img src="assets/icon-home.png" alt="" class="menu-icon">
+            <span>Главная страница</span>
+          </a>
+          <a href="purchases.html" class="menu-item">
+            <img src="assets/icon-purchases.png" alt="" class="menu-icon">
+            <span>Покупки</span>
+          </a>
+          <a href="deposits.html" class="menu-item">
+            <img src="assets/icon-deposits.png" alt="" class="menu-icon">
+            <span>Пополнения</span>
+          </a>
+          <a href="disputes.html" class="menu-item">
+            <img src="assets/icon-disputes.png" alt="" class="menu-icon">
+            <span>Диспуты</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-warehouse.png" alt="" class="menu-icon">
+            <span>Склад</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="regions.html" class="submenu-item">Регионы</a>
+            <a href="cities.html" class="submenu-item">Города</a>
+            <a href="districts.html" class="submenu-item">Районы</a>
+            <a href="products.html" class="submenu-item">Товары</a>
+            <a href="product-groups.html" class="submenu-item">Группы товаров</a>
+            <a href="couriers.html" class="submenu-item">Курьеры</a>
+            <a href="addresses.html" class="submenu-item">Адреса</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-marketing.png" alt="" class="menu-icon">
+            <span>Маркетинг</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="promocodes.html" class="submenu-item">Промокоды</a>
+            <a href="promo-actions.html" class="submenu-item">Промо-акции</a>
+            <a href="cumulative-discount.html" class="submenu-item">Накопительная скидка</a>
+            <a href="reviews.html" class="submenu-item">Отзывы</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-bots.png" alt="" class="menu-icon">
+            <span>Боты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="bots.html" class="submenu-item">Рабочие боты</a>
+            <a href="bot-messages.html" class="submenu-item">Сообщения бота</a>
+          </div>
+          <a href="#" class="menu-item has-submenu open active">
+            <img src="assets/icon-mailings.png" alt="" class="menu-icon">
+            <span>Рассылки/Публикации</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu" style="max-height: 300px;">
+            <a href="mailing-channels.html" class="submenu-item">Каналы для рассылки</a>
+            <a href="channel-publications.html" class="submenu-item">Публикации в каналах</a>
+            <a href="bot-mailings.html" class="submenu-item">Рассылки в бот</a>
+            <a href="auto-forwarding.html" class="submenu-item active">Автопересылки</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-clients.png" alt="" class="menu-icon">
+            <span>Клиенты</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="clients.html" class="submenu-item">Клиенты</a>
+            <a href="support-messages.html" class="submenu-item">Сообщения в техподдержку</a>
+          </div>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-staff.png" alt="" class="menu-icon">
+            <span>Сотрудники</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="employees.html" class="submenu-item">Сотрудники</a>
+            <a href="access-levels.html" class="submenu-item">Уровни доступа</a>
+          </div>
+          <a href="history.html" class="menu-item">
+            <img src="assets/icon-history.png" alt="" class="menu-icon">
+            <span>История</span>
+          </a>
+          <a href="#" class="menu-item has-submenu">
+            <img src="assets/icon-stats.png" alt="" class="menu-icon">
+            <span>Статистика</span>
+            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="submenu">
+            <a href="purchases-stock.html" class="submenu-item">Покупки и остатки</a>
+            <a href="deposits-dynamics.html" class="submenu-item">Динамика пополнений</a>
+            <a href="purchases-chart.html" class="submenu-item">Графики покупки</a>
+            <a href="deposits-chart.html" class="submenu-item">Графики пополнения</a>
+            <a href="debit-credit.html" class="submenu-item">Дебет/Кредит</a>
+            <a href="stock-groups.html" class="submenu-item">Склад по группам товаров</a>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 60px;"></div>
+        
+        <div class="wallet-section">
+          <div class="wallet-item">
+            <img src="assets/btc.svg" alt="BTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">0.00000000</span>
+              <span class="wallet-currency">BTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/ltc.svg" alt="LTC" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">234.00000000</span>
+              <span class="wallet-currency">LTC</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/rub.svg" alt="RUB" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">2 434.00 ₽</span>
+              <span class="wallet-currency">RUB</span>
+            </div>
+          </div>
+          <div class="wallet-item">
+            <img src="assets/usdt.svg" alt="USDT" class="wallet-icon">
+            <div class="wallet-info">
+              <span class="wallet-amount">130.00000000</span>
+              <span class="wallet-currency">USDT</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="separator" style="margin-top: 24px;"></div>
+        
+        <div class="user-section-wrapper">
+          <a href="settings.html" class="user-section" style="text-decoration: none; cursor: pointer;">
+            <img src="assets/avatar.svg" alt="User" class="user-avatar">
+            <div class="user-info">
+              <span class="user-shop">Gothem</span>
+              <span class="user-name">TestRUTOR</span>
+            </div>
+          </a>
+          
+          <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationBtn" data-testid="button-notifications">
+              <img src="assets/message-icon.png" alt="Messages" class="notification-icon">
+              <span class="notification-badge" id="notificationBadge">3</span>
+            </button>
+            
+            <div class="notification-panel" id="notificationPanel">
+              <div class="notification-panel-header">
+                <span class="notification-panel-title">Сообщение от клиентов</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-item" data-testid="notification-item-1">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-2">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+                <div class="notification-item" data-testid="notification-item-3">
+                  <img src="assets/avatar.svg" alt="User" class="notification-item-avatar">
+                  <div class="notification-item-content">
+                    <span class="notification-item-name">Carpenter Susan</span>
+                    <span class="notification-item-text">Новое сообщение от клиента</span>
+                    <span class="notification-item-time">03.12.2025 22:47:46</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <div class="breadcrumb">
+        <a href="index.html" class="breadcrumb-item breadcrumb-link" data-testid="link-home-breadcrumb">Главная страница</a>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item">Рассылки/Публикации</span>
+        <svg class="breadcrumb-separator" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <span class="breadcrumb-item active">Рассылки</span>
+      </div>
+      
+      <!-- Filter Bar -->
+      <div class="af-toolbar">
+        <div class="af-filters">
+          <div class="af-filter-dropdown">
+            <button type="button" class="af-filter-btn" id="afTypeBtn" data-testid="button-filter-type">
+              <span>Тип</span>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="af-filter-menu" id="afTypeMenu">
+              <div class="af-filter-item" data-value="all">Все</div>
+              <div class="af-filter-item" data-value="manual">Ручной запуск</div>
+              <div class="af-filter-item" data-value="auto">Автоматический запуск</div>
+            </div>
+          </div>
+          <div class="af-date-range">
+            <button type="button" class="af-date-btn" id="afDateBtn" data-testid="button-date-range">
+              <span id="afDateText">2025-12-09 - 2025-12-15</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </button>
+            <div class="af-date-picker" id="afDatePicker">
+              <div class="af-date-picker-header">Выберите период</div>
+              <div class="af-date-picker-body">
+                <div class="af-date-row">
+                  <label>От:</label>
+                  <input type="date" id="afDateFrom" class="af-date-input">
+                </div>
+                <div class="af-date-row">
+                  <label>До:</label>
+                  <input type="date" id="afDateTo" class="af-date-input">
+                </div>
+              </div>
+              <div class="af-date-picker-footer">
+                <button class="af-date-apply" id="afDateApply">Применить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="af-btn-add" data-testid="button-add-forwarding">
+          <span>Добавить</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+      </div>
+      
+      <!-- Table -->
+      <div class="af-table-container">
+        <div class="af-table">
+          <div class="af-table-header">
+            <div class="af-th af-th-id">#</div>
+            <div class="af-th af-th-name">Название</div>
+            <div class="af-th af-th-donor">ID канала донора</div>
+            <div class="af-th af-th-message">Номер пересылаемого сообщения</div>
+            <div class="af-th af-th-status">Статус</div>
+            <div class="af-th af-th-type">Тип рассылки</div>
+            <div class="af-th af-th-action">Действие</div>
+          </div>
+          <div class="af-table-body" id="afTableBody">
+            <div class="af-table-row" data-id="1">
+              <div class="af-td af-td-id">8</div>
+              <div class="af-td af-td-name">Тестовое название канала</div>
+              <div class="af-td af-td-donor">-1002343324404</div>
+              <div class="af-td af-td-message">3</div>
+              <div class="af-td af-td-status">
+                <div class="af-status-info">
+                  <span class="af-status-label">Последний запуск</span>
+                  <span class="af-status-date">03.12.2025 22:47</span>
+                  <div class="af-status-badges">
+                    <span class="af-stat-badge af-stat-gray">12</span>
+                    <span class="af-stat-badge af-stat-green">32</span>
+                    <span class="af-stat-badge af-stat-red">12</span>
+                  </div>
+                </div>
+              </div>
+              <div class="af-td af-td-type">Автоматический запуск</div>
+              <div class="af-td af-td-action">
+                <button class="af-launch-btn" data-testid="button-launch-1">Запуск</button>
+              </div>
+            </div>
+            <div class="af-table-row" data-id="2">
+              <div class="af-td af-td-id">8</div>
+              <div class="af-td af-td-name">Тестовое название канала</div>
+              <div class="af-td af-td-donor">-1002343324404</div>
+              <div class="af-td af-td-message">5</div>
+              <div class="af-td af-td-status">
+                <div class="af-status-info">
+                  <span class="af-status-label">Последний запуск</span>
+                  <span class="af-status-date">03.12.2025 22:47</span>
+                  <div class="af-status-badges">
+                    <span class="af-stat-badge af-stat-gray">12</span>
+                    <span class="af-stat-badge af-stat-green">32</span>
+                    <span class="af-stat-badge af-stat-red">12</span>
+                  </div>
+                </div>
+              </div>
+              <div class="af-td af-td-type">Ручной запуск</div>
+              <div class="af-td af-td-action">
+                <button class="af-launch-btn" data-testid="button-launch-2">Запуск</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Modal -->
+  <div class="af-modal-overlay" id="afModalOverlay">
+    <div class="af-modal">
+      <span class="af-modal-title" id="afModalTitle">Добавить</span>
+      <button class="af-modal-close" id="afModalClose" data-testid="button-modal-close">
+        <svg viewBox="0 0 19 19" fill="none" stroke="#FFFFFF" stroke-width="1.58">
+          <line x1="4.75" y1="4.75" x2="14.25" y2="14.25"/>
+          <line x1="14.25" y1="4.75" x2="4.75" y2="14.25"/>
+        </svg>
+      </button>
+      
+      <!-- Тип пересылки -->
+      <div class="af-form-group af-group-type">
+        <span class="af-form-label">Тип пересылки</span>
+        <div class="af-form-select" id="afSelectType" data-testid="select-type">
+          <span class="af-select-value">Не выбрано</span>
+          <span class="af-select-arrow">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.33"><path d="M4 6l4 4 4-4"/></svg>
+          </span>
+          <div class="af-select-menu">
+            <div class="af-select-item" data-value="forward">Пересылка</div>
+            <div class="af-select-item" data-value="copy">Копирование</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Название пересылки -->
+      <div class="af-form-group af-group-name">
+        <span class="af-form-label">Название пересылки</span>
+        <input type="text" class="af-form-input" id="afInputName" data-testid="input-name" placeholder="">
+        <span class="af-form-hint">Укажите название рассылки, например, из какого канала куда отправляем</span>
+      </div>
+      
+      <!-- Токен бота пересылщика -->
+      <div class="af-form-group af-group-token">
+        <span class="af-form-label">Токен бота пересылщика</span>
+        <input type="text" class="af-form-input" id="afInputToken" data-testid="input-token" placeholder="">
+        <span class="af-form-hint">Бот должен быть подключен к каналу с правами чтения сообщений, а также добавлен во все чаты, в которые необходимо пересылать сообщение.</span>
+      </div>
+      
+      <!-- ID канала откуда пересылаем -->
+      <div class="af-form-group af-group-channel-id">
+        <span class="af-form-label">ID канала откуда пересылаем</span>
+        <input type="text" class="af-form-input" id="afInputChannelId" data-testid="input-channel-id" placeholder="">
+        <span class="af-form-hint">Отрицательное число. Его можно получить с помощью бота https://t.me/username_to_id_bot прислав ему ссылку на канал.</span>
+      </div>
+      
+      <!-- Номер сообщения в канале для пересылки -->
+      <div class="af-form-group af-group-message-num">
+        <span class="af-form-label">Номер сообщения в канале для пересылки</span>
+        <input type="text" class="af-form-input" id="afInputMessageNum" data-testid="input-message-num" placeholder="">
+        <span class="af-form-hint">Можно получить номер сообщения, кликнув правой кл мыши на сообщение и получив ссылку на сообщение в канале. В ссылке будет указан номер сообщения.</span>
+      </div>
+      
+      <!-- ID чатов -->
+      <div class="af-form-group af-group-chats">
+        <span class="af-form-label">ID чатов, один в каждой строчке</span>
+        <textarea class="af-form-textarea" id="afInputChats" data-testid="input-chats" placeholder=""></textarea>
+      </div>
+      
+      <!-- Статус -->
+      <div class="af-form-group af-group-status">
+        <span class="af-form-label">Статус</span>
+        <div class="af-form-select" id="afSelectStatus" data-testid="select-status">
+          <span class="af-select-value">Активная</span>
+          <span class="af-select-arrow">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.33"><path d="M4 6l4 4 4-4"/></svg>
+          </span>
+          <div class="af-select-menu">
+            <div class="af-select-item" data-value="active">Активная</div>
+            <div class="af-select-item" data-value="inactive">Неактивная</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Buttons -->
+      <div class="af-modal-footer">
+        <button class="af-modal-btn af-btn-save-add" id="afBtnSaveAdd" data-testid="button-save-add">Сохранить и добавить другой</button>
+        <button class="af-modal-btn af-btn-apply" id="afBtnApply" data-testid="button-apply">Применить</button>
+        <button class="af-modal-btn af-btn-save" id="afBtnSave" data-testid="button-save">Сохранить</button>
+        <button class="af-modal-btn af-btn-delete" id="afBtnDelete" data-testid="button-delete">Удалить</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Data storage
+      let forwardingData = [
+        {
+          id: 1,
+          name: 'Тестовое название канала',
+          token: '123456789:ABCdefGHIjklMNOpqrsTUVwxyz',
+          channelId: '-1002343324404',
+          messageNum: '3',
+          chats: '-100123456789\n-100987654321',
+          type: 'auto',
+          status: 'active',
+          lastRun: '03.12.2025 22:47',
+          stats: { gray: 12, green: 32, red: 12 }
+        },
+        {
+          id: 2,
+          name: 'Тестовое название канала',
+          token: '987654321:ZYXwvuTSRqponMLKjihGFEdcba',
+          channelId: '-1002343324404',
+          messageNum: '5',
+          chats: '-100111222333',
+          type: 'manual',
+          status: 'active',
+          lastRun: '03.12.2025 22:47',
+          stats: { gray: 12, green: 32, red: 12 }
+        }
+      ];
+      
+      let nextId = 3;
+      let editingId = null;
+      let isEditMode = false;
+      
+      // Elements
+      const tableBody = document.getElementById('afTableBody');
+      const modalOverlay = document.getElementById('afModalOverlay');
+      const modalTitle = document.getElementById('afModalTitle');
+      const modalClose = document.getElementById('afModalClose');
+      const addBtn = document.querySelector('.af-btn-add');
+      const btnSaveAdd = document.getElementById('afBtnSaveAdd');
+      const btnApply = document.getElementById('afBtnApply');
+      const btnSave = document.getElementById('afBtnSave');
+      const btnDelete = document.getElementById('afBtnDelete');
+      
+      // Form elements
+      const inputName = document.getElementById('afInputName');
+      const inputToken = document.getElementById('afInputToken');
+      const inputChannelId = document.getElementById('afInputChannelId');
+      const inputMessageNum = document.getElementById('afInputMessageNum');
+      const inputChats = document.getElementById('afInputChats');
+      const selectType = document.getElementById('afSelectType');
+      const selectStatus = document.getElementById('afSelectStatus');
+      
+      // Render table from data
+      function renderTable() {
+        tableBody.innerHTML = '';
+        forwardingData.forEach(function(item) {
+          const typeText = item.type === 'auto' ? 'Автоматический запуск' : 'Ручной запуск';
+          const row = document.createElement('div');
+          row.className = 'af-table-row';
+          row.dataset.id = item.id;
+          row.innerHTML = `
+            <div class="af-td af-td-id">${item.id}</div>
+            <div class="af-td af-td-name">${item.name}</div>
+            <div class="af-td af-td-donor">${item.channelId}</div>
+            <div class="af-td af-td-message">${item.messageNum}</div>
+            <div class="af-td af-td-status">
+              <div class="af-status-info">
+                <span class="af-status-label">Последний запуск</span>
+                <span class="af-status-date">${item.lastRun || 'Никогда'}</span>
+                <div class="af-status-badges">
+                  <span class="af-stat-badge af-stat-gray">${item.stats?.gray || 0}</span>
+                  <span class="af-stat-badge af-stat-green">${item.stats?.green || 0}</span>
+                  <span class="af-stat-badge af-stat-red">${item.stats?.red || 0}</span>
+                </div>
+              </div>
+            </div>
+            <div class="af-td af-td-type">${typeText}</div>
+            <div class="af-td af-td-action">
+              <button class="af-launch-btn" data-testid="button-launch-${item.id}">Запуск</button>
+            </div>
+          `;
+          tableBody.appendChild(row);
+        });
+        
+        // Add click handlers for rows
+        attachRowClickHandlers();
+        attachLaunchButtonHandlers();
+      }
+      
+      function attachRowClickHandlers() {
+        tableBody.querySelectorAll('.af-table-row').forEach(function(row) {
+          row.addEventListener('click', function(e) {
+            if (e.target.closest('.af-launch-btn')) return;
+            const id = parseInt(row.dataset.id);
+            openEditModal(id);
+          });
+          row.style.cursor = 'pointer';
+        });
+      }
+      
+      function attachLaunchButtonHandlers() {
+        tableBody.querySelectorAll('.af-launch-btn').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const row = btn.closest('.af-table-row');
+            const id = parseInt(row.dataset.id);
+            const item = forwardingData.find(d => d.id === id);
+            if (item) {
+              const now = new Date();
+              const dateStr = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' }) + ' ' +
+                              now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+              item.lastRun = dateStr;
+              item.stats = { gray: 0, green: 0, red: 0 };
+              
+              const statusInfo = row.querySelector('.af-status-info');
+              statusInfo.style.opacity = '0';
+              statusInfo.style.transform = 'scale(0.95)';
+              
+              setTimeout(function() {
+                statusInfo.innerHTML = `
+                  <span class="af-status-label">Последний запуск</span>
+                  <span class="af-status-date">${dateStr}</span>
+                  <div class="af-status-badges">
+                    <span class="af-stat-badge af-stat-gray">0</span>
+                    <span class="af-stat-badge af-stat-green">0</span>
+                    <span class="af-stat-badge af-stat-red">0</span>
+                  </div>
+                `;
+                statusInfo.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                statusInfo.style.opacity = '1';
+                statusInfo.style.transform = 'scale(1)';
+              }, 150);
+              
+              if (typeof showToast === 'function') {
+                showToast('success', 'Успешно', 'Рассылка запущена');
+              }
+            }
+          });
+        });
+      }
+      
+      function resetForm() {
+        inputName.value = '';
+        inputToken.value = '';
+        inputChannelId.value = '';
+        inputMessageNum.value = '';
+        inputChats.value = '';
+        selectType.querySelector('.af-select-value').textContent = 'Не выбрано';
+        selectStatus.querySelector('.af-select-value').textContent = 'Активная';
+      }
+      
+      function getFormData() {
+        const typeText = selectType.querySelector('.af-select-value').textContent;
+        const statusText = selectStatus.querySelector('.af-select-value').textContent;
+        return {
+          name: inputName.value || 'Без названия',
+          token: inputToken.value,
+          channelId: inputChannelId.value,
+          messageNum: inputMessageNum.value,
+          chats: inputChats.value,
+          type: typeText === 'Пересылка' ? 'forward' : (typeText === 'Копирование' ? 'copy' : 'auto'),
+          status: statusText === 'Активная' ? 'active' : 'inactive'
+        };
+      }
+      
+      function populateForm(item) {
+        inputName.value = item.name || '';
+        inputToken.value = item.token || '';
+        inputChannelId.value = item.channelId || '';
+        inputMessageNum.value = item.messageNum || '';
+        inputChats.value = item.chats || '';
+        
+        const typeText = item.type === 'forward' ? 'Пересылка' : (item.type === 'copy' ? 'Копирование' : 'Автоматический запуск');
+        selectType.querySelector('.af-select-value').textContent = typeText;
+        
+        const statusText = item.status === 'active' ? 'Активная' : 'Неактивная';
+        selectStatus.querySelector('.af-select-value').textContent = statusText;
+      }
+      
+      function openModal() {
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeModal() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        editingId = null;
+        isEditMode = false;
+      }
+      
+      function openAddModal() {
+        isEditMode = false;
+        editingId = null;
+        modalTitle.textContent = 'Добавить';
+        btnDelete.style.display = 'none';
+        resetForm();
+        openModal();
+      }
+      
+      function openEditModal(id) {
+        const item = forwardingData.find(d => d.id === id);
+        if (!item) return;
+        
+        isEditMode = true;
+        editingId = id;
+        modalTitle.textContent = 'Редактировать';
+        btnDelete.style.display = 'inline-flex';
+        populateForm(item);
+        openModal();
+      }
+      
+      function saveData() {
+        const formData = getFormData();
+        
+        if (isEditMode && editingId) {
+          const index = forwardingData.findIndex(d => d.id === editingId);
+          if (index !== -1) {
+            forwardingData[index] = { ...forwardingData[index], ...formData };
+          }
+        } else {
+          const newItem = {
+            id: nextId++,
+            ...formData,
+            lastRun: null,
+            stats: { gray: 0, green: 0, red: 0 }
+          };
+          forwardingData.push(newItem);
+        }
+        
+        renderTable();
+      }
+      
+      function deleteData() {
+        if (editingId) {
+          forwardingData = forwardingData.filter(d => d.id !== editingId);
+          renderTable();
+        }
+      }
+      
+      // Event listeners
+      if (addBtn) {
+        addBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          openAddModal();
+        });
+      }
+      
+      if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+      }
+      
+      if (modalOverlay) {
+        modalOverlay.addEventListener('click', function(e) {
+          if (e.target === modalOverlay) {
+            closeModal();
+          }
+        });
+      }
+      
+      if (btnSaveAdd) {
+        btnSaveAdd.addEventListener('click', function() {
+          saveData();
+          if (typeof showToast === 'function') {
+            showToast('success', 'Успешно', 'Запись сохранена');
+          }
+          isEditMode = false;
+          editingId = null;
+          modalTitle.textContent = 'Добавить';
+          btnDelete.style.display = 'none';
+          resetForm();
+        });
+      }
+      
+      if (btnApply) {
+        btnApply.addEventListener('click', function() {
+          saveData();
+          if (typeof showToast === 'function') {
+            showToast('success', 'Успешно', 'Изменения применены');
+          }
+        });
+      }
+      
+      if (btnSave) {
+        btnSave.addEventListener('click', function() {
+          saveData();
+          if (typeof showToast === 'function') {
+            showToast('success', 'Успешно', 'Запись сохранена');
+          }
+          closeModal();
+        });
+      }
+      
+      if (btnDelete) {
+        btnDelete.addEventListener('click', function() {
+          deleteData();
+          if (typeof showToast === 'function') {
+            showToast('success', 'Удалено', 'Запись удалена');
+          }
+          closeModal();
+        });
+      }
+      
+      // Modal dropdowns
+      document.querySelectorAll('.af-form-select').forEach(function(select) {
+        select.addEventListener('click', function(e) {
+          e.stopPropagation();
+          document.querySelectorAll('.af-form-select').forEach(function(s) {
+            if (s !== select) s.classList.remove('open');
+          });
+          select.classList.toggle('open');
+        });
+        
+        select.querySelectorAll('.af-select-item').forEach(function(item) {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            select.querySelector('.af-select-value').textContent = item.textContent;
+            select.classList.remove('open');
+          });
+        });
+      });
+      
+      // Type filter dropdown
+      const typeBtn = document.getElementById('afTypeBtn');
+      const typeMenu = document.getElementById('afTypeMenu');
+      
+      if (typeBtn && typeMenu) {
+        typeBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          closeDatePicker();
+          typeBtn.classList.toggle('open');
+          typeMenu.classList.toggle('open');
+        });
+        
+        typeMenu.querySelectorAll('.af-filter-item').forEach(function(item) {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const value = item.dataset.value;
+            typeBtn.querySelector('span').textContent = item.textContent;
+            typeBtn.classList.remove('open');
+            typeMenu.classList.remove('open');
+            filterRows(value);
+          });
+        });
+      }
+      
+      function filterRows(typeValue) {
+        const rows = tableBody.querySelectorAll('.af-table-row');
+        rows.forEach(function(row) {
+          const rowType = row.querySelector('.af-td-type').textContent;
+          if (typeValue === 'all') {
+            row.style.display = 'flex';
+            row.style.opacity = '1';
+          } else if (typeValue === 'manual' && rowType.includes('Ручной')) {
+            row.style.display = 'flex';
+            row.style.opacity = '1';
+          } else if (typeValue === 'auto' && rowType.includes('Автоматический')) {
+            row.style.display = 'flex';
+            row.style.opacity = '1';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
+      
+      // Date picker
+      const dateBtn = document.getElementById('afDateBtn');
+      const datePicker = document.getElementById('afDatePicker');
+      const dateText = document.getElementById('afDateText');
+      const dateFrom = document.getElementById('afDateFrom');
+      const dateTo = document.getElementById('afDateTo');
+      const dateApply = document.getElementById('afDateApply');
+      
+      const today = new Date();
+      const weekAgo = new Date(today);
+      weekAgo.setDate(weekAgo.getDate() - 7);
+      if (dateFrom) dateFrom.value = weekAgo.toISOString().split('T')[0];
+      if (dateTo) dateTo.value = today.toISOString().split('T')[0];
+      
+      function closeDatePicker() {
+        if (datePicker) datePicker.classList.remove('open');
+        if (dateBtn) dateBtn.classList.remove('open');
+      }
+      
+      if (dateBtn && datePicker) {
+        dateBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (typeBtn) typeBtn.classList.remove('open');
+          if (typeMenu) typeMenu.classList.remove('open');
+          dateBtn.classList.toggle('open');
+          datePicker.classList.toggle('open');
+        });
+      }
+      
+      if (dateApply) {
+        dateApply.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (dateFrom.value && dateTo.value) {
+            dateText.textContent = dateFrom.value + ' - ' + dateTo.value;
+          }
+          closeDatePicker();
+          if (typeof showToast === 'function') {
+            showToast('success', 'Успешно', 'Период применён');
+          }
+        });
+      }
+      
+      if (datePicker) {
+        datePicker.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+      }
+      
+      // Close dropdowns on outside click
+      document.addEventListener('click', function() {
+        if (typeBtn) typeBtn.classList.remove('open');
+        if (typeMenu) typeMenu.classList.remove('open');
+        closeDatePicker();
+        document.querySelectorAll('.af-form-select').forEach(function(s) {
+          s.classList.remove('open');
+        });
+      });
+      
+      // Keyboard ESC to close modal
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+          closeModal();
+        }
+      });
+      
+      // Initial render
+      renderTable();
+    });
+  </script>
+</body>
+</html>
